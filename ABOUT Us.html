@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--wine:#bd6b97;--wine-deep:#2e0018;--wine-mid:#7d2348;--wine-light:#a3496a;--blush:#f9edf2;--blush-mid:#f0d8e4;--cream:#fdfaf8;--white:#ffffff;--gold:#c9a96e;--gold-light:#e8d5b0;--text-dark:#1a0a10;--text-mid:#5a3040;--text-soft:#9a6878;--border:rgba(84,0,45,0.08);--sh-sm:rgba(84,0,45,0.06);--sh-md:rgba(84,0,45,0.13);--sh-lg:rgba(84,0,45,0.23);--pad:clamp(16px,5vw,64px)}
+    :root{--wine:#54002D;--wine-deep:#2e0018;--wine-mid:#7d2348;--wine-light:#a3496a;--blush:#f9edf2;--blush-mid:#f0d8e4;--cream:#fdfaf8;--white:#ffffff;--gold:#c9a96e;--gold-light:#e8d5b0;--text-dark:#1a0a10;--text-mid:#5a3040;--text-soft:#9a6878;--border:rgba(84,0,45,0.08);--sh-sm:rgba(84,0,45,0.06);--sh-md:rgba(84,0,45,0.13);--sh-lg:rgba(84,0,45,0.23);--pad:clamp(16px,5vw,64px)}
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;-webkit-font-smoothing:antialiased}
     a{text-decoration:none;color:inherit}
@@ -44,14 +44,14 @@
     .hero-card h1 em{font-style:italic;color:var(--gold-light)}
     .hero-card p{font-size:clamp(13px,1.5vw,15px);color:rgba(255,255,255,0.5);font-weight:300;line-height:1.8;max-width:500px;margin:0 auto}
  
-    /* STATS ROW */
+   
     .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:16px var(--pad) 0;background:var(--white);border:1px solid var(--border);border-radius:18px;box-shadow:0 2px 12px var(--sh-sm);overflow:hidden}
     .stat-item{padding:clamp(20px,3vw,32px) 20px;text-align:center;border-right:1px solid var(--border)}
     .stat-item:last-child{border-right:none}
     .stat-num{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,48px);font-weight:300;color:var(--wine);line-height:1;margin-bottom:4px}
     .stat-lbl{font-size:12px;color:var(--text-soft);font-weight:300;letter-spacing:0.04em}
  
-    /* STORY SECTION */
+   
     .story-section{padding:clamp(48px,6vw,80px) var(--pad)}
     .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
     .story-img{border-radius:20px;overflow:hidden;height:clamp(280px,36vw,440px);background:linear-gradient(135deg,var(--blush),var(--blush-mid));display:flex;align-items:center;justify-content:center;font-size:80px;color:var(--wine);opacity:0.15;position:relative;border:1px solid var(--border)}
@@ -61,7 +61,7 @@
     .story-text h2 em{font-style:italic;color:var(--wine-mid)}
     .story-text p{font-size:clamp(13px,1.4vw,15px);color:var(--text-soft);font-weight:300;line-height:1.8;margin-bottom:14px}
  
-   
+    /* VALUES */
     .values-section{background:var(--blush);border-top:1px solid var(--blush-mid);border-bottom:1px solid var(--blush-mid);padding:clamp(40px,5.5vw,72px) var(--pad)}
     .values-head{text-align:center;margin-bottom:clamp(28px,4vw,48px)}
     .values-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.8vw,44px);font-weight:300;color:var(--text-dark)}
@@ -104,13 +104,13 @@
 </head>
 <body>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="Index.html">Home</a><a href="Gallery.html">Gallery</a><a href="Gallery.html">Gallery</a><a href="About us.html">About Us</a><a href="Contact Us.html">Contact</a><a href="FAQ.html">FAQ</a>
+  <a href="index.html">Home</a><a href="Gallery.html">Gallery</a><a href="ABOUT Us.html">About Us</a><a href="CONTACT Us.html">CONTACT US</a><a href="faq.html">FAQ</a>
   <div class="mm-search"><svg width="14" height="14" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input type="text" placeholder="Search watches…"></div>
 </div>
 <div class="nav-wrap"><nav class="nav-inner">
-  <a class="brand" href="Index.html">Amiro — Luxury Watches</a>
+  <a class="brand" href="index.html">Amiro</a>
   <ul class="nav-links">
-    <li><a href="Index.html">Home</a></li><li><a href="Gallery.html">Gallery</a></li><li></li><li></li><li class="active"><a href="ABOUT US.html">ABOUT US</a></li><li><a href="CONTACT US.html">CONTACT US</a></li><li><a href="FAQ.html">FAQ</a></li>
+    <li><a href="index.html">Home</a></li><li><a href="gallery.html">Gallery</a></li><li class="active"><a href="ABOUT Us.html">About Us</a></li><li><a href="CONTACT Us.html">CONTACT US</a></li><li><a href="faq.html">FAQ</a></li>
   </ul>
   <div class="nav-right"><div class="nav-search"><svg width="13" height="13" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input type="text" placeholder="Search…"></div><button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button></div>
 </nav></div>
@@ -157,7 +157,7 @@
  
 <footer class="footer">
   <div class="footer-brand">Amiro</div>
-  <div class="flinks"><a href="#">Privacy</a><a href="#">Terms</a><a href="Contact Us.html">Contact</a></div>
+  <div class="flinks"><a href="#">Privacy</a><a href="#">Terms</a><a href="contact.html">Contact</a></div>
   <div class="fcopy">© 2025 Amiro Watches. All rights reserved.</div>
 </footer>
  
