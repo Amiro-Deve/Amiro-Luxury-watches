@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Men's Watches — AMIRO Luxury Watches</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --pink-bg:#ffeaf1;--pink-50:#fff0f5;--pink-100:#ffd9e4;--pink-200:#ffbfd2;
+        --pink-300:#ff9ebc;--pink-400:#f78fa7;--pink-deep:#e36b8a;--pink-text:#8a3a52;
+        --rose:#c2185b;--gold:#d4a05a;--gold-light:#e7c890;--gold-deep:#a67830;
+        --cream:#fff8fb;--ink:#4a1f30;--muted:#8a6b75;--white:#ffffff;
+        --shadow-sm:0 4px 10px rgba(227,107,138,0.10);--shadow-md:0 10px 25px rgba(227,107,138,0.18);
+        --shadow-lg:0 20px 45px rgba(227,107,138,0.25);
+        --radius-sm:8px;--radius-md:16px;--radius-lg:24px;--radius-pill:999px;
+        --serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;
+        --display:"Bebas Neue",Impact,sans-serif;
+      }
+      *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+      body{font-family:var(--sans);color:var(--ink);background:linear-gradient(180deg,var(--pink-bg) 0%,var(--pink-50) 100%);overflow-x:hidden}
+      img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+
+      /* NAVBAR */
+      .nav-wrap{position:sticky;top:0;z-index:100;padding:12px clamp(12px,3vw,24px)}
+      .navbar-inner{max-width:1400px;margin:0 auto;background:var(--pink-deep);border-radius:var(--radius-pill);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-md);border:1px solid rgba(248,187,208,0.15)}
+      .brand{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white);letter-spacing:1.5px;white-space:nowrap}.brand span{color:var(--gold-light)}
+      .nav-links{display:flex;list-style:none;gap:6px;align-items:center}
+      .nav-links a{color:var(--white);font-size:14px;font-weight:500;padding:8px 14px;border-radius:var(--radius-pill);transition:all 0.25s}
+      .nav-links a:hover{background:var(--pink-100);color:var(--pink-deep)}
+      .nav-links a.active{background:var(--gold);color:var(--white)}
+      .has-dropdown{position:relative}.dropdown-toggle{display:inline-flex!important;align-items:center;gap:6px;cursor:pointer}
+      .caret{font-size:10px;color:var(--gold-light);transition:transform 0.25s}.has-dropdown.open .caret{transform:rotate(180deg);color:var(--gold)}
+      .dropdown-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:220px;background:var(--white);list-style:none;padding:8px;border-radius:var(--radius-md);box-shadow:var(--shadow-lg);border:1.5px solid var(--gold-light);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.25s;z-index:110}
+      .dropdown-menu::before{content:"";position:absolute;top:-7px;right:28px;width:12px;height:12px;background:var(--white);border-top:1.5px solid var(--gold-light);border-left:1.5px solid var(--gold-light);transform:rotate(45deg)}
+      .has-dropdown.open .dropdown-menu,.has-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+      .dropdown-menu li{width:100%}.dropdown-menu a{display:flex!important;align-items:center;gap:12px;padding:10px 14px!important;color:var(--ink)!important;background:transparent!important;border-radius:var(--radius-sm)!important;font-size:14px!important;font-weight:500;transition:all 0.2s;border-left:2px solid transparent}
+      .dropdown-menu a:hover{background:linear-gradient(90deg,var(--pink-50),var(--white))!important;color:var(--rose)!important;border-left-color:var(--gold)!important;padding-left:18px!important}
+      .dd-icon{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--white);display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;box-shadow:0 2px 6px rgba(212,160,90,0.35);flex-shrink:0}
+      .nav-icons{display:flex;gap:8px;align-items:center}
+      .nav-icon-btn{width:36px;height:36px;border-radius:50%;background:rgba(248,187,208,0.15);color:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.25s;border:none;font-size:16px}
+      .nav-icon-btn:hover{background:var(--pink-200);color:var(--pink-deep)}
+      .hamburger{display:none;flex-direction:column;gap:4px;background:transparent;border:none;cursor:pointer;padding:6px}
+      .hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s}
+      @media(max-width:900px){
+        .nav-links{position:absolute;top:80px;left:12px;right:12px;background:var(--pink-deep);flex-direction:column;padding:16px;border-radius:var(--radius-md);gap:4px;box-shadow:var(--shadow-lg);max-height:0;overflow:hidden;opacity:0;transition:all 0.35s}
+        .nav-links.open{max-height:700px;opacity:1;padding:16px;overflow:auto}
+        .nav-links li{width:100%}.nav-links a{display:block;padding:12px 16px;width:100%}
+        .hamburger{display:flex}
+        .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:rgba(255,255,255,0.12);margin-top:6px;max-height:0;overflow:hidden;padding:0 8px;transition:all 0.3s}
+        .dropdown-menu::before{display:none}
+        .has-dropdown.open .dropdown-menu{max-height:320px;padding:8px}
+        .has-dropdown:hover .dropdown-menu{max-height:0}
+        .has-dropdown.open:hover .dropdown-menu{max-height:320px}
+        .dropdown-menu a{color:var(--white)!important}.dropdown-menu a:hover{background:rgba(255,255,255,0.15)!important;color:var(--white)!important}
+      }
+
+      /* HERO */
+      .hero{max-width:1400px;margin:24px auto 0;padding:0 clamp(12px,3vw,24px);display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+      .hero-main{background:linear-gradient(135deg,var(--pink-300) 0%,var(--pink-200) 50%,var(--pink-100) 100%);border-radius:24px;padding:clamp(28px,4vw,48px);position:relative;overflow:hidden;min-height:380px;display:flex;flex-direction:column;justify-content:space-between}
+      .hero-main::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,rgba(212,160,90,0.3),transparent 60%)}
+      .hero-main::after{content:"♂";position:absolute;right:-40px;bottom:-60px;font-size:320px;color:rgba(212,160,90,0.12);font-family:serif;line-height:1}
+      .hero-eyebrow{position:relative;display:inline-block;background:var(--white);color:var(--rose);font-family:var(--display);font-size:14px;letter-spacing:3px;padding:4px 14px;border-radius:999px;align-self:flex-start}
+      .hero-title{position:relative;font-family:var(--display);font-size:clamp(54px,8vw,96px);color:var(--ink);letter-spacing:2px;line-height:0.95;margin:16px 0}
+      .hero-title em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--rose);display:block;font-size:0.55em;letter-spacing:0}
+      .hero-sub{position:relative;color:var(--pink-text);max-width:460px;font-size:15px;line-height:1.6;margin-bottom:24px}
+      .hero-cta{position:relative;display:inline-flex;align-items:center;gap:10px;background:var(--pink-deep);color:var(--white);padding:14px 28px;border-radius:999px;font-weight:700;font-size:14px;letter-spacing:0.5px;align-self:flex-start;transition:all 0.25s;cursor:pointer;border:none}
+      .hero-cta:hover{background:var(--gold);transform:translateX(4px)}
+      .hero-side{display:flex;flex-direction:column;gap:16px}
+      .hero-thumb{flex:1;border-radius:24px;overflow:hidden;position:relative;background:var(--pink-200);min-height:180px}
+      .hero-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}.hero-thumb:hover img{transform:scale(1.08)}
+      .hero-thumb-label{position:absolute;bottom:12px;left:12px;background:rgba(255,255,255,0.95);color:var(--ink);padding:6px 14px;border-radius:999px;font-size:12px;font-weight:700;border:1.5px solid var(--gold-light)}
+      @media(max-width:900px){.hero{grid-template-columns:1fr}.hero-side{flex-direction:row}}
+      @media(max-width:540px){.hero-side{flex-direction:column}}
+
+      /* SPEC STRIP */
+      .spec-strip{max-width:1400px;margin:32px auto 0;padding:0 clamp(12px,3vw,24px);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+      .spec-card{background:var(--white);border:1.5px solid var(--gold-light);border-radius:16px;padding:20px;text-align:center;transition:all 0.3s}
+      .spec-card:hover{transform:translateY(-4px);background:linear-gradient(135deg,var(--pink-deep),var(--rose));color:var(--white)}
+      .spec-card:hover .spec-num{color:var(--gold-light)}.spec-card:hover .spec-label{color:var(--pink-100)}
+      .spec-num{font-family:var(--display);font-size:36px;color:var(--rose);letter-spacing:1px}
+      .spec-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+      /* SECTION HEADER */
+      .section-head{max-width:1400px;margin:64px auto 24px;padding:0 clamp(12px,3vw,24px);display:flex;align-items:end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+      .section-title{font-family:var(--display);font-size:clamp(34px,5vw,56px);color:var(--ink);letter-spacing:1px}
+      .section-title em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--rose);letter-spacing:0}
+      .section-line{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin:0 16px 14px;max-width:200px}
+      .section-link{color:var(--rose);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px}
+
+      /* MAGAZINE GRID */
+      .mag-grid{max-width:1400px;margin:0 auto;padding:0 clamp(12px,3vw,24px);display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:280px;gap:16px}
+      .mag-item{position:relative;border-radius:20px;overflow:hidden;background:var(--pink-deep);cursor:pointer;box-shadow:var(--shadow-sm);transition:all 0.4s}
+      .mag-item:hover{box-shadow:var(--shadow-lg)}
+      .mag-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.mag-item:hover img{transform:scale(1.1)}
+      .mag-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(74,31,48,0.92));display:flex;flex-direction:column;justify-content:flex-end;padding:20px;color:var(--white)}
+      .mag-cat{font-family:var(--display);font-size:12px;color:var(--gold-light);letter-spacing:2px}
+      .mag-title{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.15;margin:4px 0 8px}
+      .mag-price{display:flex;justify-content:space-between;align-items:center}
+      .mag-price-num{font-family:var(--display);font-size:22px;color:var(--gold-light);letter-spacing:1px}
+      .mag-buy{background:var(--gold);color:var(--ink);border:none;padding:6px 14px;border-radius:999px;font-weight:700;font-size:11px;cursor:pointer;letter-spacing:0.5px}.mag-buy:hover{background:var(--white)}
+      .mag-item.lg{grid-column:span 2;grid-row:span 2}.mag-item.md{grid-column:span 2}
+      .mag-item .mag-title{font-size:18px}.mag-item.lg .mag-title{font-size:30px}
+      @media(max-width:900px){.mag-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:220px}.mag-item.lg{grid-column:span 2;grid-row:span 2}.mag-item.md{grid-column:span 2}}
+      @media(max-width:540px){.mag-grid{grid-template-columns:1fr}.mag-item.lg,.mag-item.md{grid-column:span 1;grid-row:span 1}}
+
+      /* FOOTER */
+      footer{margin-top:64px;padding:32px clamp(12px,3vw,24px);text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--pink-100)}
+      footer .brand-foot{font-family:var(--serif);font-size:22px;color:var(--pink-deep);font-weight:700;letter-spacing:1.5px;margin-bottom:8px}
+      footer .brand-foot span{color:var(--gold)}
+      footer .nav-foot{display:flex;gap:20px;justify-content:center;margin:16px 0;flex-wrap:wrap}
+      footer .nav-foot a{color:var(--muted);font-size:13px}.footer .nav-foot a:hover{color:var(--rose)}
+      .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--pink-deep);color:var(--white);padding:14px 24px;border-radius:999px;font-weight:600;font-size:14px;box-shadow:var(--shadow-lg);opacity:0;transition:all 0.4s;z-index:200;border:1.5px solid var(--gold)}
+      .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+    </style>
+  </head>
+  <body>
+    <div class="nav-wrap"><nav class="navbar-inner">
+      <a href="index.html" class="brand">AMIRO<span>·</span>LUXURY</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="Best Sellers.html">Best Sellers</a></li>
+        <li><a href="About us.html">About Us</a></li>
+        <li><a href="Contact Us.html">Contact Us</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li class="has-dropdown">
+          <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Watches <span class="caret">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="MEN.html"><span class="dd-icon">♂</span> For Men</a></li>
+            <li><a href="WOMEN.html"><span class="dd-icon">♀</span> For Women</a></li>
+            <li><a href="CHILDREN.html"><span class="dd-icon">★</span> For Children</a></li>
+            <li><a href="BOTH.html"><span class="dd-icon">⚭</span> Unisex</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-icons">
+        <button class="nav-icon-btn" title="Search">⌕</button>
+        <button class="nav-icon-btn" title="Wishlist">♡</button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </nav></div>
+
+    <section class="hero">
+      <div class="hero-main">
+        <span class="hero-eyebrow">★ The Gentleman's Edit</span>
+        <h1 class="hero-title">FOR <em>the modern</em> MEN</h1>
+        <p class="hero-sub">Built for power, precision, and presence. Discover chronographs, dive watches, and dress pieces engineered for the man who keeps his time — and his standards — sharp.</p>
+        <button class="hero-cta" onclick="document.querySelector('.mag-grid').scrollIntoView({behavior:'smooth'})">Shop the Edit →</button>
+      </div>
+      <div class="hero-side">
+        <div class="hero-thumb"><img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800" alt="Chronograph" /><span class="hero-thumb-label">Chronographs</span></div>
+        <div class="hero-thumb"><img src="https://images.unsplash.com/photo-1548171915-e79a380a2a4b?w=800" alt="Dive watch" /><span class="hero-thumb-label">Dive Watches</span></div>
+      </div>
+    </section>
+
+    <div class="spec-strip">
+      <div class="spec-card"><div class="spec-num">200M</div><div class="spec-label">Water Resistant</div></div>
+      <div class="spec-card"><div class="spec-num">42mm</div><div class="spec-label">Avg Case Size</div></div>
+      <div class="spec-card"><div class="spec-num">5YR</div><div class="spec-label">Movement Warranty</div></div>
+      <div class="spec-card"><div class="spec-num">316L</div><div class="spec-label">Steel Build</div></div>
+    </div>
+
+    <div class="section-head">
+      <h2 class="section-title">SIGNATURE <em>pieces</em></h2>
+      <div class="section-line"></div>
+      <a href="gallery.html" class="section-link">View all →</a>
+    </div>
+
+    <section class="mag-grid">
+      <div class="mag-item lg"><img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=900" alt="Black Steel Chronograph" /><div class="mag-overlay"><span class="mag-cat">FLAGSHIP</span><h3 class="mag-title">Onyx Chronograph 42</h3><div class="mag-price"><span class="mag-price-num">$2,890</span><button class="mag-buy" onclick="addToCart('Onyx Chronograph')">+ CART</button></div></div></div>
+      <div class="mag-item"><img src="https://images.unsplash.com/photo-1639037687537-fbf3a44ee1e8?w=600" alt="Silver Dress Watch" /><div class="mag-overlay"><span class="mag-cat">DRESS</span><h3 class="mag-title">Silver Heritage</h3><div class="mag-price"><span class="mag-price-num">$1,450</span><button class="mag-buy" onclick="addToCart('Silver Heritage')">+ CART</button></div></div></div>
+      <div class="mag-item"><img src="https://images.unsplash.com/photo-1622434641406-a158123450f9?w=600" alt="Submariner" /><div class="mag-overlay"><span class="mag-cat">DIVE</span><h3 class="mag-title">Atlas Submariner</h3><div class="mag-price"><span class="mag-price-num">$3,200</span><button class="mag-buy" onclick="addToCart('Atlas Submariner')">+ CART</button></div></div></div>
+      <div class="mag-item md"><img src="https://images.unsplash.com/photo-1606859191213-c7f6b2c8dbb1?w=900" alt="Gold Watch" /><div class="mag-overlay"><span class="mag-cat">PRESTIGE</span><h3 class="mag-title">Royal Gold Sovereign</h3><div class="mag-price"><span class="mag-price-num">$8,750</span><button class="mag-buy" onclick="addToCart('Royal Gold Sovereign')">+ CART</button></div></div></div>
+      <div class="mag-item md"><img src="https://images.unsplash.com/photo-1585123334904-845d60e97b29?w=900" alt="Leather Strap" /><div class="mag-overlay"><span class="mag-cat">CLASSIC</span><h3 class="mag-title">Mahogany Leather 40</h3><div class="mag-price"><span class="mag-price-num">$890</span><button class="mag-buy" onclick="addToCart('Mahogany Leather')">+ CART</button></div></div></div>
+      <div class="mag-item"><img src="https://images.unsplash.com/photo-1633934542430-0905ccb5f050?w=600" alt="Smart Sport" /><div class="mag-overlay"><span class="mag-cat">SMART</span><h3 class="mag-title">Iron Sport GPS</h3><div class="mag-price"><span class="mag-price-num">$520</span><button class="mag-buy" onclick="addToCart('Iron Sport GPS')">+ CART</button></div></div></div>
+      <div class="mag-item"><img src="https://images.unsplash.com/photo-1548171915-e79a380a2a4b?w=600" alt="Pilot Watch" /><div class="mag-overlay"><span class="mag-cat">PILOT</span><h3 class="mag-title">Aviator Skyline</h3><div class="mag-price"><span class="mag-price-num">$1,890</span><button class="mag-buy" onclick="addToCart('Aviator Skyline')">+ CART</button></div></div></div>
+    </section>
+
+    <footer>
+      <div class="brand-foot">AMIRO<span>·</span>LUXURY WATCHES</div>
+      <div class="nav-foot">
+        <a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="Best Sellers.html">Best Sellers</a>
+        <a href="WOMEN.html">Women</a><a href="CHILDREN.html">Children</a><a href="BOTH.html">Unisex</a>
+        <a href="About us.html">About</a><a href="Contact Us.html">Contact</a><a href="faq.html">FAQ</a>
+      </div>
+      <p>Crafted with care · Kampala, Uganda · © 2026 AMIRO</p>
+    </footer>
+    <div class="toast" id="toast"></div>
+    <script>
+      const hamburger=document.getElementById("hamburger"),navLinks=document.getElementById("navLinks");
+      hamburger.addEventListener("click",()=>navLinks.classList.toggle("open"));
+      document.querySelectorAll(".nav-links a:not(.dropdown-toggle)").forEach(a=>{a.addEventListener("click",()=>navLinks.classList.remove("open"))});
+      function toggleDropdown(e){e.preventDefault();e.stopPropagation();const p=e.currentTarget.parentElement;document.querySelectorAll(".has-dropdown.open").forEach(d=>{if(d!==p)d.classList.remove("open")});p.classList.toggle("open")}
+      document.addEventListener("click",e=>{if(!e.target.closest(".has-dropdown"))document.querySelectorAll(".has-dropdown.open").forEach(d=>d.classList.remove("open"))});
+      const toast=document.getElementById("toast");let toastTimer;
+      function addToCart(n){toast.textContent="✓ "+n+" added to cart";toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),2500)}
+    </script>
+  </body>
+</html>

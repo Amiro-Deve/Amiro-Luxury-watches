@@ -1,0 +1,200 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Women's Watches — AMIRO Luxury Watches</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --pink-bg:#ffeaf1;--pink-50:#fff0f5;--pink-100:#ffd9e4;--pink-200:#ffbfd2;
+        --pink-300:#ff9ebc;--pink-400:#f78fa7;--pink-deep:#e36b8a;--pink-text:#8a3a52;
+        --rose:#c2185b;--rose-gold:#e6a791;--gold:#d4a05a;--gold-light:#e7c890;--gold-deep:#a67830;
+        --cream:#fff8fb;--pearl:#fdf6f0;--ink:#4a1f30;--muted:#8a6b75;--white:#ffffff;
+        --shadow-sm:0 4px 12px rgba(227,107,138,0.08);--shadow-md:0 12px 30px rgba(227,107,138,0.15);
+        --shadow-lg:0 20px 50px rgba(227,107,138,0.22);
+        --radius-sm:8px;--radius-md:16px;--radius-lg:24px;--radius-pill:999px;
+        --serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;
+        --display:"Playfair Display",Georgia,serif;
+      }
+      *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+      body{font-family:var(--sans);color:var(--ink);background:radial-gradient(circle at 0% 0%,var(--pink-100) 0%,transparent 40%),radial-gradient(circle at 100% 100%,var(--pearl) 0%,transparent 50%),var(--pink-bg);overflow-x:hidden;min-height:100vh}
+      img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+
+      /* NAVBAR */
+      .nav-wrap{position:sticky;top:0;z-index:100;padding:12px clamp(12px,3vw,24px)}
+      .navbar-inner{max-width:1400px;margin:0 auto;background:var(--pink-deep);border-radius:var(--radius-pill);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-md);border:1px solid rgba(248,187,208,0.15)}
+      .brand{font-family:var(--display);font-size:22px;font-weight:500;color:var(--white);letter-spacing:1px;font-style:italic}.brand span{color:var(--gold-light);font-style:normal}
+      .nav-links{display:flex;list-style:none;gap:6px;align-items:center}
+      .nav-links a{color:var(--white);font-size:14px;font-weight:500;padding:8px 14px;border-radius:var(--radius-pill);transition:all 0.25s}
+      .nav-links a:hover{background:var(--pink-100);color:var(--pink-deep)}.nav-links a.active{background:var(--gold);color:var(--white)}
+      .has-dropdown{position:relative}.dropdown-toggle{display:inline-flex!important;align-items:center;gap:6px;cursor:pointer}
+      .caret{font-size:10px;color:var(--gold-light);transition:transform 0.25s}.has-dropdown.open .caret{transform:rotate(180deg)}
+      .dropdown-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:220px;background:var(--white);list-style:none;padding:8px;border-radius:var(--radius-md);box-shadow:var(--shadow-lg);border:1.5px solid var(--gold-light);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.25s;z-index:110}
+      .dropdown-menu::before{content:"";position:absolute;top:-7px;right:28px;width:12px;height:12px;background:var(--white);border-top:1.5px solid var(--gold-light);border-left:1.5px solid var(--gold-light);transform:rotate(45deg)}
+      .has-dropdown.open .dropdown-menu,.has-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+      .dropdown-menu li{width:100%}.dropdown-menu a{display:flex!important;align-items:center;gap:12px;padding:10px 14px!important;color:var(--ink)!important;background:transparent!important;border-radius:var(--radius-sm)!important;font-size:14px!important;border-left:2px solid transparent;transition:all 0.2s}
+      .dropdown-menu a:hover{background:linear-gradient(90deg,var(--pink-50),var(--white))!important;color:var(--rose)!important;border-left-color:var(--gold)!important;padding-left:18px!important}
+      .dd-icon{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--rose-gold),var(--gold));color:var(--white);display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+      .nav-icons{display:flex;gap:8px;align-items:center}
+      .nav-icon-btn{width:36px;height:36px;border-radius:50%;background:rgba(248,187,208,0.15);color:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;font-size:16px;transition:all 0.25s}
+      .nav-icon-btn:hover{background:var(--pink-200);color:var(--pink-deep)}
+      .hamburger{display:none;flex-direction:column;gap:4px;background:transparent;border:none;cursor:pointer;padding:6px}.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px}
+      @media(max-width:900px){.nav-links{position:absolute;top:80px;left:12px;right:12px;background:var(--pink-deep);flex-direction:column;padding:16px;border-radius:var(--radius-md);gap:4px;box-shadow:var(--shadow-lg);max-height:0;overflow:hidden;opacity:0;transition:all 0.35s}.nav-links.open{max-height:700px;opacity:1;padding:16px;overflow:auto}.nav-links li{width:100%}.nav-links a{display:block;padding:12px 16px;width:100%}.hamburger{display:flex}.dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:rgba(255,255,255,0.12);margin-top:6px;max-height:0;overflow:hidden;padding:0 8px;transition:all 0.3s}.dropdown-menu::before{display:none}.has-dropdown.open .dropdown-menu{max-height:320px;padding:8px}.has-dropdown:hover .dropdown-menu{max-height:0}.has-dropdown.open:hover .dropdown-menu{max-height:320px}.dropdown-menu a{color:var(--white)!important}}
+
+      /* HERO */
+      .hero{max-width:1400px;margin:32px auto 0;padding:0 clamp(12px,3vw,24px);position:relative}
+      .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:center}
+      .hero-text{padding:24px 40px 24px 0}
+      .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold-deep);font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+      .hero-eyebrow::before,.hero-eyebrow::after{content:"";width:30px;height:1px;background:var(--gold)}
+      .hero-title{font-family:var(--display);font-size:clamp(42px,7vw,84px);font-weight:400;color:var(--ink);line-height:1.0;letter-spacing:-1px}
+      .hero-title em{font-style:italic;font-weight:400;color:var(--rose);display:block;background:linear-gradient(135deg,var(--rose),var(--rose-gold),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+      .hero-sub{color:var(--muted);margin:24px 0;font-size:16px;line-height:1.7;max-width:460px;font-family:var(--serif);font-size:19px}
+      .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+      .btn-rose{background:linear-gradient(135deg,var(--rose-gold),var(--rose));color:var(--white);border:none;padding:14px 30px;border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;letter-spacing:0.5px;transition:all 0.3s;box-shadow:0 4px 16px rgba(184,57,94,0.3)}
+      .btn-rose:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(184,57,94,0.4)}
+      .btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--gold);padding:12px 28px;border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.3s}.btn-outline:hover{background:var(--gold-light)}
+      .hero-circle{position:relative;aspect-ratio:1;max-width:520px;margin-left:auto}
+      .circle-bg{position:absolute;inset:10%;background:linear-gradient(135deg,var(--rose-gold),var(--pink-200),var(--gold-light));border-radius:50%;animation:spin 30s linear infinite}
+      @keyframes spin{to{transform:rotate(360deg)}}
+      .circle-watch{position:absolute;inset:18%;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 30px 60px rgba(216,90,133,0.3);overflow:hidden;border:8px solid var(--white)}
+      .circle-watch img{width:100%;height:100%;object-fit:cover}
+      .circle-badge{position:absolute;background:var(--white);padding:12px 20px;border-radius:999px;font-family:var(--display);font-style:italic;color:var(--rose);font-size:14px;font-weight:500;box-shadow:var(--shadow-md);border:1.5px solid var(--gold-light);white-space:nowrap}
+      .circle-badge.b1{top:10%;right:-5%}.circle-badge.b2{bottom:12%;left:-8%}.circle-badge.b3{top:50%;right:-10%;transform:translateY(-50%)}
+      @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:32px}.hero-text{padding:0;text-align:center}.hero-eyebrow{justify-content:center}.hero-actions{justify-content:center}.hero-circle{margin:0 auto;max-width:360px}.circle-badge{font-size:12px;padding:8px 14px}}
+
+      /* CATEGORIES */
+      .cats{max-width:1400px;margin:56px auto 0;padding:0 clamp(12px,3vw,24px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+      .cat-pill{background:var(--white);border-radius:999px;padding:20px 24px;display:flex;align-items:center;gap:16px;box-shadow:var(--shadow-sm);border:1.5px solid var(--pink-100);transition:all 0.3s;cursor:pointer}
+      .cat-pill:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:var(--shadow-md)}
+      .cat-emoji{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--pink-200),var(--rose-gold));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+      .cat-name{font-family:var(--display);font-size:18px;color:var(--ink)}.cat-count{font-size:12px;color:var(--muted)}
+
+      /* SECTION HEADER */
+      .section-head{max-width:1400px;margin:72px auto 32px;padding:0 clamp(12px,3vw,24px);text-align:center}
+      .section-eyebrow{color:var(--gold-deep);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
+      .section-title{font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,54px);color:var(--ink)}.section-title em{font-style:italic;color:var(--rose)}
+
+      /* JEWEL PRODUCT GRID */
+      .jewel-grid{max-width:1400px;margin:0 auto;padding:0 clamp(12px,3vw,24px);display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:28px}
+      .jewel{background:var(--white);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-sm);border:1.5px solid transparent;transition:all 0.4s ease;position:relative}
+      .jewel::before{content:"";position:absolute;inset:0;border-radius:24px;background:linear-gradient(135deg,transparent 30%,rgba(231,184,127,0.4) 50%,transparent 70%);opacity:0;transition:opacity 0.4s;pointer-events:none}
+      .jewel:hover{transform:translateY(-12px) rotate(-0.5deg);box-shadow:var(--shadow-lg);border-color:var(--gold-light)}
+      .jewel:hover::before{opacity:1;animation:shimmer 1.2s}
+      @keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+      .jewel-img{aspect-ratio:1;overflow:hidden;background:linear-gradient(135deg,var(--pink-50),var(--pearl));position:relative}
+      .jewel-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}.jewel:hover .jewel-img img{transform:scale(1.08)}
+      .jewel-tag{position:absolute;top:14px;left:14px;background:var(--white);color:var(--rose);font-size:10px;font-weight:700;padding:6px 12px;border-radius:999px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--gold-light)}
+      .jewel-fav{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:var(--white);color:var(--rose);border:none;cursor:pointer;font-size:16px;box-shadow:var(--shadow-sm);transition:all 0.25s}
+      .jewel-fav:hover,.jewel-fav.active{background:var(--rose);color:var(--white);transform:scale(1.1)}
+      .jewel-body{padding:22px 24px 26px;text-align:center}
+      .jewel-cat{font-size:11px;color:var(--gold-deep);letter-spacing:2px;text-transform:uppercase}
+      .jewel-name{font-family:var(--display);font-style:italic;font-size:22px;color:var(--ink);margin:6px 0 14px;line-height:1.2}
+      .jewel-price{font-family:var(--display);font-size:26px;color:var(--rose);margin-bottom:16px}
+      .jewel-cart{background:transparent;color:var(--ink);border:1.5px solid var(--ink);padding:10px 28px;border-radius:999px;font-weight:600;font-size:12px;cursor:pointer;letter-spacing:1px;text-transform:uppercase;transition:all 0.3s}
+      .jewel-cart:hover{background:var(--ink);color:var(--gold-light)}
+
+      /* QUOTE */
+      .quote{max-width:1000px;margin:80px auto;padding:0 clamp(12px,3vw,24px);text-align:center}
+      .quote-text{font-family:var(--display);font-style:italic;font-size:clamp(24px,3.5vw,36px);color:var(--ink);line-height:1.4}
+      .quote-text::before,.quote-text::after{content:'"';color:var(--rose-gold);font-size:1.4em}
+      .quote-author{margin-top:16px;color:var(--gold-deep);font-size:12px;letter-spacing:3px;text-transform:uppercase}
+
+      /* FOOTER */
+      footer{margin-top:40px;padding:40px clamp(12px,3vw,24px);text-align:center;color:var(--muted);font-size:13px;background:linear-gradient(180deg,transparent,var(--pink-100))}
+      footer .brand-foot{font-family:var(--display);font-style:italic;font-size:28px;color:var(--rose);font-weight:500;letter-spacing:1px;margin-bottom:8px}
+      footer .brand-foot span{color:var(--gold-deep);font-style:normal}
+      footer .nav-foot{display:flex;gap:20px;justify-content:center;margin:16px 0;flex-wrap:wrap}
+      footer .nav-foot a{color:var(--muted)}.footer .nav-foot a:hover{color:var(--rose)}
+      .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--pink-deep);color:var(--white);padding:14px 24px;border-radius:999px;font-weight:600;font-size:14px;box-shadow:var(--shadow-lg);opacity:0;transition:all 0.4s;z-index:200}
+      .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+    </style>
+  </head>
+  <body>
+    <div class="nav-wrap"><nav class="navbar-inner">
+      <a href="index.html" class="brand">Amiro<span> · </span>Luxury</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="Best Sellers.html">Best Sellers</a></li>
+        <li><a href="About us.html">About Us</a></li>
+        <li><a href="Contact Us.html">Contact Us</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li class="has-dropdown">
+          <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Watches <span class="caret">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="MEN.html"><span class="dd-icon">♂</span> For Men</a></li>
+            <li><a href="WOMEN.html"><span class="dd-icon">♀</span> For Women</a></li>
+            <li><a href="CHILDREN.html"><span class="dd-icon">★</span> For Children</a></li>
+            <li><a href="BOTH.html"><span class="dd-icon">⚭</span> Unisex</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-icons">
+        <button class="nav-icon-btn">⌕</button><button class="nav-icon-btn">♡</button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </nav></div>
+
+    <section class="hero"><div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Atelier Féminin</div>
+        <h1 class="hero-title">Timeless<br /><em>Elegance</em><br />For Her</h1>
+        <p class="hero-sub">A curated collection of jewel-set timepieces, slim profiles, and rose-gold masterworks — designed for the woman who wears time as her most treasured accessory.</p>
+        <div class="hero-actions">
+          <button class="btn-rose" onclick="document.querySelector('.jewel-grid').scrollIntoView({behavior:'smooth'})">Discover Collection</button>
+          <a href="Best Sellers.html" class="btn-outline">View Best Sellers</a>
+        </div>
+      </div>
+      <div class="hero-circle">
+        <div class="circle-bg"></div>
+        <div class="circle-watch"><img src="https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=800" alt="Featured women's watch" /></div>
+        <div class="circle-badge b1">✨ Diamond Set</div>
+        <div class="circle-badge b2">Rose Gold 18K</div>
+        <div class="circle-badge b3">From $890</div>
+      </div>
+    </div></section>
+
+    <div class="cats">
+      <div class="cat-pill"><div class="cat-emoji">💎</div><div><div class="cat-name">Diamond</div><div class="cat-count">24 pieces</div></div></div>
+      <div class="cat-pill"><div class="cat-emoji">🌹</div><div><div class="cat-name">Rose Gold</div><div class="cat-count">18 pieces</div></div></div>
+      <div class="cat-pill"><div class="cat-emoji">🤍</div><div><div class="cat-name">Pearl</div><div class="cat-count">12 pieces</div></div></div>
+      <div class="cat-pill"><div class="cat-emoji">⚡</div><div><div class="cat-name">Smart</div><div class="cat-count">9 pieces</div></div></div>
+    </div>
+
+    <div class="section-head"><div class="section-eyebrow">— Curated For Her —</div><h2 class="section-title">Pieces She'll <em>Treasure</em></h2></div>
+
+    <section class="jewel-grid">
+      <article class="jewel"><div class="jewel-img"><span class="jewel-tag">★ Bestseller</span><button class="jewel-fav" onclick="this.classList.toggle('active')">♡</button><img src="https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=600" alt="Rose Gold Diamond" /></div><div class="jewel-body"><div class="jewel-cat">Rose Gold · Diamond</div><h3 class="jewel-name">Rosalind Diamond Bracelet</h3><div class="jewel-price">$1,890</div><button class="jewel-cart" onclick="addToCart('Rosalind Diamond')">Add to Bag</button></div></article>
+      <article class="jewel"><div class="jewel-img"><span class="jewel-tag">New</span><button class="jewel-fav" onclick="this.classList.toggle('active')">♡</button><img src="https://images.unsplash.com/photo-1609587312208-cea54be969e7?w=600" alt="Pearl White" /></div><div class="jewel-body"><div class="jewel-cat">Pearl · Slim</div><h3 class="jewel-name">Bianca Pearl Slim 32</h3><div class="jewel-price">$1,240</div><button class="jewel-cart" onclick="addToCart('Bianca Pearl')">Add to Bag</button></div></article>
+      <article class="jewel"><div class="jewel-img"><span class="jewel-tag">Limited</span><button class="jewel-fav" onclick="this.classList.toggle('active')">♡</button><img src="https://images.unsplash.com/photo-1622434641406-a158123450f9?w=600" alt="Vintage Gold" /></div><div class="jewel-body"><div class="jewel-cat">Vintage · Gold</div><h3 class="jewel-name">Aurelia Vintage Gold</h3><div class="jewel-price">$2,450</div><button class="jewel-cart" onclick="addToCart('Aurelia Vintage')">Add to Bag</button></div></article>
+      <article class="jewel"><div class="jewel-img"><span class="jewel-tag">−15%</span><button class="jewel-fav" onclick="this.classList.toggle('active')">♡</button><img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=600" alt="Silver Crystal" /></div><div class="jewel-body"><div class="jewel-cat">Silver · Crystal</div><h3 class="jewel-name">Celeste Crystal Halo</h3><div class="jewel-price">$890</div><button class="jewel-cart" onclick="addToCart('Celeste Crystal')">Add to Bag</button></div></article>
+      <article class="jewel"><div class="jewel-img"><span class="jewel-tag">Couture</span><button class="jewel-fav" onclick="this.classList.toggle('active')">♡</button><img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=600" alt="Pink leather" /></div><div class="jewel-body"><div class="jewel-cat">Leather · Pink</div><h3 class="jewel-name">Mademoiselle Blush 34</h3><div class="jewel-price">$640</div><button class="jewel-cart" onclick="addToCart('Mademoiselle Blush')">Add to Bag</button></div></article>
+      <article class="jewel"><div class="jewel-img"><span class="jewel-tag">★ Hot</span><button class="jewel-fav" onclick="this.classList.toggle('active')">♡</button><img src="https://images.unsplash.com/photo-1594534475808-b18fc33b045e?w=600" alt="Smart Rose" /></div><div class="jewel-body"><div class="jewel-cat">Smart · Rose Gold</div><h3 class="jewel-name">Nova Smart Rose</h3><div class="jewel-price">$420</div><button class="jewel-cart" onclick="addToCart('Nova Smart Rose')">Add to Bag</button></div></article>
+    </section>
+
+    <section class="quote"><p class="quote-text">A woman's watch is the only piece of jewelry she wears for herself</p><p class="quote-author">— Amiro House, Est. 1962</p></section>
+
+    <footer>
+      <div class="brand-foot">Amiro<span> · </span>Luxury Watches</div>
+      <div class="nav-foot">
+        <a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="Best Sellers.html">Best Sellers</a>
+        <a href="MEN.html">Men</a><a href="CHILDREN.html">Children</a><a href="BOTH.html">Unisex</a>
+        <a href="About us.html">About</a><a href="Contact Us.html">Contact</a><a href="faq.html">FAQ</a>
+      </div>
+      <p>Crafted with care · Kampala, Uganda · © 2026 AMIRO</p>
+    </footer>
+    <div class="toast" id="toast"></div>
+    <script>
+      const hamburger=document.getElementById("hamburger"),navLinks=document.getElementById("navLinks");
+      hamburger.addEventListener("click",()=>navLinks.classList.toggle("open"));
+      document.querySelectorAll(".nav-links a:not(.dropdown-toggle)").forEach(a=>{a.addEventListener("click",()=>navLinks.classList.remove("open"))});
+      function toggleDropdown(e){e.preventDefault();e.stopPropagation();const p=e.currentTarget.parentElement;document.querySelectorAll(".has-dropdown.open").forEach(d=>{if(d!==p)d.classList.remove("open")});p.classList.toggle("open")}
+      document.addEventListener("click",e=>{if(!e.target.closest(".has-dropdown"))document.querySelectorAll(".has-dropdown.open").forEach(d=>d.classList.remove("open"))});
+      const toast=document.getElementById("toast");let toastTimer;
+      function addToCart(n){toast.textContent="✓ "+n+" added to bag";toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),2500)}
+    </script>
+  </body>
+</html>

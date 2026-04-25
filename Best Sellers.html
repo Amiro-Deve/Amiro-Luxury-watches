@@ -1,732 +1,130 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .navbar-inner {
-        border-radius: 40px;
-        overflow: hidden;
-        margin-top: -10px;
-        background-color: rgb(84, 14, 45) !important;
-        background-image: none !important;
-        /* removes bootstrap gradient */
-        color: white;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Best Sellers — AMIRO Luxury Watches</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--pink-bg:#ffeaf1;--pink-50:#fff0f5;--pink-100:#ffd9e4;--pink-200:#ffbfd2;--pink-300:#ff9ebc;--pink-400:#f78fa7;--pink-deep:#e36b8a;--pink-text:#8a3a52;--rose:#c2185b;--gold:#d4a05a;--gold-light:#e7c890;--cream:#fff8fb;--ink:#4a1f30;--muted:#8a6b75;--white:#ffffff;--shadow-sm:0 4px 10px rgba(227,107,138,0.10);--shadow-md:0 10px 25px rgba(227,107,138,0.18);--shadow-lg:0 20px 45px rgba(227,107,138,0.25);--radius-sm:8px;--radius-md:16px;--radius-lg:24px;--radius-pill:999px;--serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--sans);color:var(--ink);background:linear-gradient(180deg,var(--pink-bg) 0%,var(--pink-50) 100%);line-height:1.5;overflow-x:hidden}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+    .nav-wrap{position:sticky;top:0;z-index:100;padding:12px clamp(12px,3vw,24px);background:transparent}.navbar-inner{max-width:1400px;margin:0 auto;background:var(--pink-deep);border-radius:var(--radius-pill);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-md);border:1px solid rgba(248,187,208,0.15)}.brand{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white);letter-spacing:1.5px;white-space:nowrap}.brand span{color:var(--gold-light)}
+    .nav-links{display:flex;list-style:none;gap:6px;align-items:center}.nav-links a{color:var(--white);font-size:14px;font-weight:500;padding:8px 14px;border-radius:var(--radius-pill);transition:all 0.25s}.nav-links a:hover{background:var(--pink-100);color:var(--pink-deep)}.nav-links a.active{background:var(--gold);color:var(--white)}
+    .has-dropdown{position:relative}.dropdown-toggle{display:inline-flex!important;align-items:center;gap:6px;cursor:pointer}.caret{font-size:10px;color:var(--gold-light);transition:transform 0.25s}.has-dropdown.open .caret{transform:rotate(180deg);color:var(--gold)}
+    .dropdown-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:220px;background:var(--white);list-style:none;padding:8px;border-radius:var(--radius-md);box-shadow:var(--shadow-lg);border:1.5px solid var(--gold-light);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.25s;z-index:110}.dropdown-menu::before{content:"";position:absolute;top:-7px;right:28px;width:12px;height:12px;background:var(--white);border-top:1.5px solid var(--gold-light);border-left:1.5px solid var(--gold-light);transform:rotate(45deg)}.has-dropdown.open .dropdown-menu,.has-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu li{width:100%}.dropdown-menu a{display:flex!important;align-items:center;gap:12px;padding:10px 14px!important;color:var(--ink)!important;background:transparent!important;border-radius:var(--radius-sm)!important;font-size:14px!important;font-weight:500;transition:all 0.2s;border-left:2px solid transparent}.dropdown-menu a:hover{background:linear-gradient(90deg,var(--pink-50),var(--white))!important;color:var(--rose)!important;border-left-color:var(--gold)!important;padding-left:18px!important}.dd-icon{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--white);display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;box-shadow:0 2px 6px rgba(212,160,90,0.35);flex-shrink:0}
+    .nav-icons{display:flex;gap:8px;align-items:center}.nav-icon-btn{width:36px;height:36px;border-radius:50%;background:rgba(248,187,208,0.15);color:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.25s;border:none;font-size:16px}.nav-icon-btn:hover{background:var(--pink-200);color:var(--pink-deep)}
+    .hamburger{display:none;flex-direction:column;gap:4px;background:transparent;border:none;cursor:pointer;padding:6px}.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s}
+    @media(max-width:900px){.nav-links{position:absolute;top:80px;left:12px;right:12px;background:var(--pink-deep);flex-direction:column;padding:16px;border-radius:var(--radius-md);gap:4px;box-shadow:var(--shadow-lg);max-height:0;overflow:hidden;opacity:0;transition:all 0.35s}.nav-links.open{max-height:700px;opacity:1;padding:16px;overflow:auto}.nav-links li{width:100%}.nav-links a{display:block;padding:12px 16px;width:100%}.hamburger{display:flex}.dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:rgba(255,255,255,0.12);margin-top:6px;max-height:0;overflow:hidden;padding:0 8px;transition:all 0.3s}.dropdown-menu::before{display:none}.has-dropdown.open .dropdown-menu{max-height:320px;padding:8px}.has-dropdown:hover .dropdown-menu{max-height:0}.has-dropdown.open:hover .dropdown-menu{max-height:320px}.dropdown-menu a{color:var(--white)!important}.dropdown-menu a:hover{background:rgba(255,255,255,0.15)!important;color:var(--white)!important}}
 
-      .navbar {
-        margin: 15px;
-        color: white;
-      }
+    .hero{max-width:1400px;margin:24px auto 0;padding:0 clamp(12px,3vw,24px)}.hero-card{background:linear-gradient(135deg,var(--pink-300) 0%,var(--pink-200) 50%,var(--pink-100) 100%);border-radius:var(--radius-lg);padding:24px clamp(20px,4vw,36px);position:relative;overflow:hidden;box-shadow:var(--shadow-lg);min-height:300px;max-height:320px}.hero-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 30%,rgba(255,255,255,0.4),transparent 50%),radial-gradient(circle at 20% 80%,rgba(231,200,144,0.25),transparent 50%);pointer-events:none}.hero-content{position:relative;z-index:2}.hero-eyebrow{display:inline-block;background:var(--white);color:var(--rose);font-size:11px;font-weight:700;padding:4px 12px;border-radius:var(--radius-pill);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}.hero-title{font-family:var(--serif);font-size:clamp(26px,3.4vw,38px);font-weight:700;color:var(--ink);line-height:1.05;letter-spacing:-0.5px;margin-bottom:10px}.hero-title em{font-style:italic;color:var(--rose);font-weight:500}.hero-sub{color:var(--pink-text);font-size:13px;max-width:460px;margin-bottom:16px;line-height:1.5}
+    .btn{padding:14px 28px;border-radius:var(--radius-pill);font-family:var(--sans);font-size:14px;font-weight:700;cursor:pointer;border:none;letter-spacing:0.5px;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px}.btn-primary{background:var(--pink-deep);color:var(--white)}.btn-primary:hover{background:var(--gold);transform:translateY(-2px);box-shadow:var(--shadow-md)}.btn-ghost{background:var(--pink-100);color:var(--pink-deep)}.btn-ghost:hover{background:var(--pink-200);transform:translateY(-2px)}.btn-row{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px}.hero-meta-num{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--rose);line-height:1}.hero-meta-label{font-size:10px;opacity:0.75;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+    @media(max-width:800px){.hero-card{max-height:none;min-height:0}}
 
-      .navbar .nav .active > a,
-      .navbar .nav .active > a:hover {
-        background-color: transparent !important;
-        color: white !important;
-      }
+    .filters{max-width:1400px;margin:32px auto 0;padding:0 clamp(12px,3vw,24px);display:flex;gap:10px;flex-wrap:wrap;align-items:center}.filter-label{font-family:var(--serif);font-size:18px;color:var(--pink-deep);font-weight:600;margin-right:8px}.filter-btn{padding:8px 22px;border-radius:var(--radius-pill);background:var(--white);border:1.5px solid var(--pink-200);color:var(--pink-400);font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;transition:all 0.25s;box-shadow:var(--shadow-sm)}.filter-btn:hover{background:var(--pink-100);border-color:var(--pink-400);transform:translateY(-2px)}.filter-btn.active{background:var(--pink-deep);color:var(--white);border-color:var(--pink-deep)}
 
-      .bakground {
-        background-image: url("image677.jpg");
-        width: 1540px;
-        height: 40vh;
-        background-position: cover;
-        margin-top: -20px;
-      }
+    .section-head{max-width:1400px;margin:56px auto 24px;padding:0 clamp(12px,3vw,24px);text-align:center}.section-eyebrow{color:var(--gold);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}.section-title{font-family:var(--serif);font-size:clamp(30px,4vw,44px);color:var(--pink-deep);font-weight:600}.section-title em{font-style:italic;color:var(--gold)}
 
-      .row1box1 {
-        margin-top: -200px;
-        margin-left: 550px;
-      }
+    .grid{max-width:1400px;margin:0 auto;padding:0 clamp(12px,3vw,24px);display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+    .product{background:linear-gradient(135deg,var(--white) 0%,var(--pink-50) 100%);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);transition:all 0.35s;border:1px solid var(--pink-100);display:flex;flex-direction:column;position:relative}.product:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--gold-light)}
+    .product-img-wrap{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--cream)}.product-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}.product:hover .product-img-wrap img{transform:scale(1.08)}
+    .product-tag{position:absolute;top:12px;left:12px;background:var(--gold);color:var(--white);font-size:11px;font-weight:700;padding:5px 12px;border-radius:var(--radius-pill);letter-spacing:1px;text-transform:uppercase;z-index:2}.product-fav{position:absolute;top:12px;right:12px;width:36px;height:36px;background:var(--white);border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--pink-400);transition:all 0.25s;z-index:2}.product-fav:hover,.product-fav.active{background:var(--pink-200);color:var(--rose);transform:scale(1.1)}
+    .product-body{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}.product-name{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);margin-bottom:6px;line-height:1.25}.product-cat{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px}.product-bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:12px}.product-price{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--rose)}.product-cart{background:var(--pink-deep);color:var(--white);border:none;padding:9px 18px;border-radius:var(--radius-pill);font-weight:700;font-size:12px;cursor:pointer;transition:all 0.25s;letter-spacing:0.5px}.product-cart:hover{background:var(--gold)}
 
-      .text1 {
-        color: rgb(157, 21, 21);
-        font-size: 34px;
-        font-weight: bold;
-        font-family: Georgia, "Times New Roman", Times, serif;
-      }
+    .newsletter{max-width:1400px;margin:56px auto 0;padding:0 clamp(12px,3vw,24px)}.newsletter-inner{background:linear-gradient(135deg,var(--pink-300),var(--pink-deep));border-radius:var(--radius-lg);padding:clamp(32px,5vw,56px);text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow-md)}.newsletter-inner::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,0.3),transparent 60%)}.newsletter-title{position:relative;font-family:var(--serif);color:var(--white);font-size:clamp(26px,3.5vw,38px);margin-bottom:8px}.newsletter-title em{color:var(--pink-50);font-style:italic}.newsletter-sub{position:relative;color:var(--pink-50);margin-bottom:24px;font-size:15px}.newsletter-form{position:relative;display:flex;gap:8px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}.newsletter-form input{flex:1;min-width:220px;padding:14px 20px;border-radius:var(--radius-pill);border:none;font-family:var(--sans);font-size:14px;background:var(--white);color:var(--ink);outline:none}.newsletter-form input:focus{box-shadow:0 0 0 3px var(--pink-200)}
 
-      .row1box2 {
-        border-color: rgb(120, 83, 83);
-        margin-left: 550px;
-        margin-top: 17px;
-        background-color: rgb(237, 221, 226);
-        border-radius: 100px;
-        width: 220px;
-        height: 23px;
-        padding: 2px;
-      }
+    footer{margin-top:56px;padding:32px clamp(12px,3vw,24px);text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--pink-100)}footer .brand-foot{font-family:var(--serif);font-size:22px;color:var(--pink-deep);font-weight:700;letter-spacing:1.5px;margin-bottom:8px}footer .brand-foot span{color:var(--gold)}footer .nav-foot{display:flex;gap:20px;justify-content:center;margin:16px 0;flex-wrap:wrap}footer .nav-foot a{color:var(--muted);font-size:13px}footer .nav-foot a:hover{color:var(--rose)}
 
-      .text2 {
-        font-size: 14px;
-        font-family:
-          system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          Oxygen,
-          Ubuntu,
-          Cantarell,
-          "Open Sans",
-          "Helvetica Neue",
-          sans-serif;
-        color: rgb(91, 54, 66);
-        font-weight: bold;
-      }
-
-      .row1box3 {
-        width: 80px;
-        height: 30px;
-        margin-left: 550px;
-        margin-top: 120px;
-        background-color: rgb(232, 232, 241);
-        border-radius: 100px;
-        box-shadow: 0px 4px 10px rgba(0.3, 0, 0, 0.3);
-      }
-
-      .text3 {
-        padding: 8px;
-        color: rgb(54, 9, 9);
-        margin-left: 16px;
-        font-size: 15px;
-        font-weight: bold;
-      }
-
-      .row1box3:hover {
-        background-color: rgb(229, 3, 3);
-      }
-
-      .row1box4 {
-        width: 140px;
-        height: 30px;
-        margin-left: 650px;
-        margin-top: -30px;
-        background-color: rgb(129, 52, 4);
-        border-radius: 100px;
-        box-shadow: 0px 4px 10px rgba(0.3, 0, 0, 0.3);
-      }
-
-      .text4 {
-        padding: 6px;
-        color: rgb(232, 231, 231);
-        margin-left: 19px;
-        font-size: 15px;
-        font-weight: bold;
-      }
-
-      .row1box4:hover {
-        background-color: rgb(229, 3, 3);
-      }
-
-      .row1box5 {
-        width: 140px;
-        height: 30px;
-        margin-left: 810px;
-        margin-top: -30px;
-        background-color: rgb(230, 225, 222);
-        border-radius: 100px;
-        box-shadow: 0px 4px 10px rgba(0.3, 0, 0, 0.3);
-      }
-
-      .text5 {
-        padding: 6px;
-        color: rgb(69, 18, 18);
-        margin-left: 19px;
-        font-size: 15px;
-        font-weight: bold;
-      }
-
-      .row1box5:hover {
-        background-color: rgb(229, 3, 3);
-      }
-
-      .row1box8 {
-        background-image: url("image677.jpg");
-        background-position: center;
-        width: 1600px;
-        height: 320px;
-        margin-top: 10px;
-        box-shadow: 0px 4px 10px rgba(0.3, 0, 0, 0.3);
-      }
-
-      .sliders {
-        width: 660px;
-        height: 320px;
-        overflow: hidden;
-        /* VERY IMPORTANT */
-
-        position: relative;
-        /* add this */
-        float: right;
-        margin-right: 100px;
-        /* remove negative margin */
-        margin-top: -6px;
-        border-radius: 20px;
-        background-position: center;
-        background-size: cover;
-
-        animation: slideBg 17s infinite;
-        backdrop-filter: blur(6px);
-        box-shadow: 0px 4px 10px rgba(0.3, 0, 0, 0.3);
-      }
-
-      @keyframes slideBg {
-        0% {
-          background-image: url("imm.jpg");
-        }
-
-        33% {
-          background-image: url("image870.jpg.jpg");
-        }
-
-        66% {
-          background-image: url("download (64).jpg");
-        }
-
-        100% {
-          background-image: url("B7 Smart Watch for Men & Women HD Full-Screen, Wireless Calling Function Fitness Tracker with Step Counter, Smartwatch.jpg");
-        }
-
-        66% {
-          background-image: url("27 Copper Products For Girls Who Want to Get Their Shine On.jpg");
-        }
-
-        57% {
-          background-image: url("newimg.jog-removebg-preview.png");
-        }
-      }
-
-      .row1box9 {
-        width: 400px;
-        height: 40px;
-        float: left;
-        margin-left: 120px;
-      }
-
-      .text7 {
-        font-size: 36px;
-        font-weight: bold;
-        font-family:
-          "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        padding: 10px;
-        color: rgb(62, 19, 19);
-      }
-
-      .row1box10 {
-        width: 400px;
-        height: 30px;
-        margin-left: 100px;
-        margin-top: -250px;
-      }
-
-      .text8 {
-        font-family:
-          "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        font-size: 22px;
-        color: rgb(210, 90, 31);
-        margin-left: 90px;
-      }
-
-      .row1box11 {
-        width: 700px;
-        margin-left: 20px;
-        height: 42px;
-      }
-
-      .text9 {
-        font-size: 22px;
-        font-weight: bold;
-        color: rgb(46, 15, 15);
-        padding: 8px;
-      }
-
-      .text10 {
-        font-size: 22px;
-        font-weight: bold;
-        margin-top: -26px;
-        margin-left: 90px;
-        color: rgb(150, 94, 11);
-      }
-
-      .rate {
-        color: black;
-        font-size: 17px;
-        font-weight: bold;
-        margin-left: 240px;
-        margin-top: -35px;
-      }
-
-      .row2box1 {
-        width: 150px;
-        height: 30px;
-        margin-left: 130px;
-        background-color: rgb(180, 63, 4);
-        margin-top: 60px;
-        border-radius: 5px;
-      }
-
-      .text21 {
-        color: white;
-        font-size: 19px;
-        font-weight: bold;
-        padding: 5px;
-      }
-
-      .row3box1 {
-        width: 400px;
-        height: 430px;
-        background-color: whitesmoke;
-        margin-top: 110px;
-        border-radius: 20px;
-        transition: all 0.2s ease;
-        box-shadow: 0 8px 20px rgba(212, 123, 123, 0.4);
-        transition: 0.3s;
-        background: linear-gradient(135deg, #ffffff, #e7dcdc);
-        margin-left: 90px;
-      }
-
-      .row3box1:hover {
-        transform: translateY(-29px);
-      }
-
-      .text22 {
-        font-weight: bold;
-        color: black;
-        margin-left: 30px;
-        margin-top: 25px;
-      }
-
-      .text23 {
-        font-weight: bold;
-        color: rgb(110, 20, 20);
-        margin-left: 90px;
-        margin-top: 8px;
-      }
-
-      .bestSel {
-        width: 90px;
-        height: 20px;
-        font-size: 13px;
-        font-weight: bold;
-        background-color: rgb(184, 100, 16);
-        color: #ffffff;
-        border-radius: 100px;
-        margin-left: 60px;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        align-items: center;
-        padding-left: 18px;
-        margin-top: 10px;
-      }
-
-      .row3box2 {
-        width: 400px;
-        height: 430px;
-        background-color: whitesmoke;
-        margin-top: -430px;
-        border-radius: 20px;
-        transition: all 0.2s ease;
-        box-shadow: 0 8px 20px rgba(212, 123, 123, 0.4);
-        transition: 0.3s;
-        background: linear-gradient(135deg, #ffffff, #e7dcdc);
-        margin-left: 570px;
-      }
-
-      .row3box2:hover {
-        transform: translateY(-29px);
-      }
-
-      .text24 {
-        font-weight: bold;
-        color: black;
-        margin-left: 30px;
-        margin-top: 25px;
-      }
-
-      .text25 {
-        font-weight: bold;
-        color: rgb(110, 20, 20);
-        margin-left: 90px;
-        margin-top: -6px;
-      }
-
-      .bestSell {
-        width: 90px;
-        height: 20px;
-        font-size: 13px;
-        font-weight: bold;
-        background-color: rgb(184, 100, 16);
-        color: #ffffff;
-        border-radius: 100px;
-        margin-left: 80px;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        align-items: center;
-        padding-left: 23px;
-        margin-top: 5px;
-      }
-
-      .row3box3 {
-        width: 400px;
-        height: 430px;
-        background-color: whitesmoke;
-        margin-top: -430px;
-        border-radius: 20px;
-        transition: all 0.2s ease;
-        box-shadow: 0 8px 20px rgba(212, 123, 123, 0.4);
-        transition: 0.3s;
-        background: linear-gradient(135deg, #ffffff, #e7dcdc);
-        margin-left: 1040px;
-      }
-
-      .row3box3:hover {
-        transform: translateY(-29px);
-      }
-
-      .text26 {
-        font-weight: bold;
-        color: black;
-        margin-left: 30px;
-        margin-top: 10px;
-        font-size: 13px;
-      }
-
-      .text27 {
-        font-weight: bold;
-        color: rgb(110, 20, 20);
-        margin-left: 120px;
-        margin-top: -2px;
-        font-size: 14px;
-      }
-
-      .bestSelle {
-        width: 90px;
-        height: 20px;
-        font-size: 13px;
-        font-weight: bold;
-        background-color: rgb(184, 100, 16);
-        color: #ffffff;
-        border-radius: 100px;
-        margin-left: 120px;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        align-items: center;
-        padding-left: 23px;
-        margin-top: 5px;
-      }
-
-      .time-box {
-        width: 1600px;
-        height: 60px;
-        background-color: rgb(231, 177, 78);
-        border-radius: 100px;
-        margin-top: 20px;
-      }
-
-      .trending {
-        width: 200px;
-        height: 40px;
-        background-color: black;
-        margin-top: 100px;
-      }
-
-      .textt1 {
-        font-size: 19px;
-        font-family:
-          "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        color: white;
-        margin-left: 450px;
-        margin-top: -30px;
-        color: rgb(121, 49, 43);
-      }
-
-      .timer {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        margin-left: 710px;
-        margin-top: -45px;
-        vertical-align: middle;
-      }
-
-      .time-box-unit {
-        background: #fff;
-        color: #c2410c;
-        font-size: 18px;
-        font-weight: bold;
-        width: 40px;
-        height: 34px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 7px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      }
-
-      .colon {
-        color: white;
-        font-size: 20px;
-        font-weight: bold;
-      }
-    </style>
-
-    <link
-      href="bootstrap/css/bootstrap-responsive.css"
-      rel="stylesheet"
-      type="text/css" />
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-  </head>
-
-  <body>
-    <div class="nav-bar">
-      <div class="navbar navbar-inverse" style="position: static">
-        <div class="navbar-inner">
-          <div class="container">
-            <a
-              class="btn btn-navbar"
-              data-toggle="collapse"
-              data-target=".navbar-inverse-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="#">Title</a>
-            <div class="nav-collapse collapse navbar-inverse-collapse">
-              <div class="nav-collapse collapse navbar-inverse-collapse">
-                <ul class="nav">
-                  <li class="active"><a href="Index.html">Home</a></li>
-                  <li><a href="Collections.html">Collections</a></li>
-                  <li><a href="Best Sellers.html">Best sellers</a></li>
-                  <li><a href="About us.html">About us</a></li>
-                  <li><a href="MEN.html">MEN</a></li>
-                  <li><a href="FAQ.html">FAQ</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                      >Dropdown <b class="caret"></b
-                    ></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li class="divider"></li>
-                      <li class="nav-header">Nav header</li>
-                      <li><a href="#">Separated link</a></li>
-                      <li><a href="#">One more separated link</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <form class="navbar-search pull-left" action="">
-                  <input
-                    type="text"
-                    class="search-query span2"
-                    placeholder="Search" />
-                </form>
-                <ul class="nav pull-right">
-                  <li><a href="#">Link</a></li>
-                  <li class="divider-vertical"></li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                      >Dropdown <b class="caret"></b
-                    ></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#">Separated link</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- /.nav-collapse -->
-          </div>
-        </div>
-        <!-- /navbar-inner -->
-      </div>
+    .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--pink-deep);color:var(--white);padding:14px 24px;border-radius:var(--radius-pill);font-weight:600;font-size:14px;box-shadow:var(--shadow-lg);opacity:0;transition:all 0.4s;z-index:200;display:flex;align-items:center;gap:10px}.toast.show{transform:translateX(-50%) translateY(0);opacity:1}.toast-icon{background:var(--gold-light);color:var(--pink-deep);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="nav-wrap"><nav class="navbar-inner">
+    <a href="index.html" class="brand">AMIRO<span>·</span>LUXURY</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="Best Sellers.html" class="active">Best Sellers</a></li>
+      <li><a href="About us.html">About Us</a></li>
+      <li><a href="Contact Us.html">Contact Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li class="has-dropdown">
+        <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Watches <span class="caret">▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="MEN.html"><span class="dd-icon">♂</span> For Men</a></li>
+          <li><a href="WOMEN.html"><span class="dd-icon">♀</span> For Women</a></li>
+          <li><a href="CHILDREN.html"><span class="dd-icon">★</span> For Children</a></li>
+          <li><a href="BOTH.html"><span class="dd-icon">⚭</span> Unisex</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-icons">
+      <button class="nav-icon-btn" title="Search">⌕</button>
+      <button class="nav-icon-btn" title="Cart">♡</button>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
+  </nav></div>
 
-    <div class="bakground">
-      <img
-        src="removed2.jpg.png"
-        style="
-          width: 500px;
-          height: 370px;
-          float: right;
-          margin-top: 4px;
-          margin-right: 20px;
-" />
+  <section class="hero"><div class="hero-card"><div class="hero-content">
+    <div class="hero-eyebrow">★ Curated Selection</div>
+    <h1 class="hero-title">Best <em>Sellers</em><br />Crafted&nbsp;to&nbsp;Impress</h1>
+    <p class="hero-sub">Discover the timepieces our customers love most. Hand-picked icons, limited editions, and the sharpest deals on luxury and fitness watches — all in one place.</p>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="document.querySelector('.grid').scrollIntoView({behavior:'smooth'})">Shop Now →</button>
+      <a href="gallery.html" class="btn btn-ghost">View Collections</a>
     </div>
-    <div class="row1box1">
-      <div class="text1">Best Sellers</div>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><div class="hero-meta-num">4.9★</div><div class="hero-meta-label">Avg Rating</div></div>
+      <div class="hero-meta-item"><div class="hero-meta-num">12K+</div><div class="hero-meta-label">Happy Buyers</div></div>
+      <div class="hero-meta-item"><div class="hero-meta-num">2yr</div><div class="hero-meta-label">Warranty</div></div>
     </div>
-    <div class="row1box2">
-      <div class="text2">Most Loved By Our Customers</div>
-    </div>
-    <div class="row1box3">
-      <div class="text3">All</div>
-    </div>
-    <div class="row1box4">
-      <div class="text4">Fitiness</div>
-    </div>
+  </div></div></section>
 
-    <div class="row1box5">
-      <div class="text5">Luxury</div>
+  <div class="filters"><span class="filter-label">Filter:</span><button class="filter-btn active" data-cat="all">All</button><button class="filter-btn" data-cat="luxury">Luxury</button><button class="filter-btn" data-cat="fitness">Fitness</button><button class="filter-btn" data-cat="smart">Smart</button><button class="filter-btn" data-cat="classic">Classic</button></div>
+
+  <div class="section-head"><div class="section-eyebrow">Top Picks This Month</div><h2 class="section-title">Most <em>Loved</em> Timepieces</h2></div>
+
+  <section class="grid" id="productGrid">
+    <article class="product" data-cat="fitness"><div class="product-img-wrap"><span class="product-tag">Best Seller</span><button class="product-fav" onclick="this.classList.toggle('active')">♡</button><img src="B7 Smart Watch for Men &amp; Women HD Full-Screen, Wireless Calling Function Fitness Tracker with Step Counter, Smartwatch.jpg" onerror="this.src='https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600'" alt="B7 Smart Watch" /></div><div class="product-body"><div class="product-cat">Fitness · Smart</div><h3 class="product-name">B7 Smart Watch — HD Full-Screen</h3><div class="product-bottom"><span class="product-price">$129</span><button class="product-cart" onclick="addToCart('B7 Smart Watch')">+ Cart</button></div></div></article>
+    <article class="product" data-cat="luxury"><div class="product-img-wrap"><span class="product-tag">Premium</span><button class="product-fav" onclick="this.classList.toggle('active')">♡</button><img src="Luxury items, men's watch, women's watch, and high cost-performance ratio_.jpg" onerror="this.src='https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=600'" alt="Rolex Datejust 36" /></div><div class="product-body"><div class="product-cat">Luxury · Diamond</div><h3 class="product-name">Rolex Datejust 36 — Diamonds Jubilee</h3><div class="product-bottom"><span class="product-price">$22,748</span><button class="product-cart" onclick="addToCart('Rolex Datejust 36')">+ Cart</button></div></div></article>
+    <article class="product" data-cat="classic"><div class="product-img-wrap"><span class="product-tag">Unisex</span><button class="product-fav" onclick="this.classList.toggle('active')">♡</button><img src="Women's &amp; Men's Clothing, Shop Online Fashion.jpg" onerror="this.src='https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=600'" alt="PU Leather Strap Watch" /></div><div class="product-body"><div class="product-cat">Classic · Leather</div><h3 class="product-name">PU Leather Strap — Unisex Classic</h3><div class="product-bottom"><span class="product-price">$89</span><button class="product-cart" onclick="addToCart('PU Leather Strap Watch')">+ Cart</button></div></div></article>
+    <article class="product" data-cat="luxury"><div class="product-img-wrap"><span class="product-tag">New</span><button class="product-fav" onclick="this.classList.toggle('active')">♡</button><img src="rolex.jpg.jpg" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600'" alt="Gold Edition Watch" /></div><div class="product-body"><div class="product-cat">Luxury · Gold</div><h3 class="product-name">Amiro Gold Edition — Heritage Series</h3><div class="product-bottom"><span class="product-price">$1,899</span><button class="product-cart" onclick="addToCart('Amiro Gold Edition')">+ Cart</button></div></div></article>
+    <article class="product" data-cat="smart"><div class="product-img-wrap"><span class="product-tag">Hot</span><button class="product-fav" onclick="this.classList.toggle('active')">♡</button><img src="imm.jpg" onerror="this.src='https://images.unsplash.com/photo-1617043786394-f977fa12eddf?w=600'" alt="Smart Pro" /></div><div class="product-body"><div class="product-cat">Smart · Connected</div><h3 class="product-name">Smart Pro — Wireless Calling Edition</h3><div class="product-bottom"><span class="product-price">$199</span><button class="product-cart" onclick="addToCart('Smart Pro')">+ Cart</button></div></div></article>
+    <article class="product" data-cat="fitness"><div class="product-img-wrap"><span class="product-tag">−20%</span><button class="product-fav" onclick="this.classList.toggle('active')">♡</button><img src="image870.jpg.jpg" onerror="this.src='https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600'" alt="Active Tracker" /></div><div class="product-body"><div class="product-cat">Fitness · Tracker</div><h3 class="product-name">Active Tracker — Step & Heart Rate</h3><div class="product-bottom"><span class="product-price">$79</span><button class="product-cart" onclick="addToCart('Active Tracker')">+ Cart</button></div></div></article>
+  </section>
+
+  <section class="newsletter"><div class="newsletter-inner">
+    <h2 class="newsletter-title">Join the <em>AMIRO</em> Circle</h2>
+    <p class="newsletter-sub">Be the first to know about new drops, private sales, and member-only offers.</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault();subscribed(this);">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit" class="btn btn-primary" style="background:var(--white);color:var(--pink-deep);">Subscribe</button>
+    </form>
+  </div></section>
+
+  <footer>
+    <div class="brand-foot">AMIRO<span>·</span>LUXURY WATCHES</div>
+    <div class="nav-foot">
+      <a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="MEN.html">Men</a><a href="WOMEN.html">Women</a><a href="CHILDREN.html">Children</a><a href="BOTH.html">Unisex</a><a href="About us.html">About</a><a href="Contact Us.html">Contact</a><a href="faq.html">FAQ</a>
     </div>
-    <div class="row1box8">
-      <div class="sliders"></div>
+    <p>Crafted with care · Kampala, Uganda</p>
+    <p style="margin-top:8px;opacity:0.7;">© 2026 AMIRO. All rights reserved.</p>
+  </footer>
 
-      <div class="row1box9">
-        <div class="text7">SmartWatch Pro X</div>
-      </div>
-    </div>
+  <div class="toast" id="toast"><span class="toast-icon">✓</span><span id="toastMsg">Added to cart</span></div>
 
-    <div class="row1box10">
-      <div class="text8">Limited Stock - 30% Off!</div>
-    </div>
-
-    <div class="row1box11">
-      <div class="text9">$ 249</div>
-      <div class="text10">$ 179</div>
-      <div class="start">
-        <img
-          src="Star-removebg-preview.jpg.png"
-          style="
-            width: 35px;
-            height: 35px;
-            border-radius: 100px;
-            margin-left: 100px;
-            margin-top: -35px;
-          " />
-      </div>
-      <div class="rate">4.9/5</div>
-      <div class="best seller">
-        <img
-          src="best seller icon.jpg.png"
-          style="
-            width: 150px;
-            height: 37px;
-            float: right;
-            margin-right: 250px;
-            margin-top: -30px;
-            border-radius: 100px;
-          " />
-      </div>
-    </div>
-    <div class="row2box1">
-      <div class="text21">Add To Chart</div>
-    </div>
-
-    <div class="row3box1">
-      <img
-        src="B7 Smart Watch for Men & Women HD Full-Screen, Wireless Calling Function Fitness Tracker with Step Counter, Smartwatch.jpg"
-        style="
-          width: 380px;
-          height: 300px;
-          border-radius: 20px;
-          margin-left: 7px;
-          margin-top: 17px;
-        " />
-      <div class="text22">B7 Smart Watch for Men & Women HD Full-Screen.</div>
-      <div class="text23">Price $129</div>
-      <div class="bestSel">Best Seller</div>
-    </div>
-
-    <div class="row3box2">
-      <img
-        src="Luxury items, men's watch, women's watch, and high cost-performance ratio_.jpg"
-        style="
-          width: 380px;
-          height: 300px;
-          border-radius: 20px;
-          margin-left: 7px;
-          margin-top: 17px;
-        " />
-      <div class="text24">
-        Rolex Datejust 36 126231G Black Diamonds Jubilee 2023
-      </div>
-      <div class="text25">Price $22,748</div>
-      <div class="bestSell">Best Seller</div>
-    </div>
-
-    <div class="row3box3">
-      <img
-        src="Women's & Men's Clothing, Shop Online Fashion.jpg"
-        style="
-          width: 380px;
-          height: 300px;
-          border-radius: 20px;
-          margin-left: 7px;
-          margin-top: 17px;
-        " />
-      <div class="text26">
-        This Watch Features A Fashionable And Comfortable PU Leather Strap,
-        Suitable For Both Men And Women.
-      </div>
-      <div class="text27">Price $22,748</div>
-      <div class="bestSelle">Best Seller</div>
-    </div>
-    <div class="time-box">
-      <img
-        src="fire-removebg-preview.png"
-        style="
-          width: 50px;
-          height: 40px;
-          margin-left: 400px;
-          margin-top: 10px;
-        " />
-      <div class="textt1">Hurry! only 7 left in Stock!</div>
-      <div class="timer">
-        <div class="time-box-unit" id="days">14d</div>
-        <span class="colon">:</span>
-        <div class="time-box-unit" id="hours">24h</div>
-        <span class="colon">:</span>
-        <div class="time-box-unit" id="minutes">14min</div>
-        <span class="colon">:</span>
-        <div class="time-box-unit" id="seconds">32sec</div>
-      </div>
-    </div>
-    <div class="trending"></div>
-
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script>
-      window.jQuery ||
-        document.write(
-          '<script src="js/vendor/jquery-1.8.3.min.js"><\/script>',
-        );
-    </script>
-
-    <script>
-      $("#toggle").click(function () {
-        if ($("#blacktheme").length) {
-          $("#blacktheme").remove();
-          $(".navbar-fixed-top").removeClass("navbar-inverse");
-        } else {
-          $("head").append(
-            '<link id="blacktheme" rel="stylesheet" href="css/darkbootstrap.css" />',
-          );
-          $(".navbar-fixed-top").addClass("navbar-inverse");
-        }
-      });
-    </script>
-
-    <script src="bootstrap/js/jquery-1.9.1.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-
-    <script>
-      let totalSeconds = 14 * 60 + 32;
-
-      function pad(n) {
-        return String(n).padStart(2, "0");
-      }
-
-      setInterval(function () {
-        if (totalSeconds <= 0) return;
-        var m = Math.floor(totalSeconds / 60);
-        var s = totalSeconds % 60;
-        document.getElementById("minutes").textContent = pad(m);
-        document.getElementById("seconds").textContent = pad(s);
-        totalSeconds--;
-      }, 1000);
-    </script>
-  </body>
+  <script>
+    const hamburger=document.getElementById("hamburger"),navLinks=document.getElementById("navLinks");
+    hamburger.addEventListener("click",()=>{navLinks.classList.toggle("open")});
+    document.querySelectorAll(".nav-links a:not(.dropdown-toggle)").forEach(a=>{a.addEventListener("click",()=>navLinks.classList.remove("open"))});
+    function toggleDropdown(e){e.preventDefault();e.stopPropagation();const parent=e.currentTarget.parentElement;document.querySelectorAll(".has-dropdown.open").forEach(d=>{if(d!==parent)d.classList.remove("open")});parent.classList.toggle("open")}
+    document.addEventListener("click",(e)=>{if(!e.target.closest(".has-dropdown")){document.querySelectorAll(".has-dropdown.open").forEach(d=>d.classList.remove("open"))}});
+    const filterBtns=document.querySelectorAll(".filter-btn"),products=document.querySelectorAll(".product");
+    filterBtns.forEach(btn=>{btn.addEventListener("click",()=>{filterBtns.forEach(b=>b.classList.remove("active"));btn.classList.add("active");const cat=btn.dataset.cat;products.forEach(p=>{p.style.display=(cat==="all"||p.dataset.cat===cat)?"":"none"})})});
+    const toast=document.getElementById("toast"),toastMsg=document.getElementById("toastMsg");let toastTimer;
+    function showToast(msg){toastMsg.textContent=msg;toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),2500)}
+    function addToCart(name){showToast("✓ "+name+" added to cart")}
+    function subscribed(form){form.reset();showToast("✓ Welcome to the AMIRO Circle")}
+  </script>
+</body>
 </html>

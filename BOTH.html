@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unisex Watches — AMIRO Luxury Watches</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --pink-bg:#ffeaf1;--pink-50:#fff0f5;--pink-100:#ffd9e4;--pink-200:#ffbfd2;
+        --pink-300:#ff9ebc;--pink-400:#f78fa7;--pink-deep:#e36b8a;--pink-text:#8a3a52;
+        --rose:#c2185b;--gold:#d4a05a;--gold-light:#e7c890;--gold-deep:#a67830;
+        --sand:#f5ede0;--cream:#fff8fb;--ink:#4a1f30;--slate:#6a4555;--muted:#8a6b75;--line:#ebd9e1;--white:#ffffff;
+        --shadow-sm:0 4px 10px rgba(227,107,138,0.08);--shadow-md:0 10px 25px rgba(227,107,138,0.15);
+        --shadow-lg:0 20px 45px rgba(227,107,138,0.22);
+        --radius-sm:8px;--radius-md:16px;--radius-lg:24px;--radius-pill:999px;
+        --serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;
+        --display:"Space Grotesk","DM Sans",sans-serif;
+      }
+      *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+      body{font-family:var(--sans);color:var(--ink);background:linear-gradient(180deg,var(--pink-bg) 0%,var(--pink-50) 100%);overflow-x:hidden}
+      img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+
+      /* NAVBAR */
+      .nav-wrap{position:sticky;top:0;z-index:100;padding:12px clamp(12px,3vw,24px)}
+      .navbar-inner{max-width:1400px;margin:0 auto;background:var(--pink-deep);border-radius:var(--radius-pill);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-md);border:1px solid rgba(248,187,208,0.15)}
+      .brand{font-family:var(--display);font-size:20px;font-weight:700;color:var(--white);letter-spacing:1px}.brand span{color:var(--gold-light);margin:0 4px}
+      .nav-links{display:flex;list-style:none;gap:4px;align-items:center}
+      .nav-links a{color:var(--white);font-family:var(--display);font-size:13px;font-weight:500;letter-spacing:0.5px;padding:8px 14px;border-radius:var(--radius-pill);transition:all 0.25s;text-transform:uppercase}
+      .nav-links a:hover{background:var(--pink-100);color:var(--pink-deep)}.nav-links a.active{background:var(--gold);color:var(--white)}
+      .has-dropdown{position:relative}.dropdown-toggle{display:inline-flex!important;align-items:center;gap:6px;cursor:pointer}
+      .caret{font-size:9px;color:var(--gold-light);transition:transform 0.25s}.has-dropdown.open .caret{transform:rotate(180deg)}
+      .dropdown-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:220px;background:var(--white);list-style:none;padding:8px;border-radius:var(--radius-md);box-shadow:var(--shadow-lg);border:1.5px solid var(--gold-light);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.25s;z-index:110}
+      .has-dropdown.open .dropdown-menu,.has-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+      .dropdown-menu li{width:100%}.dropdown-menu a{display:flex!important;align-items:center;gap:12px;padding:10px 14px!important;color:var(--ink)!important;background:transparent!important;border-radius:var(--radius-sm)!important;font-size:13px!important;font-weight:500;text-transform:none!important;letter-spacing:0;border-left:2px solid transparent;transition:all 0.2s}
+      .dropdown-menu a:hover{background:var(--pink-50)!important;color:var(--rose)!important;border-left-color:var(--gold)!important;padding-left:18px!important}
+      .dd-icon{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--white);display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+      .nav-icons{display:flex;gap:8px;align-items:center}
+      .nav-icon-btn{width:36px;height:36px;border-radius:50%;background:rgba(248,187,208,0.15);color:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;font-size:16px;transition:all 0.25s}
+      .nav-icon-btn:hover{background:var(--gold);color:var(--white)}
+      .hamburger{display:none;flex-direction:column;gap:4px;background:transparent;border:none;cursor:pointer;padding:6px}.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px}
+      @media(max-width:900px){.nav-links{position:absolute;top:80px;left:12px;right:12px;background:var(--pink-deep);flex-direction:column;padding:16px;border-radius:var(--radius-md);gap:4px;box-shadow:var(--shadow-lg);max-height:0;overflow:hidden;opacity:0;transition:all 0.35s}.nav-links.open{max-height:700px;opacity:1;padding:16px;overflow:auto}.nav-links li{width:100%}.nav-links a{display:block;padding:12px 16px;width:100%}.hamburger{display:flex}.dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:rgba(255,255,255,0.12);margin-top:6px;max-height:0;overflow:hidden;padding:0 8px;transition:all 0.3s}.has-dropdown.open .dropdown-menu{max-height:320px;padding:8px}.has-dropdown:hover .dropdown-menu{max-height:0}.has-dropdown.open:hover .dropdown-menu{max-height:320px}.dropdown-menu a{color:var(--white)!important}}
+
+      /* HERO SPLIT */
+      .hero{max-width:1400px;margin:24px auto 0;padding:0 clamp(12px,3vw,24px)}
+      .hero-split{display:grid;grid-template-columns:1fr 1fr;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);position:relative;border:1px solid var(--line)}
+      .hero-split::after{content:"";position:absolute;left:50%;top:10%;bottom:10%;width:1px;background:linear-gradient(180deg,transparent,var(--gold),transparent)}
+      .hero-half{padding:clamp(28px,4vw,48px);position:relative;min-height:380px;display:flex;flex-direction:column;justify-content:space-between}
+      .hero-half.left{background:linear-gradient(180deg,var(--pink-50),var(--white))}
+      .hero-half.right{background:linear-gradient(180deg,var(--sand),var(--cream))}
+      .half-num{font-family:var(--display);font-size:11px;color:var(--gold-deep);letter-spacing:3px;font-weight:600}
+      .half-title{font-family:var(--serif);font-size:clamp(36px,4.5vw,56px);font-weight:600;color:var(--ink);line-height:1.0;letter-spacing:-1px;margin:16px 0}
+      .half-title em{font-style:italic;color:var(--rose)}
+      .half-desc{color:var(--muted);font-size:14px;line-height:1.6;max-width:320px;margin-bottom:20px}
+      .half-img{width:100%;aspect-ratio:16/10;border-radius:var(--radius-sm);overflow:hidden;background:var(--pink-100);margin-top:16px}
+      .half-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}.half-img:hover img{transform:scale(1.05)}
+      .half-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-size:13px;font-weight:600;color:var(--ink);letter-spacing:1px;text-transform:uppercase;align-self:flex-start;border-bottom:2px solid var(--gold);padding-bottom:4px;transition:all 0.25s}
+      .half-link:hover{color:var(--rose);border-color:var(--rose)}.half-link::after{content:"→";transition:transform 0.25s}.half-link:hover::after{transform:translateX(4px)}
+      @media(max-width:800px){.hero-split{grid-template-columns:1fr}.hero-split::after{left:10%;right:10%;top:50%;bottom:auto;width:auto;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}.hero-half{min-height:0}}
+
+      /* INTRO */
+      .intro{max-width:800px;margin:64px auto 0;padding:0 clamp(12px,3vw,24px);text-align:center}
+      .intro-eyebrow{font-family:var(--display);font-size:11px;color:var(--gold-deep);letter-spacing:3px;font-weight:600;margin-bottom:12px}
+      .intro-title{font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:500;color:var(--ink);line-height:1.2;margin-bottom:16px}.intro-title em{font-style:italic;color:var(--rose)}
+      .intro-text{color:var(--muted);font-size:16px;line-height:1.7}
+
+      /* FILTER TABS */
+      .tabs{max-width:1400px;margin:40px auto 24px;padding:0 clamp(12px,3vw,24px);display:flex;gap:0;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+      .tab{background:transparent;border:none;cursor:pointer;padding:14px 22px;font-family:var(--display);font-size:13px;font-weight:500;color:var(--muted);letter-spacing:1px;text-transform:uppercase;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.25s}
+      .tab:hover{color:var(--ink)}.tab.active{color:var(--ink);border-bottom-color:var(--gold)}
+
+      /* MINIMAL PRODUCT GRID */
+      .min-grid{max-width:1400px;margin:0 auto;padding:0 clamp(12px,3vw,24px);display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:32px}
+      .min-card{background:transparent;cursor:pointer;position:relative}
+      .min-img{aspect-ratio:1;overflow:hidden;background:var(--white);border-radius:var(--radius-sm);position:relative;border:1px solid var(--line);transition:all 0.3s}
+      .min-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+      .min-card:hover .min-img{border-color:var(--gold);box-shadow:var(--shadow-md)}.min-card:hover .min-img img{transform:scale(1.06)}
+      .min-tag{position:absolute;top:12px;left:12px;background:var(--white);color:var(--ink);font-family:var(--display);font-size:10px;font-weight:600;padding:5px 10px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--gold)}
+      .min-fav{position:absolute;top:12px;right:12px;width:34px;height:34px;background:var(--white);color:var(--ink);border:1px solid var(--line);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all 0.25s;opacity:0}
+      .min-card:hover .min-fav{opacity:1}.min-fav:hover,.min-fav.active{background:var(--rose);color:var(--white);border-color:var(--rose)}
+      .min-quick{position:absolute;bottom:0;left:0;right:0;background:var(--pink-deep);color:var(--white);padding:12px;text-align:center;font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;opacity:0;transform:translateY(100%);transition:all 0.3s;border:none}
+      .min-card:hover .min-quick{opacity:1;transform:translateY(0)}.min-quick:hover{background:var(--rose)}
+      .min-info{padding:16px 0 0;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+      .min-name{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);line-height:1.2}
+      .min-meta{font-family:var(--display);font-size:11px;color:var(--gold-deep);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px}
+      .min-price{font-family:var(--display);font-size:16px;font-weight:600;color:var(--ink);white-space:nowrap}
+
+      /* COMPARE */
+      .compare{max-width:1400px;margin:80px auto 0;padding:0 clamp(12px,3vw,24px)}
+      .compare-card{background:var(--pink-deep);color:var(--white);border-radius:var(--radius-lg);padding:clamp(32px,4vw,56px);display:grid;grid-template-columns:1fr auto 1fr;gap:32px;align-items:center;position:relative;overflow:hidden}
+      .compare-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(212,160,90,0.2),transparent 60%)}
+      .compare-side{position:relative;text-align:center}
+      .compare-side img{width:140px;height:140px;object-fit:cover;border-radius:var(--radius-sm);margin:0 auto 16px;border:2px solid var(--gold)}
+      .compare-name{font-family:var(--serif);font-size:22px;margin-bottom:6px}
+      .compare-spec{font-family:var(--display);font-size:12px;color:var(--gold-light);letter-spacing:1px}
+      .compare-vs{position:relative;font-family:var(--display);font-size:32px;color:var(--gold);font-weight:700}
+      .compare-cta{position:relative;grid-column:1/-1;text-align:center;margin-top:24px}
+      .compare-btn{background:var(--gold);color:var(--ink);padding:14px 32px;border:none;cursor:pointer;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;transition:all 0.25s;border-radius:var(--radius-pill)}
+      .compare-btn:hover{background:var(--white)}
+      @media(max-width:700px){.compare-card{grid-template-columns:1fr;gap:16px}.compare-vs{transform:rotate(90deg)}}
+
+      /* FOOTER */
+      footer{margin-top:80px;padding:40px clamp(12px,3vw,24px);text-align:center;color:var(--muted);font-size:13px;background:var(--white);border-top:1px solid var(--line)}
+      footer .brand-foot{font-family:var(--display);font-size:22px;color:var(--pink-deep);font-weight:700;letter-spacing:1.5px;margin-bottom:8px}
+      footer .brand-foot span{color:var(--gold-deep);margin:0 4px}
+      footer .nav-foot{display:flex;gap:20px;justify-content:center;margin:16px 0;flex-wrap:wrap}
+      footer .nav-foot a{color:var(--muted);font-family:var(--display);font-size:12px;letter-spacing:1px;text-transform:uppercase}.footer .nav-foot a:hover{color:var(--rose)}
+      .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--pink-deep);color:var(--white);padding:14px 24px;border-radius:var(--radius-pill);font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;box-shadow:var(--shadow-lg);opacity:0;transition:all 0.4s;z-index:200;border-left:3px solid var(--gold)}
+      .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+    </style>
+  </head>
+  <body>
+    <div class="nav-wrap"><nav class="navbar-inner">
+      <a href="index.html" class="brand">AMIRO<span>·</span>LUXURY</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="Best Sellers.html">Best Sellers</a></li>
+        <li><a href="About us.html">About Us</a></li>
+        <li><a href="Contact Us.html">Contact Us</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li class="has-dropdown">
+          <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Watches <span class="caret">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="MEN.html"><span class="dd-icon">♂</span> For Men</a></li>
+            <li><a href="WOMEN.html"><span class="dd-icon">♀</span> For Women</a></li>
+            <li><a href="CHILDREN.html"><span class="dd-icon">★</span> For Children</a></li>
+            <li><a href="BOTH.html"><span class="dd-icon">⚭</span> Unisex</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-icons">
+        <button class="nav-icon-btn">⌕</button><button class="nav-icon-btn">♡</button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </nav></div>
+
+    <section class="hero"><div class="hero-split">
+      <div class="hero-half left">
+        <div><div class="half-num">01 / FOR ANYONE</div><h1 class="half-title">Worn by <em>him.</em></h1><p class="half-desc">Crafted with masculine geometry, sized for any wrist. The same watch, his way.</p></div>
+        <div class="half-img"><img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800" alt="Worn by him" /></div>
+        <a href="MEN.html" class="half-link">Browse Men</a>
+      </div>
+      <div class="hero-half right">
+        <div><div class="half-num">02 / WORN BY ALL</div><h1 class="half-title">Worn by <em>her.</em></h1><p class="half-desc">Same craftsmanship, same elegance. Sized to flatter, designed without limits.</p></div>
+        <div class="half-img"><img src="https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=800" alt="Worn by her" /></div>
+        <a href="WOMEN.html" class="half-link">Browse Women</a>
+      </div>
+    </div></section>
+
+    <section class="intro"><div class="intro-eyebrow">— THE UNISEX EDIT —</div><h2 class="intro-title">One watch. <em>Every wrist.</em></h2><p class="intro-text">We don't believe time has a gender. The unisex collection is built around balanced proportions, neutral palettes, and timeless silhouettes that look right on anyone — borrow it, share it, gift it, keep it.</p></section>
+
+    <div class="tabs">
+      <button class="tab active" onclick="setTab(this)">All</button><button class="tab" onclick="setTab(this)">Smart</button><button class="tab" onclick="setTab(this)">Classic</button><button class="tab" onclick="setTab(this)">Minimal</button><button class="tab" onclick="setTab(this)">Sport</button><button class="tab" onclick="setTab(this)">Heritage</button>
+    </div>
+
+    <section class="min-grid">
+      <article class="min-card"><div class="min-img"><span class="min-tag">New</span><button class="min-fav" onclick="this.classList.toggle('active')">♡</button><button class="min-quick" onclick="addToCart('Aero Minimal 38')">Quick Add</button><img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=600" alt="Aero Minimal" /></div><div class="min-info"><div><h3 class="min-name">Aero Minimal 38</h3><div class="min-meta">Steel · Mesh</div></div><div class="min-price">$420</div></div></article>
+      <article class="min-card"><div class="min-img"><span class="min-tag">Bestseller</span><button class="min-fav" onclick="this.classList.toggle('active')">♡</button><button class="min-quick" onclick="addToCart('Forma Black')">Quick Add</button><img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=600" alt="Forma Black" /></div><div class="min-info"><div><h3 class="min-name">Forma Black 40</h3><div class="min-meta">Matte · Quartz</div></div><div class="min-price">$310</div></div></article>
+      <article class="min-card"><div class="min-img"><span class="min-tag">Smart</span><button class="min-fav" onclick="this.classList.toggle('active')">♡</button><button class="min-quick" onclick="addToCart('Lumen Smart')">Quick Add</button><img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600" alt="Lumen Smart" /></div><div class="min-info"><div><h3 class="min-name">Lumen Smart</h3><div class="min-meta">AMOLED · GPS</div></div><div class="min-price">$280</div></div></article>
+      <article class="min-card"><div class="min-img"><span class="min-tag">Heritage</span><button class="min-fav" onclick="this.classList.toggle('active')">♡</button><button class="min-quick" onclick="addToCart('Heritage 36')">Quick Add</button><img src="https://images.unsplash.com/photo-1639037687537-fbf3a44ee1e8?w=600" alt="Heritage 36" /></div><div class="min-info"><div><h3 class="min-name">Heritage 36</h3><div class="min-meta">Leather · Auto</div></div><div class="min-price">$890</div></div></article>
+      <article class="min-card"><div class="min-img"><span class="min-tag">−20%</span><button class="min-fav" onclick="this.classList.toggle('active')">♡</button><button class="min-quick" onclick="addToCart('Nordic Slim')">Quick Add</button><img src="https://images.unsplash.com/photo-1622434641406-a158123450f9?w=600" alt="Nordic Slim" /></div><div class="min-info"><div><h3 class="min-name">Nordic Slim 38</h3><div class="min-meta">Beige · Sapphire</div></div><div class="min-price">$240</div></div></article>
+      <article class="min-card"><div class="min-img"><span class="min-tag">Sport</span><button class="min-fav" onclick="this.classList.toggle('active')">♡</button><button class="min-quick" onclick="addToCart('Trail Hybrid')">Quick Add</button><img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600" alt="Trail Hybrid" /></div><div class="min-info"><div><h3 class="min-name">Trail Hybrid</h3><div class="min-meta">Rubber · 100m</div></div><div class="min-price">$199</div></div></article>
+      <article class="min-card"><div class="min-img"><span class="min-tag">Limited</span><button class="min-fav" onclick="this.classList.toggle('active')">♡</button><button class="min-quick" onclick="addToCart('Mono Edition')">Quick Add</button><img src="https://images.unsplash.com/photo-1606859191213-c7f6b2c8dbb1?w=600" alt="Mono Edition" /></div><div class="min-info"><div><h3 class="min-name">Mono Gold Edition</h3><div class="min-meta">PVD · Numbered</div></div><div class="min-price">$1,420</div></div></article>
+      <article class="min-card"><div class="min-img"><span class="min-tag">Pink</span><button class="min-fav" onclick="this.classList.toggle('active')">♡</button><button class="min-quick" onclick="addToCart('Blossom Mono')">Quick Add</button><img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=600" alt="Blossom Mono" /></div><div class="min-info"><div><h3 class="min-name">Blossom Mono 36</h3><div class="min-meta">Soft Pink · Steel</div></div><div class="min-price">$340</div></div></article>
+    </section>
+
+    <section class="compare"><div class="compare-card">
+      <div class="compare-side"><img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=400" alt="His pick" /><div class="compare-name">Aero Minimal 38</div><div class="compare-spec">38mm · Steel</div></div>
+      <div class="compare-vs">+</div>
+      <div class="compare-side"><img src="https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=400" alt="Her pick" /><div class="compare-name">Aero Minimal 36</div><div class="compare-spec">36mm · Steel</div></div>
+      <div class="compare-cta"><p style="margin-bottom:16px;font-family:var(--serif);font-style:italic;font-size:18px;">The matching set — for couples, for friends, for you and you.</p><button class="compare-btn" onclick="addToCart('Aero Pair Set')">Shop the Pair · $780</button></div>
+    </div></section>
+
+    <footer>
+      <div class="brand-foot">AMIRO<span>·</span>LUXURY WATCHES</div>
+      <div class="nav-foot">
+        <a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="Best Sellers.html">Best Sellers</a>
+        <a href="MEN.html">Men</a><a href="WOMEN.html">Women</a><a href="CHILDREN.html">Children</a>
+        <a href="About us.html">About</a><a href="Contact Us.html">Contact</a><a href="faq.html">FAQ</a>
+      </div>
+      <p>Crafted with care · Kampala, Uganda · © 2026 AMIRO</p>
+    </footer>
+    <div class="toast" id="toast"></div>
+    <script>
+      const hamburger=document.getElementById("hamburger"),navLinks=document.getElementById("navLinks");
+      hamburger.addEventListener("click",()=>navLinks.classList.toggle("open"));
+      document.querySelectorAll(".nav-links a:not(.dropdown-toggle)").forEach(a=>{a.addEventListener("click",()=>navLinks.classList.remove("open"))});
+      function toggleDropdown(e){e.preventDefault();e.stopPropagation();const p=e.currentTarget.parentElement;document.querySelectorAll(".has-dropdown.open").forEach(d=>{if(d!==p)d.classList.remove("open")});p.classList.toggle("open")}
+      document.addEventListener("click",e=>{if(!e.target.closest(".has-dropdown"))document.querySelectorAll(".has-dropdown.open").forEach(d=>d.classList.remove("open"))});
+      const toast=document.getElementById("toast");let toastTimer;
+      function addToCart(n){toast.textContent="✓ "+n+" — added";toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),2500)}
+      function setTab(btn){document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));btn.classList.add("active")}
+    </script>
+  </body>
+</html>
