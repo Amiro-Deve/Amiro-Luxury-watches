@@ -7,57 +7,103 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--wine:#a5517e;--wine-deep:#c05a8f;--wine-mid:#7d2348;--wine-lt:#a3496a;--blush:#f9edf2;--blush-mid:#f0d8e4;--cream:#fdfaf8;--white:#ffffff;--gold:#c9a96e;--gold-lt:#e8d5b0;--text:#000;--text-mid:#5a3040;--text-soft:#9a6878;--border:rgba(84,0,45,0.08);--sh-sm:rgba(84,0,45,0.06);--sh-md:rgba(84,0,45,0.13);--sh-lg:rgba(84,0,45,0.22)}
-    html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
- 
+    :root{
+      --onyx:#0c0c0e;--charcoal:#48091d;--slate:#48091d;--slate-lt:#48091d;
+      --champagne:#c5a55a;--champ-deep:#9a7d35;--champ-mid:#b5943e;--champ-lt:#dcc88a;--champ-pale:#f7f2e6;
+      --ivory:#faf8f3;--pearl:#ffffff;
+      --text:#0c0c0e;--text-mid:#3a3a42;--text-soft:#8a8a92;
+      --border:rgba(197,165,90,.12);--sh-sm:rgba(0,0,0,.06);--sh-md:rgba(0,0,0,.13);--sh-lg:rgba(0,0,0,.22)
+    }
+    html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
+
     /* NAV */
-    .nav-wrap{position:sticky;top:0;z-index:100;padding:10px 16px}.nav-inner{background:var(--wine);border-radius:60px;padding:0 10px 0 20px;display:flex;align-items:center;justify-content:space-between;height:52px;box-shadow:0 8px 36px var(--sh-lg);gap:8px}.brand{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--gold-lt);letter-spacing:.08em;flex-shrink:0}.nav-links{display:flex;align-items:center;gap:2px;list-style:none;flex:1;justify-content:center}.nav-links a{color:rgba(255,255,255,.72);font-size:12px;padding:6px 11px;border-radius:30px;transition:background .2s,color .2s;white-space:nowrap}.nav-links a:hover,.nav-links .active a{background:rgba(255,255,255,.14);color:#fff}.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}.nav-search{display:flex;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:30px;padding:7px 14px;gap:7px}.nav-search input{background:none;border:none;outline:none;color:#fff;font-size:12px;width:90px;font-family:'DM Sans',sans-serif}.nav-search input::placeholder{color:rgba(255,255,255,.45)}.nav-toggle{display:none;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:12px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;flex-shrink:0}.nav-toggle span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s;transform-origin:center}.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.nav-toggle.open span:nth-child(2){opacity:0}.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:var(--wine-deep);flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:32px 24px;opacity:0;transform:translateY(-8px);transition:opacity .3s,transform .3s}.mobile-menu.show{display:flex;opacity:1;transform:translateY(0)}.mobile-menu a{color:rgba(255,255,255,.85);font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;padding:10px 24px;border-radius:10px;width:100%;text-align:center;transition:background .2s,color .2s}.mobile-menu a:hover{background:rgba(255,255,255,.08);color:var(--gold-lt)}.mm-search{margin-top:20px;display:flex;align-items:center;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:30px;padding:11px 20px;gap:10px;width:100%}.mm-search input{background:none;border:none;outline:none;color:#fff;font-size:14px;width:100%;font-family:'DM Sans',sans-serif}.mm-search input::placeholder{color:rgba(255,255,255,.4)}
-    .has-dropdown{position:relative}.dropdown-toggle{display:inline-flex;align-items:center;gap:5px;cursor:pointer}.caret{font-size:9px;color:var(--gold-lt);transition:transform .25s}.has-dropdown.open .caret{transform:rotate(180deg)}.dropdown-menu{position:absolute;top:calc(100% + 10px);right:0;min-width:180px;background:var(--white);list-style:none;padding:6px;border-radius:14px;box-shadow:0 8px 28px rgba(84,0,45,.18);border:1px solid rgba(240,216,228,.8);opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .25s;z-index:110}.has-dropdown.open .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu li{width:100%}.dropdown-menu a{display:block!important;padding:9px 14px!important;color:#5a3040!important;background:transparent!important;border-radius:8px!important;font-size:12px!important;transition:all .2s;white-space:nowrap}.dropdown-menu a:hover{background:#f9edf2!important;color:#7d2348!important}
- 
+    .nav-wrap{position:sticky;top:0;z-index:100;padding:10px 16px}
+    .nav-inner{background:var(--charcoal);border-radius:60px;padding:0 10px 0 20px;display:flex;align-items:center;justify-content:space-between;height:52px;box-shadow:0 8px 36px var(--sh-lg);gap:8px;border:1px solid rgba(197,165,90,.1)}
+    .brand{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--champ-lt);letter-spacing:.08em;flex-shrink:0}
+    .nav-links{display:flex;align-items:center;gap:2px;list-style:none;flex:1;justify-content:center}
+    .nav-links a{color:rgba(255,255,255,.55);font-size:12px;padding:6px 11px;border-radius:30px;transition:background .2s,color .2s;white-space:nowrap}
+    .nav-links a:hover,.nav-links .active a{background:rgba(197,165,90,.15);color:var(--champ-lt)}
+    .nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+    .nav-search{display:flex;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(197,165,90,.15);border-radius:30px;padding:7px 14px;gap:7px}
+    .nav-search input{background:none;border:none;outline:none;color:var(--champ-lt);font-size:12px;width:90px;font-family:'DM Sans',sans-serif}
+    .nav-search input::placeholder{color:rgba(197,165,90,.3)}
+    .nav-toggle{display:none;background:rgba(197,165,90,.1);border:1px solid rgba(197,165,90,.2);border-radius:12px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;flex-shrink:0}
+    .nav-toggle span{display:block;width:20px;height:2px;background:var(--champ-lt);border-radius:2px;transition:transform .3s,opacity .3s;transform-origin:center}
+    .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-toggle.open span:nth-child(2){opacity:0}
+    .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:var(--charcoal);flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:32px 24px;opacity:0;transform:translateY(-8px);transition:opacity .3s,transform .3s}
+    .mobile-menu.show{display:flex;opacity:1;transform:translateY(0)}
+    .mobile-menu a{color:rgba(255,255,255,.75);font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;padding:10px 24px;border-radius:10px;width:100%;text-align:center;transition:background .2s,color .2s}
+    .mobile-menu a:hover{background:rgba(197,165,90,.1);color:var(--champ-lt)}
+    .mm-search{margin-top:20px;display:flex;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(197,165,90,.15);border-radius:30px;padding:11px 20px;gap:10px;width:100%}
+    .mm-search input{background:none;border:none;outline:none;color:#fff;font-size:14px;width:100%;font-family:'DM Sans',sans-serif}
+    .mm-search input::placeholder{color:rgba(255,255,255,.3)}
+    .has-dropdown{position:relative}.dropdown-toggle{display:inline-flex;align-items:center;gap:5px;cursor:pointer}.caret{font-size:9px;color:var(--champagne);transition:transform .25s}.has-dropdown.open .caret{transform:rotate(180deg)}.dropdown-menu{position:absolute;top:calc(100% + 10px);right:0;min-width:180px;background:var(--pearl);list-style:none;padding:6px;border-radius:14px;box-shadow:0 8px 28px rgba(0,0,0,.18);border:1px solid var(--border);opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .25s;z-index:110}.has-dropdown.open .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu li{width:100%}.dropdown-menu a{display:block!important;padding:9px 14px!important;color:var(--text-mid)!important;background:transparent!important;border-radius:8px!important;font-size:12px!important;transition:all .2s;white-space:nowrap}.dropdown-menu a:hover{background:var(--champ-pale)!important;color:var(--champ-deep)!important}
+
     /* HERO SLIDER */
     .hero-slider{position:relative;margin:12px 16px 0;border-radius:22px;overflow:hidden;box-shadow:0 12px 44px var(--sh-lg);height:clamp(320px,50vw,480px)}
     .h-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s}.h-slide.active{opacity:1}.h-slide-img{width:100%;height:100%;object-fit:cover}
-    .h-slide-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(46,0,24,.88) 0%,rgba(125,35,72,.6) 45%,rgba(125,35,72,.15) 100%)}
+    .h-slide-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(12,12,14,.92) 0%,rgba(26,26,31,.7) 45%,rgba(42,42,50,.2) 100%)}
     .h-slide-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,5vw,64px);z-index:2}
-    .h-slide-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,169,110,.2);border:1px solid rgba(201,169,110,.4);border-radius:50px;padding:5px 14px;font-size:10px;font-weight:500;color:var(--gold-lt);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;width:fit-content}
-    .h-slide-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5.5vw,62px);font-weight:300;line-height:1.05;color:#fff;margin-bottom:12px;max-width:560px}.h-slide-title em{font-style:italic;color:var(--gold-lt)}
-    .h-slide-desc{font-size:clamp(12px,1.4vw,15px);color:rgba(255,255,255,.55);font-weight:300;line-height:1.75;margin-bottom:24px;max-width:420px}
+    .h-slide-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(197,165,90,.12);border:1px solid rgba(197,165,90,.3);border-radius:50px;padding:5px 14px;font-size:10px;font-weight:500;color:var(--champ-lt);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;width:fit-content}
+    .h-slide-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5.5vw,62px);font-weight:300;line-height:1.05;color:#fff;margin-bottom:12px;max-width:560px}.h-slide-title em{font-style:italic;color:var(--champagne)}
+    .h-slide-desc{font-size:clamp(12px,1.4vw,15px);color:rgba(255,255,255,.45);font-weight:300;line-height:1.75;margin-bottom:24px;max-width:420px}
     .h-slide-btns{display:flex;gap:10px;flex-wrap:wrap}
-    .btn-gold{background:var(--gold);color:var(--wine-mid);border:none;border-radius:30px;padding:12px 26px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;box-shadow:0 5px 18px rgba(201,169,110,.38);transition:all .25s;display:inline-flex;align-items:center;gap:7px}.btn-gold:hover{background:var(--gold-lt);transform:translateY(-2px)}
-    .btn-ghost{background:rgba(255,255,255,.09);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.25);border-radius:30px;padding:12px 24px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .25s}.btn-ghost:hover{background:rgba(255,255,255,.18);color:#fff}
-    .h-dots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:5}.h-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);border:1.5px solid rgba(255,255,255,.5);cursor:pointer;transition:all .3s}.h-dot.active{background:var(--gold-lt);border-color:var(--gold-lt);width:28px;border-radius:5px}
-    .h-arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:all .25s}.h-arrow:hover{background:rgba(255,255,255,.25)}.h-arrow.prev{left:16px}.h-arrow.next{right:16px}
-    .h-stats{position:absolute;bottom:20px;right:clamp(16px,3vw,40px);display:flex;gap:20px;z-index:5}.h-stat{text-align:center;color:#fff}.h-stat-num{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--gold-lt);line-height:1}.h-stat-lbl{font-size:9px;letter-spacing:.08em;text-transform:uppercase;opacity:.5;margin-top:2px}
- 
+    .btn-gold{background:var(--champagne);color:var(--onyx);border:none;border-radius:30px;padding:12px 26px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;box-shadow:0 5px 18px rgba(197,165,90,.3);transition:all .25s;display:inline-flex;align-items:center;gap:7px}.btn-gold:hover{background:var(--champ-lt);transform:translateY(-2px)}
+    .btn-ghost{background:rgba(255,255,255,.06);color:rgba(255,255,255,.75);border:1px solid rgba(197,165,90,.25);border-radius:30px;padding:12px 24px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .25s}.btn-ghost:hover{background:rgba(197,165,90,.12);color:var(--champ-lt);border-color:rgba(197,165,90,.4)}
+    .h-dots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:5}.h-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.2);border:1.5px solid rgba(255,255,255,.35);cursor:pointer;transition:all .3s}.h-dot.active{background:var(--champagne);border-color:var(--champagne);width:28px;border-radius:5px}
+    .h-arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.08);backdrop-filter:blur(6px);border:1px solid rgba(197,165,90,.2);color:var(--champ-lt);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:all .25s}.h-arrow:hover{background:rgba(197,165,90,.2)}.h-arrow.prev{left:16px}.h-arrow.next{right:16px}
+    .h-stats{position:absolute;bottom:20px;right:clamp(16px,3vw,40px);display:flex;gap:20px;z-index:5}.h-stat{text-align:center;color:#fff}.h-stat-num{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--champagne);line-height:1}.h-stat-lbl{font-size:9px;letter-spacing:.08em;text-transform:uppercase;opacity:.4;margin-top:2px}
+
     /* GUARANTEE */
-    .g-row{display:grid;grid-template-columns:repeat(4,1fr);margin:14px 16px 0;background:var(--white);border:1px solid var(--border);border-radius:16px;box-shadow:0 2px 12px var(--sh-sm);overflow:hidden}.g-item{display:flex;align-items:center;gap:11px;padding:16px;border-right:1px solid var(--border);transition:background .2s}.g-item:last-child{border-right:none}.g-item:hover{background:var(--blush)}.g-icon{width:36px;height:36px;border-radius:10px;background:var(--blush);border:1px solid var(--blush-mid);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}.g-label strong{display:block;font-size:12px;color:var(--text);font-weight:500}.g-label span{font-size:10px;color:var(--text-soft);font-weight:300}
- 
+    .g-row{display:grid;grid-template-columns:repeat(4,1fr);margin:14px 16px 0;background:var(--pearl);border:1px solid var(--border);border-radius:16px;box-shadow:0 2px 12px var(--sh-sm);overflow:hidden}.g-item{display:flex;align-items:center;gap:11px;padding:16px;border-right:1px solid var(--border);transition:background .2s}.g-item:last-child{border-right:none}.g-item:hover{background:var(--champ-pale)}.g-icon{width:36px;height:36px;border-radius:10px;background:var(--champ-pale);border:1px solid rgba(197,165,90,.18);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}.g-label strong{display:block;font-size:12px;color:var(--text);font-weight:500}.g-label span{font-size:10px;color:var(--text-soft);font-weight:300}
+
     /* SECTION HEAD */
-    .sec-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:36px 16px 14px}.sec-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,42px);font-weight:300;color:var(--text)}.sec-head h2 em{font-style:italic;color:var(--wine-mid)}.sec-head a{font-size:12px;color:var(--wine-mid);font-weight:500;letter-spacing:.07em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:2px}
-    .gold-rule{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:0 16px;opacity:.35}
- 
+    .sec-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:36px 16px 14px}.sec-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,42px);font-weight:300;color:var(--text)}.sec-head h2 em{font-style:italic;color:var(--champ-deep)}.sec-head a{font-size:12px;color:var(--champagne);font-weight:500;letter-spacing:.07em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:2px}
+    .gold-rule{height:1px;background:linear-gradient(to right,transparent,var(--champagne),transparent);margin:0 16px;opacity:.25}
+
     /* PRODUCT SLIDER */
     .slider-wrap{position:relative;padding:0 16px 40px}.slider-track{display:flex;gap:18px;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:16px 0}.slider-track::-webkit-scrollbar{display:none}
-    .pcard{background:var(--white);border-radius:18px;border:1px solid var(--border);box-shadow:0 2px 14px var(--sh-sm);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;min-width:260px;max-width:300px;flex-shrink:0}.pcard:hover{transform:translateY(-6px);box-shadow:0 16px 40px var(--sh-md)}
-    .cimg{position:relative;width:100%;height:200px;background:linear-gradient(145deg,var(--blush),var(--blush-mid));overflow:hidden}.cimg::before{content:'⌚';font-size:44px;opacity:.12;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;color:var(--wine)}.cimg img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1;transition:transform .4s}.pcard:hover .cimg img{transform:scale(1.07)}
-    .covr{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(46,0,24,.46),transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px}.pcard:hover .covr{opacity:1}
-    .qv-btn{background:rgba(255,255,255,.95);color:var(--wine);border:none;border-radius:30px;padding:6px 16px;font-size:11px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif}
-    .cbadge{position:absolute;top:8px;left:8px;z-index:3;background:var(--white);color:var(--wine-mid);border-radius:20px;padding:3px 10px;font-size:9px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-    .cbody{padding:12px 14px 14px;display:flex;flex-direction:column;gap:3px;flex:1}.cname{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:400;color:var(--text);line-height:1.2}.csub{font-size:10px;color:var(--text-soft);font-weight:300}.cfooter{display:flex;align-items:center;justify-content:space-between;margin-top:8px}.cprice{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--wine)}.cbtn{background:var(--wine);color:#fff;border:none;border-radius:30px;padding:7px 14px;font-size:11px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s}.cbtn:hover{background:var(--wine-mid)}
-    .s-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:var(--white);border:1px solid var(--border);box-shadow:0 4px 14px var(--sh-sm);color:var(--wine-mid);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:all .2s}.s-arrow:hover{background:var(--wine);color:#fff;box-shadow:0 6px 20px var(--sh-md)}.s-arrow.prev{left:4px}.s-arrow.next{right:4px}
- 
+    .pcard{background:var(--pearl);border-radius:18px;border:1px solid var(--border);box-shadow:0 2px 14px var(--sh-sm);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;min-width:260px;max-width:300px;flex-shrink:0}.pcard:hover{transform:translateY(-6px);box-shadow:0 16px 40px var(--sh-md)}
+    .cimg{position:relative;width:100%;height:200px;background:linear-gradient(145deg,var(--champ-pale),#efe8d6);overflow:hidden}.cimg::before{content:'⌚';font-size:44px;opacity:.08;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;color:var(--champagne)}.cimg img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1;transition:transform .4s}.pcard:hover .cimg img{transform:scale(1.07)}
+    .covr{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(12,12,14,.5),transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px}.pcard:hover .covr{opacity:1}
+    .qv-btn{background:rgba(255,255,255,.95);color:var(--charcoal);border:none;border-radius:30px;padding:6px 16px;font-size:11px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif}
+    .cbadge{position:absolute;top:8px;left:8px;z-index:3;background:var(--pearl);color:var(--champ-deep);border-radius:20px;padding:3px 10px;font-size:9px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    .cbody{padding:12px 14px 14px;display:flex;flex-direction:column;gap:3px;flex:1}.cname{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:400;color:var(--text);line-height:1.2}.csub{font-size:10px;color:var(--text-soft);font-weight:300}.cfooter{display:flex;align-items:center;justify-content:space-between;margin-top:8px}.cprice{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--champ-deep)}.cbtn{background:var(--charcoal);color:var(--champ-lt);border:none;border-radius:30px;padding:7px 14px;font-size:11px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s}.cbtn:hover{background:var(--onyx)}
+    .s-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:var(--pearl);border:1px solid var(--border);box-shadow:0 4px 14px var(--sh-sm);color:var(--charcoal);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:all .2s}.s-arrow:hover{background:var(--charcoal);color:var(--champ-lt);box-shadow:0 6px 20px var(--sh-md)}.s-arrow.prev{left:4px}.s-arrow.next{right:4px}
+
+    /* AUTO-SCROLL CAROUSEL */
+    .carousel-section{background:var(--charcoal);padding:60px 0;overflow:hidden;position:relative}
+    .carousel-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C5A55A' fill-opacity='0.025'%3E%3Ccircle cx='30' cy='30' r='1.2'/%3E%3Ccircle cx='0' cy='0' r='1.2'/%3E%3Ccircle cx='60' cy='0' r='1.2'/%3E%3Ccircle cx='0' cy='60' r='1.2'/%3E%3Ccircle cx='60' cy='60' r='1.2'/%3E%3C/g%3E%3C/svg%3E")}
+    .carousel-head{text-align:center;margin-bottom:36px;position:relative;z-index:2;padding:0 16px}
+    .carousel-tag{display:inline-block;color:var(--champagne);font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+    .carousel-title{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,40px);font-weight:300;color:#fff}
+    .carousel-title em{font-style:italic;color:var(--champagne)}
+    .carousel-track-wrap{overflow:hidden;position:relative;z-index:2}
+    .carousel-track{display:flex;gap:22px;animation:autoScroll 35s linear infinite;width:max-content}
+    .carousel-track:hover{animation-play-state:paused}
+    @keyframes autoScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .cc{background:rgba(255,255,255,.05);border:1px solid rgba(197,165,90,.15);border-radius:22px;width:220px;flex-shrink:0;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;cursor:pointer}
+    .cc:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(197,165,90,.15);border-color:var(--champagne)}
+    .cc-img{height:150px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(197,165,90,.08),rgba(197,165,90,.03));font-size:3.5rem;position:relative;overflow:hidden}
+    .cc-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+    .cc-body{padding:14px 16px 18px}
+    .cc-cat{font-size:9px;color:var(--champagne);letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;font-weight:500}
+    .cc-name{font-size:14px;font-weight:500;color:#fff;margin-bottom:3px}
+    .cc-desc{font-size:10px;color:rgba(255,255,255,.4);font-weight:300}
+
     /* WHY */
-    .why-sec{padding:0 16px 44px}.why-inner{background:var(--blush);border:1px solid var(--blush-mid);border-radius:20px;padding:28px 20px;box-shadow:0 4px 20px var(--sh-sm)}.why-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:20px}.why-top h2{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3.5vw,38px);font-weight:300;color:var(--text)}.why-top h2 em{font-style:italic;color:var(--wine-mid)}.why-top p{font-size:12px;color:var(--text-soft);font-weight:300;margin-top:4px}.why-badge{background:var(--white);border:1px solid var(--blush-mid);border-radius:30px;padding:5px 14px;font-size:10px;color:var(--wine-mid);letter-spacing:.07em;font-weight:500;text-transform:uppercase;white-space:nowrap}.why-grid{display:grid;grid-template-columns:1fr;gap:12px}.witem{display:flex;gap:14px;align-items:flex-start;background:var(--white);border:1px solid var(--blush-mid);border-radius:14px;padding:16px;box-shadow:0 2px 10px var(--sh-sm)}.wicon{width:42px;height:42px;border-radius:12px;background:var(--blush);border:1px solid var(--blush-mid);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;overflow:hidden;position:relative}.wicon img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.wtitle{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:400;color:var(--text);margin-bottom:4px}.wdesc{font-size:12px;color:var(--text-soft);font-weight:300;line-height:1.65}
- 
+    .why-sec{padding:0 16px 44px}.why-inner{background:var(--pearl);border:1px solid var(--border);border-radius:20px;padding:28px 20px;box-shadow:0 4px 20px var(--sh-sm)}.why-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:20px}.why-top h2{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3.5vw,38px);font-weight:300;color:var(--text)}.why-top h2 em{font-style:italic;color:var(--champ-deep)}.why-top p{font-size:12px;color:var(--text-soft);font-weight:300;margin-top:4px}.why-badge{background:var(--champ-pale);border:1px solid rgba(197,165,90,.18);border-radius:30px;padding:5px 14px;font-size:10px;color:var(--champ-deep);letter-spacing:.07em;font-weight:500;text-transform:uppercase;white-space:nowrap}.why-grid{display:grid;grid-template-columns:1fr;gap:12px}.witem{display:flex;gap:14px;align-items:flex-start;background:var(--champ-pale);border:1px solid rgba(197,165,90,.15);border-radius:14px;padding:16px;box-shadow:0 2px 10px var(--sh-sm);transition:transform .25s,box-shadow .25s}.witem:hover{transform:translateY(-3px);box-shadow:0 8px 20px var(--sh-md)}.wicon{width:42px;height:42px;border-radius:12px;background:var(--pearl);border:1px solid rgba(197,165,90,.18);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;overflow:hidden;position:relative}.wicon img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.wtitle{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:400;color:var(--text);margin-bottom:4px}.wdesc{font-size:12px;color:var(--text-soft);font-weight:300;line-height:1.65}
+
     /* FOOTER */
-    .footer{background:var(--wine-deep);padding:20px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}.footer-brand{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--gold-lt);letter-spacing:.1em}.flinks{display:flex;gap:16px;flex-wrap:wrap}.flinks a{font-size:11px;color:rgba(255,255,255,.32);letter-spacing:.06em;text-transform:uppercase;transition:color .2s}.flinks a:hover{color:rgba(255,255,255,.6)}.fcopy{font-size:11px;color:rgba(255,255,255,.25);font-weight:300}
- 
+    .footer{background:var(--charcoal);padding:20px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid rgba(197,165,90,.1)}.footer-brand{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--champ-lt);letter-spacing:.1em}.flinks{display:flex;gap:16px;flex-wrap:wrap}.flinks a{font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.06em;text-transform:uppercase;transition:color .2s}.flinks a:hover{color:rgba(197,165,90,.7)}.fcopy{font-size:11px;color:rgba(255,255,255,.15);font-weight:300}
+
     @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
- 
+
     /* RESPONSIVE */
-    @media(min-width:600px){.why-grid{grid-template-columns:1fr 1fr}.witem{flex-direction:column}.sec-head,.gold-rule,.slider-wrap,.g-row,.hero-slider,.why-sec,.footer,.nav-wrap{padding-left:24px;padding-right:24px}.g-row,.hero-slider{margin-left:24px;margin-right:24px}.gold-rule{margin-left:24px;margin-right:24px}}
-    @media(min-width:768px){.nav-wrap{padding:12px 32px}.hero-slider{margin:14px 32px 0;height:clamp(340px,42vw,480px)}.g-row{margin-left:32px;margin-right:32px}.sec-head{padding-left:32px;padding-right:32px;padding-top:44px}.gold-rule{margin-left:32px;margin-right:32px}.slider-wrap{padding-left:32px;padding-right:32px}.why-sec{padding:0 32px 52px}.why-grid{grid-template-columns:repeat(3,1fr)}.why-inner{padding:32px 28px}.footer{padding:24px 32px}.pcard{min-width:280px}}
+    @media(min-width:600px){.why-grid{grid-template-columns:1fr 1fr}.witem{flex-direction:column}.sec-head,.gold-rule,.slider-wrap,.g-row,.hero-slider,.why-sec,.footer,.nav-wrap,.carousel-section{padding-left:24px;padding-right:24px}.g-row,.hero-slider{margin-left:24px;margin-right:24px}.gold-rule{margin-left:24px;margin-right:24px}}
+    @media(min-width:768px){.nav-wrap{padding:12px 32px}.hero-slider{margin:14px 32px 0;height:clamp(340px,42vw,480px)}.g-row{margin-left:32px;margin-right:32px}.sec-head{padding-left:32px;padding-right:32px;padding-top:44px}.gold-rule{margin-left:32px;margin-right:32px}.slider-wrap{padding-left:32px;padding-right:32px}.why-sec{padding:0 32px 52px}.why-grid{grid-template-columns:repeat(3,1fr)}.why-inner{padding:32px 28px}.footer{padding:24px 32px}.pcard{min-width:280px}.carousel-section{padding:70px 0}}
     @media(min-width:1024px){.nav-wrap{padding:12px 48px}.nav-links{display:flex}.nav-search{display:flex}.nav-toggle{display:none!important}.hero-slider{margin:14px 48px 0}.g-row{margin-left:48px;margin-right:48px}.sec-head{padding-left:48px;padding-right:48px}.gold-rule{margin-left:48px;margin-right:48px}.slider-wrap{padding-left:48px;padding-right:48px}.why-sec{padding:0 48px 64px}.footer{padding:26px 48px}}
     @media(max-width:1023px){.nav-links{display:none}.nav-search{display:none}.nav-toggle{display:flex}}
     @media(max-width:480px){.h-stats{display:none}.h-arrow{width:34px;height:34px;font-size:14px}.g-row{grid-template-columns:repeat(2,1fr)}.g-item:nth-child(2){border-right:none}.g-item:nth-child(3),.g-item:nth-child(4){border-top:1px solid var(--border)}.g-item:nth-child(4){border-right:none}.pcard{min-width:240px}}
@@ -65,13 +111,14 @@
   </style>
 </head>
 <body>
- 
+
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="Best Sellers.html">Best Sellers</a><a href="About us.html">About Us</a><a href="Contact Us.html">Contact Us</a><a href="faq.html">FAQ</a>
   <a href="MEN.html">Men</a><a href="WOMEN.html">Women</a><a href="CHILDREN.html">Children</a><a href="BOTH.html">Unisex</a>
-  <div class="mm-search"><svg width="14" height="14" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input type="text" placeholder="Search watches…"></div>
+  <a href="order.html" style="color:var(--champagne);font-weight:500">Order Now</a>
+  <div class="mm-search"><svg width="14" height="14" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input type="text" placeholder="Search watches…"></div>
 </div>
- 
+
 <div class="nav-wrap"><nav class="nav-inner">
   <a class="brand" href="index.html">Amiro</a>
   <ul class="nav-links">
@@ -81,6 +128,7 @@
     <li><a href="About us.html">About Us</a></li>
     <li><a href="Contact Us.html">Contact Us</a></li>
     <li><a href="faq.html">FAQ</a></li>
+    <li><a href="order.html">Order</a></li>
     <li class="has-dropdown">
       <a href="#" class="dropdown-toggle" onclick="toggleDD(event)">Watches <span class="caret">▾</span></a>
       <ul class="dropdown-menu">
@@ -92,11 +140,11 @@
     </li>
   </ul>
   <div class="nav-right">
-    <div class="nav-search"><svg width="13" height="13" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input type="text" placeholder="Search…"></div>
+    <div class="nav-search"><svg width="13" height="13" fill="none" stroke="rgba(197,165,90,0.4)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input type="text" placeholder="Search…"></div>
     <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
   </div>
 </nav></div>
- 
+
 <!-- HERO IMAGE SLIDER -->
 <div class="hero-slider" id="heroSlider">
   <div class="h-slide active">
@@ -146,31 +194,60 @@
     <div class="h-stat"><div class="h-stat-num">50K+</div><div class="h-stat-lbl">Customers</div></div>
   </div>
 </div>
- 
+
 <div class="g-row">
   <div class="g-item"><div class="g-icon">🛡️</div><div class="g-label"><strong>1 Year Warranty</strong><span>On every purchase</span></div></div>
   <div class="g-item"><div class="g-icon">🚚</div><div class="g-label"><strong>Worldwide Delivery</strong><span>100+ countries</span></div></div>
   <div class="g-item"><div class="g-icon">🔒</div><div class="g-label"><strong>Secure Payment</strong><span>Bank-grade encryption</span></div></div>
   <div class="g-item"><div class="g-icon">💎</div><div class="g-label"><strong>Premium Quality</strong><span>Every detail matters</span></div></div>
 </div>
- 
+
 <!-- FEATURED WATCHES SLIDER -->
 <div class="sec-head"><h2>Featured <em>Watches</em></h2><a href="gallery.html">View all →</a></div>
 <div class="gold-rule"></div>
 <div class="slider-wrap">
   <button class="s-arrow prev" onclick="scrollCards(-1)">‹</button>
   <div class="slider-track" id="cardSlider">
-    <div class="pcard"><div class="cimg"><span class="cbadge">Classic</span><img src="img01.jpg" alt="" onerror="this.style.display='none'"><div class="covr"><button class="qv-btn">Quick View</button></div></div><div class="cbody"><div class="cname">Rolex Submariner</div><div class="csub">Stainless steel · Date</div><div class="cfooter"><div class="cprice">$399</div><button class="cbtn">Shop Now</button></div></div></div>
-    <div class="pcard"><div class="cimg"><span class="cbadge">Smart</span><img src="download (65).jpg" alt="" onerror="this.style.display='none'"><div class="covr"><button class="qv-btn">Quick View</button></div></div><div class="cbody"><div class="cname">Smart Series Pro</div><div class="csub">Carbon black · GPS</div><div class="cfooter"><div class="cprice">$399</div><button class="cbtn">Shop Now</button></div></div></div>
-    <div class="pcard"><div class="cimg"><span class="cbadge">Men's</span><img src="men's.jpg" alt="" onerror="this.style.display='none'"><div class="covr"><button class="qv-btn">Quick View</button></div></div><div class="cbody"><div class="cname">Gentleman Edition</div><div class="csub">Gold case · Leather</div><div class="cfooter"><div class="cprice">$399</div><button class="cbtn">Shop Now</button></div></div></div>
-    <div class="pcard"><div class="cimg"><span class="cbadge">Limited</span><img src="blackkwatch.jpg" alt="" onerror="this.style.display='none'"><div class="covr"><button class="qv-btn">Quick View</button></div></div><div class="cbody"><div class="cname">Midnight Black</div><div class="csub">Limited · Sapphire</div><div class="cfooter"><div class="cprice">$399</div><button class="cbtn">Shop Now</button></div></div></div>
-    <div class="pcard"><div class="cimg"><span class="cbadge">Women's</span><img src="appleWatch.jpg.jpg" alt="" onerror="this.style.display='none'"><div class="covr"><button class="qv-btn">Quick View</button></div></div><div class="cbody"><div class="cname">Rose Elegance</div><div class="csub">Rose gold · Mesh</div><div class="cfooter"><div class="cprice">$329</div><button class="cbtn">Shop Now</button></div></div></div>
-    <div class="pcard"><div class="cimg"><span class="cbadge">Sport</span><img src="download (64).jpg" alt="" onerror="this.style.display='none'"><div class="covr"><button class="qv-btn">Quick View</button></div></div><div class="cbody"><div class="cname">Active Series</div><div class="csub">Sport · Health track</div><div class="cfooter"><div class="cprice">$279</div><button class="cbtn">Shop Now</button></div></div></div>
+    <div class="pcard"><div class="cimg"><span class="cbadge">Classic</span><img src="img01.jpg" alt="" onerror="this.style.display='none'"><div class="covr"><button class="qv-btn">Quick View</button></div></div><div class="cbody"><div class="cname">Rolex Submariner</div><div class="csub">Stainless steel · Date</div><div class="cfooter"><div class="cprice">$399</div><button class="cbtn" onclick="window.location='order.html'">Shop Now</button></div></div></div>
+    <div class="pcard"><div class="cimg"><span class="cbadge">Smart</span><img src="download (65).jpg" alt="" onerror="this.style.display='none'"><div class="covr"><button class="qv-btn">Quick View</button></div></div><div class="cbody"><div class="cname">Smart Series Pro</div><div class="csub">Carbon black · GPS</div><div class="cfooter"><div class="cprice">$399</div><button class="cbtn" onclick="window.location='order.html'">Shop Now</button></div></div></div>
+    <div class="pcard"><div class="cimg"><span class="cbadge">Men's</span><img src="men's.jpg" alt="" onerror="this.style.display='none'"><div class="covr"><button class="qv-btn">Quick View</button></div></div><div class="cbody"><div class="cname">Gentleman Edition</div><div class="csub">Gold case · Leather</div><div class="cfooter"><div class="cprice">$399</div><button class="cbtn" onclick="window.location='order.html'">Shop Now</button></div></div></div>
+    <div class="pcard"><div class="cimg"><span class="cbadge">Limited</span><img src="blackkwatch.jpg" alt="" onerror="this.style.display='none'"><div class="covr"><button class="qv-btn">Quick View</button></div></div><div class="cbody"><div class="cname">Midnight Black</div><div class="csub">Limited · Sapphire</div><div class="cfooter"><div class="cprice">$399</div><button class="cbtn" onclick="window.location='order.html'">Shop Now</button></div></div></div>
+    <div class="pcard"><div class="cimg"><span class="cbadge">Women's</span><img src="appleWatch.jpg.jpg" alt="" onerror="this.style.display='none'"><div class="covr"><button class="qv-btn">Quick View</button></div></div><div class="cbody"><div class="cname">Rose Elegance</div><div class="csub">Rose gold · Mesh</div><div class="cfooter"><div class="cprice">$329</div><button class="cbtn" onclick="window.location='order.html'">Shop Now</button></div></div></div>
+    <div class="pcard"><div class="cimg"><span class="cbadge">Sport</span><img src="download (64).jpg" alt="" onerror="this.style.display='none'"><div class="covr"><button class="qv-btn">Quick View</button></div></div><div class="cbody"><div class="cname">Active Series</div><div class="csub">Sport · Health track</div><div class="cfooter"><div class="cprice">$279</div><button class="cbtn" onclick="window.location='order.html'">Shop Now</button></div></div></div>
   </div>
   <button class="s-arrow next" onclick="scrollCards(1)">›</button>
 </div>
- 
-<section class="why-sec"><div class="why-inner">
+
+<!-- AUTO-SCROLLING CAROUSEL -->
+<section class="carousel-section">
+  <div class="carousel-head">
+    <div class="carousel-tag">✦ Our Collection</div>
+    <h2 class="carousel-title">Explore Every <em>Category</em></h2>
+  </div>
+  <div class="carousel-track-wrap">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="cc" onclick="window.location='MEN.html'"><div class="cc-img"><img src="img01.jpg" alt="" onerror="this.style.display='none'">⌚</div><div class="cc-body"><div class="cc-cat">Men's</div><div class="cc-name">Rolex Submariner</div><div class="cc-desc">Stainless steel · Classic</div></div></div>
+      <div class="cc" onclick="window.location='WOMEN.html'"><div class="cc-img"><img src="appleWatch.jpg.jpg" alt="" onerror="this.style.display='none'">💎</div><div class="cc-body"><div class="cc-cat">Women's</div><div class="cc-name">Rose Elegance</div><div class="cc-desc">Rose gold · Mesh band</div></div></div>
+      <div class="cc" onclick="window.location='order.html'"><div class="cc-img"><img src="download (65).jpg" alt="" onerror="this.style.display='none'">📱</div><div class="cc-body"><div class="cc-cat">Smart</div><div class="cc-name">Smart Series Pro</div><div class="cc-desc">GPS · Heart rate</div></div></div>
+      <div class="cc" onclick="window.location='order.html'"><div class="cc-img"><img src="blackkwatch.jpg" alt="" onerror="this.style.display='none'">🌙</div><div class="cc-body"><div class="cc-cat">Limited</div><div class="cc-name">Midnight Black</div><div class="cc-desc">500 pcs · Sapphire</div></div></div>
+      <div class="cc" onclick="window.location='MEN.html'"><div class="cc-img"><img src="men's.jpg" alt="" onerror="this.style.display='none'">👔</div><div class="cc-body"><div class="cc-cat">Men's</div><div class="cc-name">Gentleman Edition</div><div class="cc-desc">Gold case · Leather</div></div></div>
+      <div class="cc" onclick="window.location='order.html'"><div class="cc-img"><img src="download (64).jpg" alt="" onerror="this.style.display='none'">🏃</div><div class="cc-body"><div class="cc-cat">Sport</div><div class="cc-name">Active Series</div><div class="cc-desc">Chronograph · 100m</div></div></div>
+      <div class="cc" onclick="window.location='WOMEN.html'"><div class="cc-img">💍</div><div class="cc-body"><div class="cc-cat">Women's</div><div class="cc-name">Diamond Petite</div><div class="cc-desc">Diamond bezel · Satin</div></div></div>
+      <div class="cc" onclick="window.location='CHILDREN.html'"><div class="cc-img">🧸</div><div class="cc-body"><div class="cc-cat">Children's</div><div class="cc-name">Junior Explorer</div><div class="cc-desc">Colorful · Durable</div></div></div>
+      <!-- duplicates for seamless loop -->
+      <div class="cc" onclick="window.location='MEN.html'"><div class="cc-img"><img src="img01.jpg" alt="" onerror="this.style.display='none'">⌚</div><div class="cc-body"><div class="cc-cat">Men's</div><div class="cc-name">Rolex Submariner</div><div class="cc-desc">Stainless steel · Classic</div></div></div>
+      <div class="cc" onclick="window.location='WOMEN.html'"><div class="cc-img"><img src="appleWatch.jpg.jpg" alt="" onerror="this.style.display='none'">💎</div><div class="cc-body"><div class="cc-cat">Women's</div><div class="cc-name">Rose Elegance</div><div class="cc-desc">Rose gold · Mesh band</div></div></div>
+      <div class="cc" onclick="window.location='order.html'"><div class="cc-img"><img src="download (65).jpg" alt="" onerror="this.style.display='none'">📱</div><div class="cc-body"><div class="cc-cat">Smart</div><div class="cc-name">Smart Series Pro</div><div class="cc-desc">GPS · Heart rate</div></div></div>
+      <div class="cc" onclick="window.location='order.html'"><div class="cc-img"><img src="blackkwatch.jpg" alt="" onerror="this.style.display='none'">🌙</div><div class="cc-body"><div class="cc-cat">Limited</div><div class="cc-name">Midnight Black</div><div class="cc-desc">500 pcs · Sapphire</div></div></div>
+      <div class="cc" onclick="window.location='MEN.html'"><div class="cc-img"><img src="men's.jpg" alt="" onerror="this.style.display='none'">👔</div><div class="cc-body"><div class="cc-cat">Men's</div><div class="cc-name">Gentleman Edition</div><div class="cc-desc">Gold case · Leather</div></div></div>
+      <div class="cc" onclick="window.location='order.html'"><div class="cc-img"><img src="download (64).jpg" alt="" onerror="this.style.display='none'">🏃</div><div class="cc-body"><div class="cc-cat">Sport</div><div class="cc-name">Active Series</div><div class="cc-desc">Chronograph · 100m</div></div></div>
+      <div class="cc" onclick="window.location='WOMEN.html'"><div class="cc-img">💍</div><div class="cc-body"><div class="cc-cat">Women's</div><div class="cc-name">Diamond Petite</div><div class="cc-desc">Diamond bezel · Satin</div></div></div>
+      <div class="cc" onclick="window.location='CHILDREN.html'"><div class="cc-img">🧸</div><div class="cc-body"><div class="cc-cat">Children's</div><div class="cc-name">Junior Explorer</div><div class="cc-desc">Colorful · Durable</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="why-sec" style="padding-top:44px"><div class="why-inner">
   <div class="why-top"><div><h2>Why Choose <em>Amiro</em></h2><p>Our promise to every customer.</p></div><div class="why-badge">Our Commitment</div></div>
   <div class="why-grid">
     <div class="witem"><div class="wicon">🛡️<img src="warrranty.jpg" alt="" onerror="this.style.display='none'"></div><div><div class="wtitle">1 Year Warranty</div><div class="wdesc">Every watch is backed by our full warranty. Wear it with confidence.</div></div></div>
@@ -178,34 +255,29 @@
     <div class="witem"><div class="wicon">🔒<img src="seccurre.jpg.png" alt="" onerror="this.style.display='none'"></div><div><div class="wtitle">Secure Payment</div><div class="wdesc">Bank-grade encryption on every transaction. Complete peace of mind.</div></div></div>
   </div>
 </div></section>
- 
+
 <footer class="footer">
   <div class="footer-brand">Amiro</div>
-  <div class="flinks"><a href="gallery.html">Gallery</a><a href="Best Sellers.html">Best Sellers</a><a href="MEN.html">Men</a><a href="WOMEN.html">Women</a><a href="CHILDREN.html">Children</a><a href="BOTH.html">Unisex</a><a href="Contact Us.html">Contact</a></div>
+  <div class="flinks"><a href="gallery.html">Gallery</a><a href="Best Sellers.html">Best Sellers</a><a href="MEN.html">Men</a><a href="WOMEN.html">Women</a><a href="CHILDREN.html">Children</a><a href="BOTH.html">Unisex</a><a href="order.html">Order</a><a href="Contact Us.html">Contact</a></div>
   <div class="fcopy">© 2025 Amiro Watches. All rights reserved.</div>
 </footer>
- 
+
 <script>
-  // Mobile menu
   var navToggle=document.getElementById('navToggle'),mobileMenu=document.getElementById('mobileMenu');
   navToggle.addEventListener('click',function(e){e.stopPropagation();var open=mobileMenu.classList.toggle('show');navToggle.classList.toggle('open',open);document.body.style.overflow=open?'hidden':''});
   mobileMenu.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){mobileMenu.classList.remove('show');navToggle.classList.remove('open');document.body.style.overflow=''})});
   document.addEventListener('click',function(e){if(!navToggle.contains(e.target)&&!mobileMenu.contains(e.target)){mobileMenu.classList.remove('show');navToggle.classList.remove('open');document.body.style.overflow=''}});
-  // Dropdown
   function toggleDD(e){e.preventDefault();e.stopPropagation();var p=e.currentTarget.parentElement;document.querySelectorAll('.has-dropdown.open').forEach(function(d){if(d!==p)d.classList.remove('open')});p.classList.toggle('open')}
   document.addEventListener('click',function(e){if(!e.target.closest('.has-dropdown'))document.querySelectorAll('.has-dropdown.open').forEach(function(d){d.classList.remove('open')})});
-  // Hero Slider
   var slides=document.querySelectorAll('.h-slide'),heroIdx=0,dotsWrap=document.getElementById('heroDots');
   slides.forEach(function(_,i){var d=document.createElement('button');d.className='h-dot'+(i===0?' active':'');d.onclick=function(){goHero(i)};dotsWrap.appendChild(d)});
   function goHero(i){slides[heroIdx].classList.remove('active');document.querySelectorAll('.h-dot')[heroIdx].classList.remove('active');heroIdx=(i+slides.length)%slides.length;slides[heroIdx].classList.add('active');document.querySelectorAll('.h-dot')[heroIdx].classList.add('active')}
   function heroSlide(d){goHero(heroIdx+d)}
   setInterval(function(){heroSlide(1)},5000);
-  // Product Slider
   var cardSlider=document.getElementById('cardSlider');
   function scrollCards(dir){cardSlider.scrollBy({left:dir*300,behavior:'smooth'})}
-  // Scroll animations
   var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.style.animation='fadeUp 0.5s ease both';obs.unobserve(e.target)}})},{threshold:0.08});
-  document.querySelectorAll('.pcard,.witem,.g-item').forEach(function(el){el.style.opacity='0';obs.observe(el)});
+  document.querySelectorAll('.pcard,.witem,.g-item,.cc').forEach(function(el){el.style.opacity='0';obs.observe(el)});
 </script>
 </body>
 </html>

@@ -4,41 +4,278 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Best Sellers — AMIRO Luxury Watches</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root{--pink-bg:#ffeaf1;--pink-50:#fff0f5;--pink-100:#ffd9e4;--pink-200:#ffbfd2;--pink-300:#ff9ebc;--pink-400:#f78fa7;--pink-deep:#e36b8a;--pink-text:#8a3a52;--rose:#c2185b;--gold:#d4a05a;--gold-light:#e7c890;--cream:#fff8fb;--ink:#4a1f30;--muted:#8a6b75;--white:#ffffff;--shadow-sm:0 4px 10px rgba(227,107,138,0.10);--shadow-md:0 10px 25px rgba(227,107,138,0.18);--shadow-lg:0 20px 45px rgba(227,107,138,0.25);--radius-sm:8px;--radius-md:16px;--radius-lg:24px;--radius-pill:999px;--serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif}
-    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--sans);color:var(--ink);background:linear-gradient(180deg,var(--pink-bg) 0%,var(--pink-50) 100%);line-height:1.5;overflow-x:hidden}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
-    .nav-wrap{position:sticky;top:0;z-index:100;padding:12px clamp(12px,3vw,24px);background:transparent}.navbar-inner{max-width:1400px;margin:0 auto;background:var(--pink-deep);border-radius:var(--radius-pill);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-md);border:1px solid rgba(248,187,208,0.15)}.brand{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white);letter-spacing:1.5px;white-space:nowrap}.brand span{color:var(--gold-light)}
-    .nav-links{display:flex;list-style:none;gap:6px;align-items:center}.nav-links a{color:var(--white);font-size:14px;font-weight:500;padding:8px 14px;border-radius:var(--radius-pill);transition:all 0.25s}.nav-links a:hover{background:var(--pink-100);color:var(--pink-deep)}.nav-links a.active{background:var(--gold);color:var(--white)}
-    .has-dropdown{position:relative}.dropdown-toggle{display:inline-flex!important;align-items:center;gap:6px;cursor:pointer}.caret{font-size:10px;color:var(--gold-light);transition:transform 0.25s}.has-dropdown.open .caret{transform:rotate(180deg);color:var(--gold)}
-    .dropdown-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:220px;background:var(--white);list-style:none;padding:8px;border-radius:var(--radius-md);box-shadow:var(--shadow-lg);border:1.5px solid var(--gold-light);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.25s;z-index:110}.dropdown-menu::before{content:"";position:absolute;top:-7px;right:28px;width:12px;height:12px;background:var(--white);border-top:1.5px solid var(--gold-light);border-left:1.5px solid var(--gold-light);transform:rotate(45deg)}.has-dropdown.open .dropdown-menu,.has-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu li{width:100%}.dropdown-menu a{display:flex!important;align-items:center;gap:12px;padding:10px 14px!important;color:var(--ink)!important;background:transparent!important;border-radius:var(--radius-sm)!important;font-size:14px!important;font-weight:500;transition:all 0.2s;border-left:2px solid transparent}.dropdown-menu a:hover{background:linear-gradient(90deg,var(--pink-50),var(--white))!important;color:var(--rose)!important;border-left-color:var(--gold)!important;padding-left:18px!important}.dd-icon{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--white);display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;box-shadow:0 2px 6px rgba(212,160,90,0.35);flex-shrink:0}
-    .nav-icons{display:flex;gap:8px;align-items:center}.nav-icon-btn{width:36px;height:36px;border-radius:50%;background:rgba(248,187,208,0.15);color:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.25s;border:none;font-size:16px}.nav-icon-btn:hover{background:var(--pink-200);color:var(--pink-deep)}
-    .hamburger{display:none;flex-direction:column;gap:4px;background:transparent;border:none;cursor:pointer;padding:6px}.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s}
-    @media(max-width:900px){.nav-links{position:absolute;top:80px;left:12px;right:12px;background:var(--pink-deep);flex-direction:column;padding:16px;border-radius:var(--radius-md);gap:4px;box-shadow:var(--shadow-lg);max-height:0;overflow:hidden;opacity:0;transition:all 0.35s}.nav-links.open{max-height:700px;opacity:1;padding:16px;overflow:auto}.nav-links li{width:100%}.nav-links a{display:block;padding:12px 16px;width:100%}.hamburger{display:flex}.dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:rgba(255,255,255,0.12);margin-top:6px;max-height:0;overflow:hidden;padding:0 8px;transition:all 0.3s}.dropdown-menu::before{display:none}.has-dropdown.open .dropdown-menu{max-height:320px;padding:8px}.has-dropdown:hover .dropdown-menu{max-height:0}.has-dropdown.open:hover .dropdown-menu{max-height:320px}.dropdown-menu a{color:var(--white)!important}.dropdown-menu a:hover{background:rgba(255,255,255,0.15)!important;color:var(--white)!important}}
+    :root {
+      /* — Exact palette from home page — */
+      --pink-bg:#ffeaf1; --pink-50:#fff0f5; --pink-100:#ffd9e4; --pink-200:#ffbfd2;
+      --pink-300:#ff9ebc; --pink-400:#f78fa7; --pink-deep:#e36b8a; --pink-text:#8a3a52;
+      --rose:#c2185b; --gold:#d4a05a; --gold-light:#e7c890; --gold-deep:#a67830;
+      --sand:#f5ede0; --cream:#fff8fb; --ink:#4a1f30; --slate:#6a4555; --muted:#8a6b75;
+      --line:#ebd9e1; --white:#ffffff;
+      --shadow-sm:0 4px 10px rgba(227,107,138,0.08);
+      --shadow-md:0 10px 25px rgba(227,107,138,0.15);
+      --shadow-lg:0 20px 45px rgba(227,107,138,0.22);
+      --shadow-gold:0 8px 30px rgba(212,160,90,0.25);
+      --radius-sm:8px; --radius-md:16px; --radius-lg:24px; --radius-pill:999px;
+      --serif:"Cormorant Garamond",Georgia,serif;
+      --sans:"DM Sans",system-ui,sans-serif;
+      --display:"Space Grotesk","DM Sans",sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);color:var(--ink);background:linear-gradient(180deg,var(--pink-bg) 0%,var(--pink-50) 100%);overflow-x:hidden;min-height:100vh}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
 
-    .hero{max-width:1400px;margin:24px auto 0;padding:0 clamp(12px,3vw,24px)}.hero-card{background:linear-gradient(135deg,var(--pink-300) 0%,var(--pink-200) 50%,var(--pink-100) 100%);border-radius:var(--radius-lg);padding:24px clamp(20px,4vw,36px);position:relative;overflow:hidden;box-shadow:var(--shadow-lg);min-height:300px;max-height:320px}.hero-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 30%,rgba(255,255,255,0.4),transparent 50%),radial-gradient(circle at 20% 80%,rgba(231,200,144,0.25),transparent 50%);pointer-events:none}.hero-content{position:relative;z-index:2}.hero-eyebrow{display:inline-block;background:var(--white);color:var(--rose);font-size:11px;font-weight:700;padding:4px 12px;border-radius:var(--radius-pill);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}.hero-title{font-family:var(--serif);font-size:clamp(26px,3.4vw,38px);font-weight:700;color:var(--ink);line-height:1.05;letter-spacing:-0.5px;margin-bottom:10px}.hero-title em{font-style:italic;color:var(--rose);font-weight:500}.hero-sub{color:var(--pink-text);font-size:13px;max-width:460px;margin-bottom:16px;line-height:1.5}
-    .btn{padding:14px 28px;border-radius:var(--radius-pill);font-family:var(--sans);font-size:14px;font-weight:700;cursor:pointer;border:none;letter-spacing:0.5px;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px}.btn-primary{background:var(--pink-deep);color:var(--white)}.btn-primary:hover{background:var(--gold);transform:translateY(-2px);box-shadow:var(--shadow-md)}.btn-ghost{background:var(--pink-100);color:var(--pink-deep)}.btn-ghost:hover{background:var(--pink-200);transform:translateY(-2px)}.btn-row{display:flex;gap:12px;flex-wrap:wrap}
-    .hero-meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px}.hero-meta-num{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--rose);line-height:1}.hero-meta-label{font-size:10px;opacity:0.75;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
-    @media(max-width:800px){.hero-card{max-height:none;min-height:0}}
+    /* ── NOISE OVERLAY ── */
+    body::before{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.4}
 
-    .filters{max-width:1400px;margin:32px auto 0;padding:0 clamp(12px,3vw,24px);display:flex;gap:10px;flex-wrap:wrap;align-items:center}.filter-label{font-family:var(--serif);font-size:18px;color:var(--pink-deep);font-weight:600;margin-right:8px}.filter-btn{padding:8px 22px;border-radius:var(--radius-pill);background:var(--white);border:1.5px solid var(--pink-200);color:var(--pink-400);font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;transition:all 0.25s;box-shadow:var(--shadow-sm)}.filter-btn:hover{background:var(--pink-100);border-color:var(--pink-400);transform:translateY(-2px)}.filter-btn.active{background:var(--pink-deep);color:var(--white);border-color:var(--pink-deep)}
+    /* ── NAVBAR ── */
+    .nav-wrap{position:sticky;top:0;z-index:100;padding:12px clamp(12px,3vw,24px)}
+    .navbar-inner{max-width:1400px;margin:0 auto;background:var(--pink-deep);border-radius:var(--radius-pill);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-md);border:1px solid rgba(248,187,208,0.15)}
+    .brand{font-family:var(--display);font-size:20px;font-weight:700;color:var(--white);letter-spacing:1px}.brand span{color:var(--gold-light);margin:0 4px}
+    .nav-links{display:flex;list-style:none;gap:4px;align-items:center}
+    .nav-links a{color:var(--white);font-family:var(--display);font-size:13px;font-weight:500;letter-spacing:0.5px;padding:8px 14px;border-radius:var(--radius-pill);transition:all 0.25s;text-transform:uppercase}
+    .nav-links a:hover{background:var(--pink-100);color:var(--pink-deep)}
+    .nav-links a.active{background:var(--gold);color:var(--white)}
+    .has-dropdown{position:relative}
+    .dropdown-toggle{display:inline-flex!important;align-items:center;gap:6px;cursor:pointer}
+    .caret{font-size:9px;color:var(--gold-light);transition:transform 0.25s}
+    .has-dropdown.open .caret{transform:rotate(180deg)}
+    .dropdown-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:220px;background:var(--white);list-style:none;padding:8px;border-radius:var(--radius-md);box-shadow:var(--shadow-lg);border:1.5px solid var(--gold-light);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.25s;z-index:110}
+    .has-dropdown.open .dropdown-menu,.has-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+    .dropdown-menu li{width:100%}
+    .dropdown-menu a{display:flex!important;align-items:center;gap:12px;padding:10px 14px!important;color:var(--ink)!important;background:transparent!important;border-radius:var(--radius-sm)!important;font-size:13px!important;font-weight:500;text-transform:none!important;letter-spacing:0;border-left:2px solid transparent;transition:all 0.2s}
+    .dropdown-menu a:hover{background:var(--pink-50)!important;color:var(--rose)!important;border-left-color:var(--gold)!important;padding-left:18px!important}
+    .dd-icon{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--white);display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+    .nav-icons{display:flex;gap:8px;align-items:center}
+    .nav-icon-btn{width:36px;height:36px;border-radius:50%;background:rgba(248,187,208,0.15);color:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;font-size:16px;transition:all 0.25s}
+    .nav-icon-btn:hover{background:var(--gold);color:var(--white)}
+    .hamburger{display:none;flex-direction:column;gap:4px;background:transparent;border:none;cursor:pointer;padding:6px}
+    .hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px}
+    @media(max-width:900px){
+      .nav-links{position:absolute;top:80px;left:12px;right:12px;background:var(--pink-deep);flex-direction:column;padding:16px;border-radius:var(--radius-md);gap:4px;box-shadow:var(--shadow-lg);max-height:0;overflow:hidden;opacity:0;transition:all 0.35s}
+      .nav-links.open{max-height:700px;opacity:1;padding:16px;overflow:auto}
+      .nav-links li{width:100%}.nav-links a{display:block;padding:12px 16px;width:100%}
+      .hamburger{display:flex}
+      .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:rgba(255,255,255,0.12);margin-top:6px;max-height:0;overflow:hidden;padding:0 8px;transition:all 0.3s}
+      .has-dropdown.open .dropdown-menu{max-height:320px;padding:8px}
+      .has-dropdown:hover .dropdown-menu{max-height:0}
+      .has-dropdown.open:hover .dropdown-menu{max-height:320px}
+      .dropdown-menu a{color:var(--white)!important}
+    }
 
-    .section-head{max-width:1400px;margin:56px auto 24px;padding:0 clamp(12px,3vw,24px);text-align:center}.section-eyebrow{color:var(--gold);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}.section-title{font-family:var(--serif);font-size:clamp(30px,4vw,44px);color:var(--pink-deep);font-weight:600}.section-title em{font-style:italic;color:var(--gold)}
+    /* ── MARQUEE TICKER ── */
+    .ticker-wrap{background:var(--gold);overflow:hidden;padding:9px 0;position:relative;z-index:1}
+    .ticker-track{display:flex;gap:0;animation:ticker 28s linear infinite;width:max-content}
+    .ticker-item{font-family:var(--display);font-size:11px;font-weight:600;color:var(--ink);letter-spacing:2px;text-transform:uppercase;padding:0 40px;white-space:nowrap}
+    .ticker-item::before{content:"✦";margin-right:20px;color:var(--pink-deep)}
+    @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-    .grid{max-width:1400px;margin:0 auto;padding:0 clamp(12px,3vw,24px);display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
-    .product{background:linear-gradient(135deg,var(--white) 0%,var(--pink-50) 100%);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);transition:all 0.35s;border:1px solid var(--pink-100);display:flex;flex-direction:column;position:relative}.product:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--gold-light)}
-    .product-img-wrap{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--cream)}.product-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}.product:hover .product-img-wrap img{transform:scale(1.08)}
-    .product-tag{position:absolute;top:12px;left:12px;background:var(--gold);color:var(--white);font-size:11px;font-weight:700;padding:5px 12px;border-radius:var(--radius-pill);letter-spacing:1px;text-transform:uppercase;z-index:2}.product-fav{position:absolute;top:12px;right:12px;width:36px;height:36px;background:var(--white);border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--pink-400);transition:all 0.25s;z-index:2}.product-fav:hover,.product-fav.active{background:var(--pink-200);color:var(--rose);transform:scale(1.1)}
-    .product-body{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}.product-name{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);margin-bottom:6px;line-height:1.25}.product-cat{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px}.product-bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:12px}.product-price{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--rose)}.product-cart{background:var(--pink-deep);color:var(--white);border:none;padding:9px 18px;border-radius:var(--radius-pill);font-weight:700;font-size:12px;cursor:pointer;transition:all 0.25s;letter-spacing:0.5px}.product-cart:hover{background:var(--gold)}
+    /* ── HERO ── */
+    .hero{max-width:1400px;margin:36px auto 0;padding:0 clamp(12px,3vw,24px);position:relative;z-index:1}
+    .hero-card{background:linear-gradient(135deg,var(--pink-50) 0%,var(--white) 60%,var(--pink-100) 100%);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--pink-100);display:grid;grid-template-columns:1fr 420px;min-height:380px;position:relative}
+    .hero-card::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 0%,rgba(231,200,144,0.18),transparent 55%),radial-gradient(ellipse at 10% 100%,rgba(227,107,138,0.12),transparent 50%);pointer-events:none}
+    .hero-left{padding:clamp(36px,5vw,64px);display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-size:11px;font-weight:600;color:var(--gold-deep);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+    .hero-eyebrow::before,.hero-eyebrow::after{content:"";width:30px;height:1px;background:var(--gold)}
+    .hero-title{font-family:var(--serif);font-size:clamp(44px,5.5vw,72px);font-weight:600;color:var(--ink);line-height:0.95;letter-spacing:-1.5px;margin-bottom:20px}
+    .hero-title em{font-style:italic;color:var(--rose);display:block}
+    .hero-desc{color:var(--muted);font-size:15px;line-height:1.7;max-width:420px;margin-bottom:32px}
+    .hero-stats{display:flex;gap:32px;margin-bottom:36px}
+    .stat{border-left:2px solid var(--gold);padding-left:14px}
+    .stat-num{font-family:var(--serif);font-size:28px;font-weight:600;color:var(--ink);line-height:1}
+    .stat-label{font-family:var(--display);font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:3px}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:14px 28px;border-radius:var(--radius-pill);font-family:var(--display);font-size:12px;font-weight:600;cursor:pointer;border:none;letter-spacing:1.5px;text-transform:uppercase;transition:all 0.3s;display:inline-flex;align-items:center;gap:8px}
+    .btn-primary{background:var(--pink-deep);color:var(--white);box-shadow:0 6px 20px rgba(227,107,138,0.35)}
+    .btn-primary:hover{background:var(--rose);transform:translateY(-2px);box-shadow:0 12px 28px rgba(194,24,91,0.35)}
+    .btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold-deep);transform:translateY(-2px)}
+    .hero-right{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--sand),var(--cream))}
+    .hero-right img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s}
+    .hero-card:hover .hero-right img{transform:scale(1.04)}
+    .hero-badge{position:absolute;bottom:24px;left:24px;background:var(--white);border-radius:var(--radius-md);padding:14px 18px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:12px;z-index:3}
+    .badge-icon{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+    .badge-text{font-family:var(--display);font-size:11px;font-weight:600;color:var(--ink);letter-spacing:0.5px}
+    .badge-sub{font-family:var(--display);font-size:10px;color:var(--muted);margin-top:2px}
+    @media(max-width:900px){.hero-card{grid-template-columns:1fr}.hero-right{height:260px}}
 
-    .newsletter{max-width:1400px;margin:56px auto 0;padding:0 clamp(12px,3vw,24px)}.newsletter-inner{background:linear-gradient(135deg,var(--pink-300),var(--pink-deep));border-radius:var(--radius-lg);padding:clamp(32px,5vw,56px);text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow-md)}.newsletter-inner::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,0.3),transparent 60%)}.newsletter-title{position:relative;font-family:var(--serif);color:var(--white);font-size:clamp(26px,3.5vw,38px);margin-bottom:8px}.newsletter-title em{color:var(--pink-50);font-style:italic}.newsletter-sub{position:relative;color:var(--pink-50);margin-bottom:24px;font-size:15px}.newsletter-form{position:relative;display:flex;gap:8px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}.newsletter-form input{flex:1;min-width:220px;padding:14px 20px;border-radius:var(--radius-pill);border:none;font-family:var(--sans);font-size:14px;background:var(--white);color:var(--ink);outline:none}.newsletter-form input:focus{box-shadow:0 0 0 3px var(--pink-200)}
+    /* ── FILTER TABS ── */
+    .filter-section{max-width:1400px;margin:52px auto 0;padding:0 clamp(12px,3vw,24px);position:relative;z-index:1}
+    .filter-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+    .filter-title{font-family:var(--serif);font-size:22px;color:var(--ink)}
+    .filter-title em{font-style:italic;color:var(--rose)}
+    .sort-select{font-family:var(--display);font-size:12px;color:var(--muted);background:var(--white);border:1.5px solid var(--line);border-radius:var(--radius-pill);padding:8px 16px;cursor:pointer;outline:none;letter-spacing:0.5px}
+    .filter-pills{display:flex;gap:8px;flex-wrap:wrap}
+    .pill{padding:10px 20px;border-radius:var(--radius-pill);background:var(--white);border:1.5px solid var(--line);color:var(--muted);font-family:var(--display);font-size:12px;font-weight:600;cursor:pointer;transition:all 0.25s;letter-spacing:0.5px}
+    .pill:hover{border-color:var(--pink-300);color:var(--pink-deep);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+    .pill.active{background:var(--pink-deep);color:var(--white);border-color:var(--pink-deep);box-shadow:0 4px 14px rgba(227,107,138,0.3)}
+    .pill-count{background:rgba(255,255,255,0.25);border-radius:var(--radius-pill);padding:1px 7px;font-size:10px;margin-left:4px}
+    .pill.active .pill-count{background:rgba(255,255,255,0.3)}
+    .pill:not(.active) .pill-count{background:var(--pink-100);color:var(--pink-deep)}
 
-    footer{margin-top:56px;padding:32px clamp(12px,3vw,24px);text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--pink-100)}footer .brand-foot{font-family:var(--serif);font-size:22px;color:var(--pink-deep);font-weight:700;letter-spacing:1.5px;margin-bottom:8px}footer .brand-foot span{color:var(--gold)}footer .nav-foot{display:flex;gap:20px;justify-content:center;margin:16px 0;flex-wrap:wrap}footer .nav-foot a{color:var(--muted);font-size:13px}footer .nav-foot a:hover{color:var(--rose)}
+    /* ── FEATURED BANNER ── */
+    .featured-banner{max-width:1400px;margin:40px auto 0;padding:0 clamp(12px,3vw,24px);position:relative;z-index:1}
+    .featured-inner{background:var(--pink-deep);border-radius:var(--radius-lg);padding:32px 40px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;position:relative;overflow:hidden;box-shadow:var(--shadow-md)}
+    .featured-inner::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(255,255,255,0.1),transparent 50%),radial-gradient(circle at 80% 20%,rgba(231,200,144,0.15),transparent 40%)}
+    .featured-item{position:relative;text-align:center;padding:20px 24px;border-right:1px solid rgba(255,255,255,0.15)}
+    .featured-item:last-child{border-right:none}
+    .fi-icon{font-size:28px;margin-bottom:10px}
+    .fi-num{font-family:var(--serif);font-size:38px;font-weight:600;color:var(--white);line-height:1}
+    .fi-label{font-family:var(--display);font-size:11px;color:rgba(255,255,255,0.7);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+    @media(max-width:600px){.featured-inner{grid-template-columns:1fr}.featured-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15)}.featured-item:last-child{border-bottom:none}}
 
-    .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--pink-deep);color:var(--white);padding:14px 24px;border-radius:var(--radius-pill);font-weight:600;font-size:14px;box-shadow:var(--shadow-lg);opacity:0;transition:all 0.4s;z-index:200;display:flex;align-items:center;gap:10px}.toast.show{transform:translateX(-50%) translateY(0);opacity:1}.toast-icon{background:var(--gold-light);color:var(--pink-deep);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+    /* ── SECTION HEAD ── */
+    .section-head{max-width:1400px;margin:64px auto 8px;padding:0 clamp(12px,3vw,24px);display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .sh-left{}
+    .sh-eyebrow{font-family:var(--display);font-size:11px;color:var(--gold-deep);letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+    .sh-title{font-family:var(--serif);font-size:clamp(32px,4vw,46px);color:var(--ink);font-weight:600;line-height:1.0}
+    .sh-title em{font-style:italic;color:var(--rose)}
+    .sh-link{font-family:var(--display);font-size:12px;font-weight:600;color:var(--muted);letter-spacing:1px;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;border-bottom:1.5px solid var(--line);padding-bottom:3px;transition:all 0.25s}
+    .sh-link:hover{color:var(--rose);border-color:var(--rose)}
+    .sh-link::after{content:"→";transition:transform 0.25s}
+    .sh-link:hover::after{transform:translateX(4px)}
+
+    /* ── PRODUCT GRID ── */
+    .grid{max-width:1400px;margin:32px auto 0;padding:0 clamp(12px,3vw,24px);display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:28px;position:relative;z-index:1}
+
+    /* ── PRODUCT CARD ── */
+    .card{background:linear-gradient(135deg,var(--white) 0%,var(--pink-50) 100%);border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--pink-100);position:relative;display:flex;flex-direction:column;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);animation:fadeUp 0.5s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .card:nth-child(1){animation-delay:0.05s}.card:nth-child(2){animation-delay:0.1s}.card:nth-child(3){animation-delay:0.15s}.card:nth-child(4){animation-delay:0.2s}.card:nth-child(5){animation-delay:0.25s}.card:nth-child(6){animation-delay:0.3s}
+    .card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg);border-color:var(--gold-light)}
+
+    .card-img{aspect-ratio:1;overflow:hidden;position:relative;background:linear-gradient(135deg,var(--pink-50),var(--sand))}
+    .card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94)}
+    .card:hover .card-img img{transform:scale(1.08)}
+
+    /* tags */
+    .card-tag{position:absolute;top:14px;left:14px;font-family:var(--display);font-size:10px;font-weight:700;padding:5px 12px;letter-spacing:1.5px;text-transform:uppercase;border-radius:var(--radius-pill);z-index:2}
+    .tag-bestseller{background:var(--gold);color:var(--white)}
+    .tag-new{background:var(--pink-deep);color:var(--white)}
+    .tag-sale{background:var(--rose);color:var(--white)}
+    .tag-limited{background:var(--pink-deep);color:var(--gold-light)}
+    .tag-hot{background:linear-gradient(135deg,#ff6b35,#e36b8a);color:var(--white)}
+    .tag-premium{background:linear-gradient(135deg,var(--gold-deep),var(--gold));color:var(--white)}
+
+    /* fav */
+    .card-fav{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:var(--white);border:1.5px solid var(--line);cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all 0.25s;z-index:2;box-shadow:var(--shadow-sm);opacity:0;transform:scale(0.8)}
+    .card:hover .card-fav{opacity:1;transform:scale(1)}
+    .card-fav:hover,.card-fav.active{background:var(--rose);color:var(--white);border-color:var(--rose)}
+
+    /* quick add */
+    .card-quick{position:absolute;bottom:0;left:0;right:0;background:rgba(74,31,48,0.92);backdrop-filter:blur(8px);color:var(--white);padding:14px;text-align:center;font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;opacity:0;transform:translateY(100%);transition:all 0.35s;border:none}
+    .card:hover .card-quick{opacity:1;transform:translateY(0)}
+    .card-quick:hover{background:var(--rose)}
+
+    /* rating stars */
+    .card-stars{position:absolute;bottom:56px;left:14px;right:14px;display:flex;align-items:center;gap:6px;opacity:0;transform:translateY(6px);transition:all 0.3s}
+    .card:hover .card-stars{opacity:1;transform:translateY(0)}
+    .stars{color:var(--gold);font-size:11px;letter-spacing:1px}
+    .rating-count{font-family:var(--display);font-size:10px;color:var(--white);background:rgba(74,31,48,0.7);border-radius:var(--radius-pill);padding:2px 8px;backdrop-filter:blur(4px)}
+
+    .card-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+    .card-cat{font-family:var(--display);font-size:10px;color:var(--gold-deep);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+    .card-name{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink);line-height:1.2;margin-bottom:8px}
+    .card-specs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+    .spec-chip{background:var(--pink-50);color:var(--pink-text);font-family:var(--display);font-size:10px;font-weight:600;padding:4px 10px;border-radius:var(--radius-pill);letter-spacing:0.5px}
+    .card-bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid var(--line)}
+    .card-price{display:flex;flex-direction:column;gap:2px}
+    .price-current{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--rose);line-height:1}
+    .price-old{font-family:var(--display);font-size:12px;color:var(--muted);text-decoration:line-through}
+    .card-cart{background:var(--pink-50);color:var(--pink-deep);border:1.5px solid var(--pink-200);padding:9px 18px;border-radius:var(--radius-pill);font-family:var(--display);font-weight:700;font-size:11px;cursor:pointer;transition:all 0.25s;letter-spacing:1px;text-transform:uppercase}
+    .card-cart:hover{background:var(--pink-deep);color:var(--white);border-color:var(--pink-deep)}
+
+    /* ── FEATURED LARGE CARD ── */
+    .featured-card{grid-column:span 2}
+    @media(max-width:700px){.featured-card{grid-column:span 1}}
+    .featured-card .card-img{aspect-ratio:2/1}
+
+    /* ── PROMO STRIP ── */
+    .promo-strip{max-width:1400px;margin:60px auto 0;padding:0 clamp(12px,3vw,24px);position:relative;z-index:1}
+    .promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .promo-item{border-radius:var(--radius-lg);padding:32px 36px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:220px}
+    .promo-a{background:linear-gradient(135deg,var(--pink-deep) 0%,var(--rose) 100%)}
+    .promo-b{background:linear-gradient(135deg,var(--sand) 0%,var(--pink-100) 100%)}
+    .promo-item::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,0.12),transparent 50%)}
+    .promo-eye{font-family:var(--display);font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+    .promo-a .promo-eye{color:var(--gold-light)}
+    .promo-b .promo-eye{color:var(--gold-deep)}
+    .promo-title{font-family:var(--serif);font-size:clamp(22px,3vw,34px);font-weight:600;line-height:1.1;margin-bottom:8px}
+    .promo-a .promo-title{color:var(--white)}
+    .promo-b .promo-title{color:var(--ink)}
+    .promo-title em{font-style:italic}
+    .promo-a .promo-title em{color:var(--gold-light)}
+    .promo-b .promo-title em{color:var(--rose)}
+    .promo-sub{font-size:13px;margin-bottom:24px}
+    .promo-a .promo-sub{color:rgba(255,255,255,0.75)}
+    .promo-b .promo-sub{color:var(--slate)}
+    .promo-btn{align-self:flex-start;padding:11px 22px;border-radius:var(--radius-pill);font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border:none;transition:all 0.25s}
+    .promo-a .promo-btn{background:var(--gold);color:var(--ink)}
+    .promo-a .promo-btn:hover{background:var(--gold-light)}
+    .promo-b .promo-btn{background:var(--pink-deep);color:var(--white)}
+    .promo-b .promo-btn:hover{background:var(--rose)}
+    .promo-deco{position:absolute;right:-20px;bottom:-20px;font-size:100px;opacity:0.08;pointer-events:none;line-height:1}
+    .promo-a .promo-deco{color:var(--white)}
+    .promo-b .promo-deco{color:var(--pink-deep)}
+    @media(max-width:700px){.promo-grid{grid-template-columns:1fr}}
+
+    /* ── TESTIMONIALS ── */
+    .testimonials{max-width:1400px;margin:72px auto 0;padding:0 clamp(12px,3vw,24px);position:relative;z-index:1}
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .testi-card{background:linear-gradient(135deg,var(--white),var(--pink-50));border-radius:var(--radius-md);padding:28px;border:1px solid var(--pink-100);position:relative;transition:all 0.3s}
+    .testi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--gold-light)}
+    .testi-stars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:14px}
+    .testi-text{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink);line-height:1.6;margin-bottom:20px}
+    .testi-author{display:flex;align-items:center;gap:12px}
+    .testi-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--pink-200),var(--pink-deep));display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:14px;font-weight:700;color:var(--white);flex-shrink:0}
+    .testi-name{font-family:var(--display);font-size:13px;font-weight:700;color:var(--ink)}
+    .testi-handle{font-family:var(--display);font-size:11px;color:var(--muted)}
+    .testi-quote{position:absolute;top:20px;right:24px;font-family:var(--serif);font-size:52px;color:var(--pink-100);line-height:1;font-weight:700}
+    @media(max-width:800px){.testi-grid{grid-template-columns:1fr}}
+
+    /* ── NEWSLETTER ── */
+    .newsletter{max-width:1400px;margin:72px auto 0;padding:0 clamp(12px,3vw,24px);position:relative;z-index:1}
+    .nl-inner{background:linear-gradient(180deg,var(--pink-50) 0%,var(--white) 100%);border-radius:var(--radius-lg);padding:clamp(36px,5vw,60px);text-align:center;border:1px solid var(--pink-100);position:relative;overflow:hidden}
+    .nl-inner::before{content:"";position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:500px;height:300px;background:radial-gradient(ellipse,rgba(227,107,138,0.1),transparent 70%);pointer-events:none}
+    .nl-eyebrow{font-family:var(--display);font-size:11px;color:var(--gold-deep);letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+    .nl-title{font-family:var(--serif);font-size:clamp(28px,4vw,44px);color:var(--ink);font-weight:600;margin-bottom:12px}
+    .nl-title em{font-style:italic;color:var(--rose)}
+    .nl-sub{color:var(--muted);font-size:15px;max-width:460px;margin:0 auto 32px;line-height:1.6}
+    .nl-form{display:flex;gap:8px;max-width:500px;margin:0 auto}
+    .nl-input{flex:1;padding:14px 22px;border-radius:var(--radius-pill);border:1.5px solid var(--line);font-family:var(--sans);font-size:14px;color:var(--ink);background:var(--pink-50);outline:none;transition:all 0.25s}
+    .nl-input:focus{border-color:var(--pink-deep);background:var(--white);box-shadow:0 0 0 4px rgba(227,107,138,0.1)}
+    .nl-btn{padding:14px 28px;border-radius:var(--radius-pill);background:var(--pink-deep);color:var(--white);border:none;font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all 0.25s;white-space:nowrap}
+    .nl-btn:hover{background:var(--rose);transform:translateY(-2px)}
+    .nl-badges{display:flex;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap}
+    .nl-badge{display:flex;align-items:center;gap:6px;font-family:var(--display);font-size:11px;color:var(--muted);letter-spacing:0.5px}
+    .nl-badge::before{content:"✓";color:var(--gold);font-weight:700}
+    @media(max-width:600px){.nl-form{flex-direction:column}}
+
+    /* ── FOOTER ── */
+    footer{margin-top:72px;padding:40px clamp(12px,3vw,24px);text-align:center;color:var(--muted);font-size:13px;background:var(--white);border-top:1px solid var(--pink-100);position:relative;z-index:1}
+    .brand-foot{font-family:var(--display);font-size:22px;color:var(--pink-deep);font-weight:700;letter-spacing:1.5px;margin-bottom:8px}
+    .brand-foot span{color:var(--gold-deep);margin:0 3px}
+    .nav-foot{display:flex;gap:20px;justify-content:center;margin:16px 0;flex-wrap:wrap}
+    .nav-foot a{color:var(--muted);font-family:var(--display);font-size:12px;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s}
+    .nav-foot a:hover{color:var(--rose)}
+    .foot-copy{opacity:0.65;font-size:12px;margin-top:8px}
+
+    /* ── TOAST ── */
+    .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--pink-deep);color:var(--white);padding:14px 24px;border-radius:var(--radius-pill);font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase;box-shadow:var(--shadow-lg);opacity:0;transition:all 0.4s;z-index:200;border-left:3px solid var(--gold);display:flex;align-items:center;gap:10px}
+    .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+    .toast-check{width:22px;height:22px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+
+    /* ── SCROLL REVEAL ── */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
   </style>
 </head>
 <body>
+
+  <!-- NAVBAR -->
   <div class="nav-wrap"><nav class="navbar-inner">
     <a href="index.html" class="brand">AMIRO<span>·</span>LUXURY</a>
     <ul class="nav-links" id="navLinks">
@@ -60,71 +297,437 @@
     </ul>
     <div class="nav-icons">
       <button class="nav-icon-btn" title="Search">⌕</button>
-      <button class="nav-icon-btn" title="Cart">♡</button>
+      <button class="nav-icon-btn" title="Wishlist">♡</button>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
   </nav></div>
 
-  <section class="hero"><div class="hero-card"><div class="hero-content">
-    <div class="hero-eyebrow">★ Curated Selection</div>
-    <h1 class="hero-title">Best <em>Sellers</em><br />Crafted&nbsp;to&nbsp;Impress</h1>
-    <p class="hero-sub">Discover the timepieces our customers love most. Hand-picked icons, limited editions, and the sharpest deals on luxury and fitness watches — all in one place.</p>
-    <div class="btn-row">
-      <button class="btn btn-primary" onclick="document.querySelector('.grid').scrollIntoView({behavior:'smooth'})">Shop Now →</button>
-      <a href="gallery.html" class="btn btn-ghost">View Collections</a>
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span class="ticker-item">Free Shipping Over $200</span>
+      <span class="ticker-item">2-Year Warranty on Every Watch</span>
+      <span class="ticker-item">12,000+ Happy Customers</span>
+      <span class="ticker-item">Kampala's Finest Timepieces</span>
+      <span class="ticker-item">Secure Checkout · Easy Returns</span>
+      <span class="ticker-item">New Collection Just Dropped</span>
+      <span class="ticker-item">Free Shipping Over $200</span>
+      <span class="ticker-item">2-Year Warranty on Every Watch</span>
+      <span class="ticker-item">12,000+ Happy Customers</span>
+      <span class="ticker-item">Kampala's Finest Timepieces</span>
+      <span class="ticker-item">Secure Checkout · Easy Returns</span>
+      <span class="ticker-item">New Collection Just Dropped</span>
     </div>
-    <div class="hero-meta">
-      <div class="hero-meta-item"><div class="hero-meta-num">4.9★</div><div class="hero-meta-label">Avg Rating</div></div>
-      <div class="hero-meta-item"><div class="hero-meta-num">12K+</div><div class="hero-meta-label">Happy Buyers</div></div>
-      <div class="hero-meta-item"><div class="hero-meta-num">2yr</div><div class="hero-meta-label">Warranty</div></div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-card">
+      <div class="hero-left">
+        <div class="hero-eyebrow">Most Loved Timepieces</div>
+        <h1 class="hero-title">Best<em>Sellers.</em></h1>
+        <p class="hero-desc">Hand-picked icons that our customers return to again and again. From everyday elegance to statement luxury — these are the watches worth knowing.</p>
+        <div class="hero-stats">
+          <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">Avg Rating</div></div>
+          <div class="stat"><div class="stat-num">12K+</div><div class="stat-label">Happy Buyers</div></div>
+          <div class="stat"><div class="stat-num">2 Yr</div><div class="stat-label">Warranty</div></div>
+        </div>
+        <div class="hero-btns">
+          <button class="btn btn-primary" onclick="document.getElementById('productGrid').scrollIntoView({behavior:'smooth'})">Shop Now →</button>
+          <a href="gallery.html" class="btn btn-outline">All Collections</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=900&q=80" alt="Luxury watch on wrist" />
+        <div class="hero-badge">
+          <div class="badge-icon">🏆</div>
+          <div>
+            <div class="badge-text">#1 Ranked in Uganda</div>
+            <div class="badge-sub">Luxury Watch Retailer 2026</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div></div></section>
-
-  <div class="filters"><span class="filter-label">Filter:</span><button class="filter-btn active" data-cat="all">All</button><button class="filter-btn" data-cat="luxury">Luxury</button><button class="filter-btn" data-cat="fitness">Fitness</button><button class="filter-btn" data-cat="smart">Smart</button><button class="filter-btn" data-cat="classic">Classic</button></div>
-
-  <div class="section-head"><div class="section-eyebrow">Top Picks This Month</div><h2 class="section-title">Most <em>Loved</em> Timepieces</h2></div>
-
-  <section class="grid" id="productGrid">
-    <article class="product" data-cat="fitness"><div class="product-img-wrap"><span class="product-tag">Best Seller</span><button class="product-fav" onclick="this.classList.toggle('active')">♡</button><img src="B7 Smart Watch for Men &amp; Women HD Full-Screen, Wireless Calling Function Fitness Tracker with Step Counter, Smartwatch.jpg" onerror="this.src='https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600'" alt="B7 Smart Watch" /></div><div class="product-body"><div class="product-cat">Fitness · Smart</div><h3 class="product-name">B7 Smart Watch — HD Full-Screen</h3><div class="product-bottom"><span class="product-price">$129</span><button class="product-cart" onclick="addToCart('B7 Smart Watch')">+ Cart</button></div></div></article>
-    <article class="product" data-cat="luxury"><div class="product-img-wrap"><span class="product-tag">Premium</span><button class="product-fav" onclick="this.classList.toggle('active')">♡</button><img src="Luxury items, men's watch, women's watch, and high cost-performance ratio_.jpg" onerror="this.src='https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=600'" alt="Rolex Datejust 36" /></div><div class="product-body"><div class="product-cat">Luxury · Diamond</div><h3 class="product-name">Rolex Datejust 36 — Diamonds Jubilee</h3><div class="product-bottom"><span class="product-price">$22,748</span><button class="product-cart" onclick="addToCart('Rolex Datejust 36')">+ Cart</button></div></div></article>
-    <article class="product" data-cat="classic"><div class="product-img-wrap"><span class="product-tag">Unisex</span><button class="product-fav" onclick="this.classList.toggle('active')">♡</button><img src="Women's &amp; Men's Clothing, Shop Online Fashion.jpg" onerror="this.src='https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=600'" alt="PU Leather Strap Watch" /></div><div class="product-body"><div class="product-cat">Classic · Leather</div><h3 class="product-name">PU Leather Strap — Unisex Classic</h3><div class="product-bottom"><span class="product-price">$89</span><button class="product-cart" onclick="addToCart('PU Leather Strap Watch')">+ Cart</button></div></div></article>
-    <article class="product" data-cat="luxury"><div class="product-img-wrap"><span class="product-tag">New</span><button class="product-fav" onclick="this.classList.toggle('active')">♡</button><img src="rolex.jpg.jpg" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600'" alt="Gold Edition Watch" /></div><div class="product-body"><div class="product-cat">Luxury · Gold</div><h3 class="product-name">Amiro Gold Edition — Heritage Series</h3><div class="product-bottom"><span class="product-price">$1,899</span><button class="product-cart" onclick="addToCart('Amiro Gold Edition')">+ Cart</button></div></div></article>
-    <article class="product" data-cat="smart"><div class="product-img-wrap"><span class="product-tag">Hot</span><button class="product-fav" onclick="this.classList.toggle('active')">♡</button><img src="imm.jpg" onerror="this.src='https://images.unsplash.com/photo-1617043786394-f977fa12eddf?w=600'" alt="Smart Pro" /></div><div class="product-body"><div class="product-cat">Smart · Connected</div><h3 class="product-name">Smart Pro — Wireless Calling Edition</h3><div class="product-bottom"><span class="product-price">$199</span><button class="product-cart" onclick="addToCart('Smart Pro')">+ Cart</button></div></div></article>
-    <article class="product" data-cat="fitness"><div class="product-img-wrap"><span class="product-tag">−20%</span><button class="product-fav" onclick="this.classList.toggle('active')">♡</button><img src="image870.jpg.jpg" onerror="this.src='https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600'" alt="Active Tracker" /></div><div class="product-body"><div class="product-cat">Fitness · Tracker</div><h3 class="product-name">Active Tracker — Step & Heart Rate</h3><div class="product-bottom"><span class="product-price">$79</span><button class="product-cart" onclick="addToCart('Active Tracker')">+ Cart</button></div></div></article>
   </section>
 
-  <section class="newsletter"><div class="newsletter-inner">
-    <h2 class="newsletter-title">Join the <em>AMIRO</em> Circle</h2>
-    <p class="newsletter-sub">Be the first to know about new drops, private sales, and member-only offers.</p>
-    <form class="newsletter-form" onsubmit="event.preventDefault();subscribed(this);">
-      <input type="email" placeholder="Enter your email" required />
-      <button type="submit" class="btn btn-primary" style="background:var(--white);color:var(--pink-deep);">Subscribe</button>
-    </form>
-  </div></section>
+  <!-- STATS BANNER -->
+  <div class="featured-banner reveal">
+    <div class="featured-inner">
+      <div class="featured-item">
+        <div class="fi-icon">⌚</div>
+        <div class="fi-num">200+</div>
+        <div class="fi-label">Styles in Stock</div>
+      </div>
+      <div class="featured-item">
+        <div class="fi-icon">✦</div>
+        <div class="fi-num">6</div>
+        <div class="fi-label">Curated Collections</div>
+      </div>
+      <div class="featured-item">
+        <div class="fi-icon">🎁</div>
+        <div class="fi-num">Free</div>
+        <div class="fi-label">Gift Wrapping</div>
+      </div>
+    </div>
+  </div>
 
+  <!-- FILTER -->
+  <div class="filter-section reveal">
+    <div class="filter-header">
+      <div class="filter-title">Browse by <em>Category</em></div>
+      <select class="sort-select" id="sortSelect" onchange="sortProducts()">
+        <option value="default">Sort: Featured</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </div>
+    <div class="filter-pills">
+      <button class="pill active" data-cat="all" onclick="filterProducts(this)">All <span class="pill-count">6</span></button>
+      <button class="pill" data-cat="luxury" onclick="filterProducts(this)">Luxury <span class="pill-count">2</span></button>
+      <button class="pill" data-cat="fitness" onclick="filterProducts(this)">Fitness <span class="pill-count">2</span></button>
+      <button class="pill" data-cat="smart" onclick="filterProducts(this)">Smart <span class="pill-count">1</span></button>
+      <button class="pill" data-cat="classic" onclick="filterProducts(this)">Classic <span class="pill-count">1</span></button>
+    </div>
+  </div>
+
+  <!-- SECTION HEAD -->
+  <div class="section-head reveal">
+    <div class="sh-left">
+      <div class="sh-eyebrow">Top Picks This Season</div>
+      <h2 class="sh-title">Most <em>Loved</em> Timepieces</h2>
+    </div>
+    <a href="gallery.html" class="sh-link">View All</a>
+  </div>
+
+  <!-- PRODUCT GRID -->
+  <section class="grid" id="productGrid">
+
+    <!-- Card 1 - Featured wide -->
+    <article class="card featured-card" data-cat="fitness" data-price="129" data-name="B7 Smart Watch">
+      <div class="card-img">
+        <span class="card-tag tag-bestseller">Best Seller</span>
+        <button class="card-fav" onclick="toggleFav(this)">♡</button>
+        <div class="card-stars">
+          <span class="stars">★★★★★</span>
+          <span class="rating-count">4.9 (2,341 reviews)</span>
+        </div>
+        <button class="card-quick" onclick="addToCart('B7 Smart Watch')">✦ Quick Add to Cart</button>
+        <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=900&q=80" alt="B7 Smart Watch" />
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Fitness · Smart</div>
+        <h3 class="card-name">B7 Smart Watch — HD Full-Screen</h3>
+        <div class="card-specs">
+          <span class="spec-chip">AMOLED Display</span>
+          <span class="spec-chip">Wireless Calling</span>
+          <span class="spec-chip">GPS Tracker</span>
+          <span class="spec-chip">Heart Rate</span>
+        </div>
+        <div class="card-bottom">
+          <div class="card-price">
+            <span class="price-current">$129</span>
+          </div>
+          <button class="card-cart" onclick="addToCart('B7 Smart Watch')">+ Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card" data-cat="luxury" data-price="22748" data-name="Rolex Datejust 36">
+      <div class="card-img">
+        <span class="card-tag tag-premium">Premium</span>
+        <button class="card-fav" onclick="toggleFav(this)">♡</button>
+        <div class="card-stars">
+          <span class="stars">★★★★★</span>
+          <span class="rating-count">5.0 (412 reviews)</span>
+        </div>
+        <button class="card-quick" onclick="addToCart('Rolex Datejust 36')">✦ Quick Add to Cart</button>
+        <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=600&q=80" alt="Rolex Datejust 36" />
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Luxury · Diamond</div>
+        <h3 class="card-name">Rolex Datejust 36 — Diamonds Jubilee</h3>
+        <div class="card-specs">
+          <span class="spec-chip">Diamond Bezel</span>
+          <span class="spec-chip">Jubilee Bracelet</span>
+        </div>
+        <div class="card-bottom">
+          <div class="card-price">
+            <span class="price-current">$22,748</span>
+          </div>
+          <button class="card-cart" onclick="addToCart('Rolex Datejust 36')">+ Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card" data-cat="classic" data-price="89" data-name="PU Leather Strap Watch">
+      <div class="card-img">
+        <span class="card-tag tag-new">Unisex</span>
+        <button class="card-fav" onclick="toggleFav(this)">♡</button>
+        <div class="card-stars">
+          <span class="stars">★★★★☆</span>
+          <span class="rating-count">4.7 (891 reviews)</span>
+        </div>
+        <button class="card-quick" onclick="addToCart('PU Leather Strap Watch')">✦ Quick Add to Cart</button>
+        <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=600&q=80" alt="PU Leather Strap Watch" />
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Classic · Leather</div>
+        <h3 class="card-name">PU Leather Strap — Unisex Classic</h3>
+        <div class="card-specs">
+          <span class="spec-chip">Genuine PU Leather</span>
+          <span class="spec-chip">Quartz</span>
+        </div>
+        <div class="card-bottom">
+          <div class="card-price">
+            <span class="price-current">$89</span>
+          </div>
+          <button class="card-cart" onclick="addToCart('PU Leather Strap Watch')">+ Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="card" data-cat="luxury" data-price="1899" data-name="Amiro Gold Edition">
+      <div class="card-img">
+        <span class="card-tag tag-new">New</span>
+        <button class="card-fav" onclick="toggleFav(this)">♡</button>
+        <div class="card-stars">
+          <span class="stars">★★★★★</span>
+          <span class="rating-count">4.8 (157 reviews)</span>
+        </div>
+        <button class="card-quick" onclick="addToCart('Amiro Gold Edition')">✦ Quick Add to Cart</button>
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" alt="Amiro Gold Edition" />
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Luxury · Gold</div>
+        <h3 class="card-name">Amiro Gold Edition — Heritage Series</h3>
+        <div class="card-specs">
+          <span class="spec-chip">18K Gold Plated</span>
+          <span class="spec-chip">Sapphire Crystal</span>
+        </div>
+        <div class="card-bottom">
+          <div class="card-price">
+            <span class="price-current">$1,899</span>
+          </div>
+          <button class="card-cart" onclick="addToCart('Amiro Gold Edition')">+ Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 5 -->
+    <article class="card" data-cat="smart" data-price="199" data-name="Smart Pro">
+      <div class="card-img">
+        <span class="card-tag tag-hot">Hot</span>
+        <button class="card-fav" onclick="toggleFav(this)">♡</button>
+        <div class="card-stars">
+          <span class="stars">★★★★★</span>
+          <span class="rating-count">4.9 (3,102 reviews)</span>
+        </div>
+        <button class="card-quick" onclick="addToCart('Smart Pro')">✦ Quick Add to Cart</button>
+        <img src="https://images.unsplash.com/photo-1617043786394-f977fa12eddf?w=600&q=80" alt="Smart Pro" />
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Smart · Connected</div>
+        <h3 class="card-name">Smart Pro — Wireless Calling Edition</h3>
+        <div class="card-specs">
+          <span class="spec-chip">Bluetooth Calls</span>
+          <span class="spec-chip">IP68 Waterproof</span>
+        </div>
+        <div class="card-bottom">
+          <div class="card-price">
+            <span class="price-current">$199</span>
+          </div>
+          <button class="card-cart" onclick="addToCart('Smart Pro')">+ Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 6 -->
+    <article class="card" data-cat="fitness" data-price="63" data-name="Active Tracker">
+      <div class="card-img">
+        <span class="card-tag tag-sale">−20%</span>
+        <button class="card-fav" onclick="toggleFav(this)">♡</button>
+        <div class="card-stars">
+          <span class="stars">★★★★☆</span>
+          <span class="rating-count">4.6 (1,820 reviews)</span>
+        </div>
+        <button class="card-quick" onclick="addToCart('Active Tracker')">✦ Quick Add to Cart</button>
+        <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&q=80" alt="Active Tracker" />
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Fitness · Tracker</div>
+        <h3 class="card-name">Active Tracker — Step & Heart Rate</h3>
+        <div class="card-specs">
+          <span class="spec-chip">Step Counter</span>
+          <span class="spec-chip">Sleep Monitor</span>
+        </div>
+        <div class="card-bottom">
+          <div class="card-price">
+            <span class="price-current">$63</span>
+            <span class="price-old">$79</span>
+          </div>
+          <button class="card-cart" onclick="addToCart('Active Tracker')">+ Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- PROMO STRIP -->
+  <div class="promo-strip reveal">
+    <div class="promo-grid">
+      <div class="promo-item promo-a">
+        <div class="promo-deco">⌚</div>
+        <div>
+          <div class="promo-eye">Limited Offer</div>
+          <h3 class="promo-title">Couples <em>Gift Set</em></h3>
+          <p class="promo-sub">Matching watches for two — classic steel in 36mm & 40mm. One box, one ribbon, one moment.</p>
+        </div>
+        <button class="promo-btn" onclick="addToCart('Couples Gift Set')">Shop the Pair · $780</button>
+      </div>
+      <div class="promo-item promo-b">
+        <div class="promo-deco">✦</div>
+        <div>
+          <div class="promo-eye">Members Only</div>
+          <h3 class="promo-title">Join the <em>Circle</em></h3>
+          <p class="promo-sub">Unlock early access to new drops, exclusive pricing, and birthday surprises from AMIRO.</p>
+        </div>
+        <button class="promo-btn" onclick="document.querySelector('.nl-input').focus();document.querySelector('.newsletter').scrollIntoView({behavior:'smooth'})">Join Free →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="section-head reveal" style="margin-top:64px">
+    <div class="sh-left">
+      <div class="sh-eyebrow">Real Reviews</div>
+      <h2 class="sh-title">What Our <em>Customers</em> Say</h2>
+    </div>
+  </div>
+  <div class="testimonials reveal">
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I ordered the Heritage Gold Edition and it arrived in the most beautiful packaging. Feels incredibly premium on the wrist.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div>
+            <div class="testi-name">Amara Nakato</div>
+            <div class="testi-handle">Kampala, Uganda</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Bought the Smart Pro for my husband and the B7 for myself — both arrived in 3 days. Outstanding customer service.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Rose Apio</div>
+            <div class="testi-handle">Entebbe, Uganda</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">The Rolex Datejust I got here turned heads at my wedding. Worth every penny — authenticated and perfect.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">D</div>
+          <div>
+            <div class="testi-name">David Onyango</div>
+            <div class="testi-handle">Nairobi, Kenya</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter reveal">
+    <div class="nl-inner">
+      <div class="nl-eyebrow">— Stay in the Loop —</div>
+      <h2 class="nl-title">Join the <em>AMIRO</em> Circle</h2>
+      <p class="nl-sub">Be the first to know about new drops, private sales, and member-only offers crafted just for you.</p>
+      <form class="nl-form" onsubmit="event.preventDefault();subscribed(this)">
+        <input type="email" class="nl-input" placeholder="your@email.com" required />
+        <button type="submit" class="nl-btn">Subscribe</button>
+      </form>
+      <div class="nl-badges">
+        <span class="nl-badge">No spam, ever</span>
+        <span class="nl-badge">Unsubscribe anytime</span>
+        <span class="nl-badge">Members-only deals</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="brand-foot">AMIRO<span>·</span>LUXURY WATCHES</div>
     <div class="nav-foot">
-      <a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="MEN.html">Men</a><a href="WOMEN.html">Women</a><a href="CHILDREN.html">Children</a><a href="BOTH.html">Unisex</a><a href="About us.html">About</a><a href="Contact Us.html">Contact</a><a href="faq.html">FAQ</a>
+      <a href="index.html">Home</a><a href="gallery.html">Gallery</a>
+      <a href="MEN.html">Men</a><a href="WOMEN.html">Women</a>
+      <a href="CHILDREN.html">Children</a><a href="BOTH.html">Unisex</a>
+      <a href="About us.html">About</a><a href="Contact Us.html">Contact</a><a href="faq.html">FAQ</a>
     </div>
     <p>Crafted with care · Kampala, Uganda</p>
-    <p style="margin-top:8px;opacity:0.7;">© 2026 AMIRO. All rights reserved.</p>
+    <p class="foot-copy">© 2026 AMIRO. All rights reserved.</p>
   </footer>
 
-  <div class="toast" id="toast"><span class="toast-icon">✓</span><span id="toastMsg">Added to cart</span></div>
+  <div class="toast" id="toast">
+    <div class="toast-check">✓</div>
+    <span id="toastMsg">Added to cart</span>
+  </div>
 
   <script>
+    // Navbar
     const hamburger=document.getElementById("hamburger"),navLinks=document.getElementById("navLinks");
-    hamburger.addEventListener("click",()=>{navLinks.classList.toggle("open")});
+    hamburger.addEventListener("click",()=>navLinks.classList.toggle("open"));
     document.querySelectorAll(".nav-links a:not(.dropdown-toggle)").forEach(a=>{a.addEventListener("click",()=>navLinks.classList.remove("open"))});
-    function toggleDropdown(e){e.preventDefault();e.stopPropagation();const parent=e.currentTarget.parentElement;document.querySelectorAll(".has-dropdown.open").forEach(d=>{if(d!==parent)d.classList.remove("open")});parent.classList.toggle("open")}
-    document.addEventListener("click",(e)=>{if(!e.target.closest(".has-dropdown")){document.querySelectorAll(".has-dropdown.open").forEach(d=>d.classList.remove("open"))}});
-    const filterBtns=document.querySelectorAll(".filter-btn"),products=document.querySelectorAll(".product");
-    filterBtns.forEach(btn=>{btn.addEventListener("click",()=>{filterBtns.forEach(b=>b.classList.remove("active"));btn.classList.add("active");const cat=btn.dataset.cat;products.forEach(p=>{p.style.display=(cat==="all"||p.dataset.cat===cat)?"":"none"})})});
+    function toggleDropdown(e){e.preventDefault();e.stopPropagation();const p=e.currentTarget.parentElement;document.querySelectorAll(".has-dropdown.open").forEach(d=>{if(d!==p)d.classList.remove("open")});p.classList.toggle("open")}
+    document.addEventListener("click",e=>{if(!e.target.closest(".has-dropdown"))document.querySelectorAll(".has-dropdown.open").forEach(d=>d.classList.remove("open"))});
+
+    // Toast
     const toast=document.getElementById("toast"),toastMsg=document.getElementById("toastMsg");let toastTimer;
-    function showToast(msg){toastMsg.textContent=msg;toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),2500)}
-    function addToCart(name){showToast("✓ "+name+" added to cart")}
-    function subscribed(form){form.reset();showToast("✓ Welcome to the AMIRO Circle")}
+    function showToast(msg){toastMsg.textContent=msg;toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),2600)}
+    function addToCart(n){showToast("Added: "+n)}
+    function subscribed(f){f.reset();showToast("✦ Welcome to the AMIRO Circle")}
+    function toggleFav(btn){btn.classList.toggle("active");showToast(btn.classList.contains("active")?"♡ Saved to Wishlist":"Removed from Wishlist")}
+
+    // Filter
+    function filterProducts(btn){
+      document.querySelectorAll(".pill").forEach(p=>p.classList.remove("active"));
+      btn.classList.add("active");
+      const cat=btn.dataset.cat;
+      document.querySelectorAll(".card").forEach(c=>{
+        c.style.display=(cat==="all"||c.dataset.cat===cat)?"flex":"none"
+      });
+    }
+
+    // Sort
+    function sortProducts(){
+      const val=document.getElementById("sortSelect").value;
+      const grid=document.getElementById("productGrid");
+      const cards=[...grid.querySelectorAll(".card")];
+      cards.sort((a,b)=>{
+        if(val==="price-asc")return +a.dataset.price - +b.dataset.price;
+        if(val==="price-desc")return +b.dataset.price - +a.dataset.price;
+        if(val==="name")return a.dataset.name.localeCompare(b.dataset.name);
+        return 0;
+      });
+      cards.forEach(c=>grid.appendChild(c));
+    }
+
+    // Scroll reveal
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}})
+    },{threshold:0.12});
+    document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
   </script>
 </body>
 </html>
